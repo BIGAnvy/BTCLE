@@ -1,0 +1,1197 @@
+/* Стили для страницы Tokenomics */
+
+:root {
+  --color-primary: #C5B483;
+  --color-gold: #C5B483;
+  --color-gold-light: #C5B483;
+  --color-gold-dark: #C5B483;
+  --color-background: #0a0a0a;
+  --color-card-bg: rgba(20, 20, 30, 0.7);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --transition-normal: all 0.3s ease;
+  --glow: 0 0 15px rgba(247, 147, 26, 0.5);
+
+  /* Переменные фона из whitepaper.css */
+  --dark-bg-1: #0B0B0F;
+  --dark-bg-2: #13131A;
+  --accent-gold: #F7CE68;
+  --accent-blue: #2E7DFF;
+  --text-light: #EAEAEA;
+}
+
+/* Фон страницы */
+.tokenomics-container {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  /* max-width: 1200px; Ограничиваем максимальную ширину */
+  padding: 120px 20px;
+  overflow: hidden;
+  background-color: var(--dark-bg-1); /* Базовый фон */
+}
+
+/* Фон страницы - стили из whitepaper.css */
+.tokenomics-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    z-index: -2;
+    opacity: 0.7;
+    mask-image: radial-gradient(ellipse 90% 70% at 50% -10%, black 40%, transparent 80%);
+    animation: bg-grid-subtle-move 60s linear infinite;
+}
+
+.tokenomics-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, #252530 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(46, 125, 255, 0.08) 0%, transparent 35%);
+    z-index: -2;
+    opacity: 0.6;
+    animation: bg-glow-subtle-move 45s ease-in-out infinite alternate;
+}
+
+@keyframes bg-grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* Заголовок и подзаголовок */
+.tokenomics-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 2rem;
+
+  border-radius: 1rem;
+
+
+
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tokenomics-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: #C5B483;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Частицы в заголовке */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(243, 201, 121, 0.3);
+  pointer-events: none;
+  animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(-5px, 15px);
+  }
+  75% {
+    transform: translate(-10px, -5px);
+  }
+}
+
+/* Сетка карточек токенов */
+.tokens-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .tokens-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tokens-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Карточка токена */
+.token-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+
+  border-radius: 0.75rem;
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  box-shadow: var(--card-shadow);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-normal);
+  backdrop-filter: blur(5px);
+}
+
+.token-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.token-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-color: rgba(243, 201, 121, 0.4);
+}
+
+.token-card.highlighted .card-value {
+  color: var(--color-gold);
+}
+
+.card-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  color: var(--color-gold);
+}
+
+.card-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: rgba(243, 201, 121, 0.7);
+}
+
+.card-value-container {
+  width: 100%;
+}
+
+.card-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contract-address {
+  display: block;
+  font-family: monospace;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-gold-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gold);
+  transition: var(--transition-normal);
+  padding: 0.25rem;
+}
+
+.copy-button:hover {
+  color: #fff;
+}
+
+/* Секция распределения */
+.distribution-section {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  padding: 2rem;
+  margin-bottom: 5rem;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-normal);
+}
+
+.distribution-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.distribution-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px; /* Ограничиваем максимальную ширину */
+  height: 350px; /* Фиксированная высота */
+  margin: 0 auto 2rem auto; /* Центрируем и добавляем отступ снизу */
+  /* Добавляем тень для объема */
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Секция вестинга */
+.monthly-vesting-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(243, 201, 121, 0.2);
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gold);
+  transition: var(--transition-normal);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0;
+}
+
+.toggle-button:hover {
+  color: #fff;
+}
+
+.toggle-icon {
+  display: flex;
+  align-items: center;
+}
+
+.chevron {
+  margin-left: 0.5rem;
+  transition: transform 0.5s ease;
+}
+
+.monthly-content, .vesting-content {
+  margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.monthly-content.visible, .vesting-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.vesting-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vesting-table th {
+  text-align: left;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  border-bottom: 1px solid rgba(243, 201, 121, 0.1);
+}
+
+.vesting-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 400;
+  color: #fff;
+}
+
+.vesting-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.value-cell {
+  font-weight: 700;
+  color: var(--color-gold-light);
+}
+
+.annual-total {
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.cumulative-cell {
+  color: rgba(243, 201, 121, 0.8);
+}
+
+.remaining-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(243, 201, 121, 0.05);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(243, 201, 121, 0.2);
+}
+
+.remaining-value {
+  font-weight: 700;
+  color: var(--color-gold-light);
+}
+
+/* Секция расписания вестинга */
+.vesting-schedule {
+  margin: 0 auto 5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-normal);
+}
+
+.vesting-schedule.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vesting-toggle {
+  width: 100%;
+  justify-content: space-between;
+
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+}
+
+.toggle-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.vesting-content {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.annual-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.annual-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  color: var(--color-gold);
+}
+
+.annual-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Кнопка возврата домой */
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  background: rgba(247, 147, 26, 0.15);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-normal);
+  z-index: 100;
+  border: 1px solid rgba(247, 147, 26, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.home-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-button:hover {
+  background: rgba(247, 147, 26, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.home-button svg {
+  transition: var(--transition-normal);
+  stroke: rgba(255, 255, 255, 0.8);
+}
+
+.home-button:hover svg {
+  stroke: #C5B483;
+}
+
+/* Новый подход с transition */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px); /* Начальное смещение */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Плавный переход */
+  will-change: opacity, transform; /* Оптимизация */
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0); /* Конечное положение */
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 3.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tokenomics-container {
+    padding: 60px 15px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+  
+  .toggle-text {
+    font-size: 1.1rem;
+  }
+  
+  .annual-header h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tokenomics-container {
+    padding: 80px 10px;
+  }
+
+  .tokenomics-header {
+    margin-bottom: 0;
+  }
+  
+  .vesting-mechanics {
+    margin: 10rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+  
+  .token-card {
+    padding: 1rem;
+  }
+  
+  .card-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .distribution-section,
+  .vesting-content {
+    padding: 1rem;
+  }
+  
+  .vesting-table th,
+  .vesting-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .home-button {
+    width: 48px;
+    height: 48px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .principles-title {
+    font-size: 1.8rem; /* Уменьшаем заголовок */
+    margin-bottom: 1.5rem;
+  }
+  
+  .principles-list {
+      max-width: 100%; /* Список занимает всю ширину */
+      padding: 0 0.5rem; /* Небольшие боковые отступы */
+      margin-bottom: 1.5rem;
+  }
+  
+  .principles-list li {
+      font-size: 1rem; /* Уменьшаем текст */
+      margin-bottom: 0.8rem;
+      flex-direction: row; /* Убедимся, что иконка и текст в ряд */
+      align-items: flex-start;
+  }
+  
+  .principles-list .point-icon {
+      margin-right: 0.6rem;
+      font-size: 1rem; /* Уменьшаем иконку */
+      line-height: 1.6; /* Выравнивание */
+  }
+
+  .principles-goal {
+    font-size: 1rem; /* Уменьшаем текст */
+    padding: 1rem;
+  }
+}
+
+/* Секция обзора */
+.overview-section {
+  margin-bottom: 5rem;
+
+  border-radius: 1rem;
+  padding: 2rem;
+
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-normal);
+}
+
+.overview-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overview-title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: inline-block;
+}
+
+.overview-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.overview-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.overview-text p {
+  margin-bottom: 1.2rem;
+}
+
+.overview-text p:last-child {
+  margin-bottom: 0;
+}
+
+.overview-text strong {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.highlight-text {
+  background: rgba(247, 147, 26, 0.15);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Секция цели распределения */
+.purpose-section {
+  margin-bottom: 5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-normal);
+}
+
+.purpose-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.purpose-title {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.purpose-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.distribution-table-container {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.distribution-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.distribution-table th {
+  background: rgba(247, 147, 26, 0.2);
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.distribution-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(20, 20, 25, 0.7);
+}
+
+.distribution-table .total-row {
+  background: rgba(247, 147, 26, 0.1);
+  font-weight: 600;
+}
+
+.distribution-table .amount-cell {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--color-gold);
+}
+
+.distribution-table .percent-cell {
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.distribution-points {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  padding: 15px;
+}
+
+.distribution-points li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  background: rgba(20, 20, 25, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.point-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  color: var(--color-gold);
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.point-text {
+  line-height: 1.5;
+}
+
+.point-text strong {
+  color: var(--color-gold);
+}
+
+/* Добавляем стили для механики вестинга */
+.vesting-mechanics {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(20, 20, 30, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(247, 147, 26, 0.15);
+}
+
+.mechanics-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.mechanics-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.mechanics-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mechanics-label {
+  font-weight: 600;
+  color: #fff;
+  min-width: 120px;
+}
+
+.mechanics-value {
+  color: var(--color-gold-light);
+  flex: 1;
+}
+
+.mechanics-summary {
+  font-style: italic;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для секции принципов (теперь список) */
+.principles-section {
+  margin-top: 4rem;
+  text-align: center;
+  /* Добавляем fade-in-up анимацию */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.principles-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.principles-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+    position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.principles-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.principles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem auto; /* Центрируем и добавляем отступ снизу */
+  max-width: 600px; /* Ограничиваем ширину для центрирования */
+  text-align: left; /* Выравниваем текст внутри списка по левому краю */
+}
+
+.principles-list li {
+  display: flex; /* Используем flex для выравнивания иконки и текста */
+  align-items: flex-start; /* Выравниваем по верху строки */
+  margin-bottom: 1rem; /* Отступ между пунктами */
+  font-size: 1.1rem; /* Размер шрифта */
+  color: var(--color-text-secondary); /* Цвет текста */
+  line-height: 1.6; /* Межстрочный интервал */
+}
+
+.principles-list .point-icon {
+  color: var(--color-primary); /* Цвет иконки */
+  margin-right: 0.8rem; /* Отступ справа от иконки */
+  font-size: 1.2rem; /* Немного увеличим иконку */
+  line-height: 1.6; /* Выравниваем иконку с текстом */
+  flex-shrink: 0; /* Предотвращаем сжатие иконки */
+}
+
+.principles-list strong {
+  color: var(--color-text); /* Выделяем жирный текст */
+  font-weight: 600;
+  margin: 0 12px;
+  white-space: nowrap;
+}
+
+.principles-goal {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1.5rem;
+  background: rgba(247, 147, 26, 0.1);
+  border-radius: 8px;
+}
+
+.principles-goal strong {
+  color: var(--color-gold);
+  margin-right: 0.5rem;
+}
+
+/* Секция прозрачности */
+.transparency-section {
+  margin-bottom: 5rem;
+
+  border-radius: 1rem;
+  padding: 2rem;
+
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-normal);
+}
+
+.transparency-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transparency-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.transparency-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.transparency-content p {
+  margin-bottom: 1.2rem;
+}
+
+.transparency-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.transparency-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-gold);
+  margin-right: 1rem;
+}
+
+.transparency-content strong {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+/* Явно стилизуем текст для легенды диаграммы */
+canvas + div ul li {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Улучшаем стили для подсказок */
+.chart-tooltip {
+  background-color: rgba(20, 20, 30, 0.95) !important;
+  color: #FFFFFF !important;
+  border: 2px solid var(--color-gold) !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 10px 15px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Устанавливаем видимость секции принципов явно */
+.principles-section.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+/* Добавляем скрипт для инициализации видимости при загрузке страницы */
+@media (min-width: 1px) {
+  .principles-section:not(.visible) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+  }
+  
+  .principle-card {
+    transform: none !important;
+  }
+}
+
+/* Кастомная легенда для диаграммы */
+.custom-chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(20, 20, 30, 0.7);
+  border-radius: 8px;
+  border: 1px solid var(--color-gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.legend-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Располагаем легенду рядом с графиком на больших экранах */
+@media (min-width: 768px) {
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  canvas {
+    max-width: 400px;
+  }
+  
+  .custom-chart-legend {
+    min-width: 250px;
+  }
+}
+
+/* На мобильных устройствах располагаем легенду под графиком */
+@media (max-width: 767px) {
+  .custom-chart-legend {
+    width: 100%;
+    margin-top: 30px;
+  }
+} 
+
+@media (min-width: 1800px) {
+  .tokenomics-container {
+    padding: 200px;
+  }
+}
+
+
+
+
+/* --- Стили для Списка Принципов Распределения --- */
+
+.principles-list {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 0; /* Убираем стандартный отступ */
+    max-width: 700px; /* Ограничиваем ширину для читаемости */
+    margin: 2rem auto 0; /* Центрируем и добавляем отступ сверху */
+  }
+  
+  .principles-list li {
+    margin-bottom: 1.5rem; /* Вертикальный отступ между пунктами !!! */
+    padding-left: 2rem; /* Горизонтальный отступ для текста, освобождаем место для иконки */
+    position: relative; /* Для позиционирования иконки */
+    font-size: 1rem; /* Базовый размер шрифта */
+    line-height: 1.7; /* Межстрочный интервал для воздуха */
+    color: var(--text-secondary-color, #ccc); /* Цвет основного текста */
+  }
+  
+  .principles-list li:last-child {
+    margin-bottom: 0; /* Убираем отступ у последнего элемента */
+  }
+  
+  .principles-list .point-icon {
+    position: absolute;
+    left: 0;
+    top: 0; /* Выравниваем иконку по верху строки */
+    color: var(--color-primary); /* Цвет иконки */
+    font-size: 1.5rem; /* Размер иконки */
+    line-height: 1.7; /* Синхронизируем с line-height текста для вертикального выравнивания */
+    margin-right: 0.5rem; /* Отступ иконки от текста (хотя текст сдвинут паддингом) */
+  }
+  
+  .principles-list strong {
+    color: var(--text-color, #fff); /* Цвет выделенного текста */
+    font-weight: 600;
+    margin-left: 0.5em; /* !!! Горизонтальный отступ ПОСЛЕ двоеточия перед strong */
+    margin-right: 0.3em; /* Небольшой отступ ПОСЛЕ strong */
+  }
+  
+  /* --- Адаптивность для Списка Принципов --- */
+  
+  @media (max-width: 768px) {
+    .principles-list {
+      max-width: 100%; /* На планшетах можно шире */
+      margin-top: 1.5rem;
+    }
+  
+    .principles-list li {
+      margin-bottom: 1.2rem;
+      padding-left: 1.8rem; /* Слегка уменьшаем отступ */
+      font-size: 0.95rem;
+    }
+  
+    .principles-list .point-icon {
+      font-size: 1.3rem; /* Уменьшаем иконку */
+    }
+  
+    .principles-list strong {
+       margin-left: 0.4em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .principles-list {
+      margin-top: 1rem;
+    }
+  
+    .principles-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem; /* Еще уменьшаем */
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  
+     .principles-list .point-icon {
+       font-size: 1.2rem;
+       top: 0.05em; /* Может потребоваться тонкая подстройка */
+     }
+  
+     .principles-list strong {
+       margin-left: 0.3em;
+    }
+  }
+  
+  

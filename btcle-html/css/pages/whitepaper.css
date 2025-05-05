@@ -1,0 +1,213 @@
+/* Стили для кнопки и контейнера Whitepaper Summary */
+.wp-summary-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(to right, rgba(43, 43, 56, 0.8), rgba(32, 32, 45, 0.8));
+  border: 1px solid rgba(243, 201, 121, 0.2);
+  color: rgba(243, 201, 121, 0.9);
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 30px auto 15px;
+  backdrop-filter: blur(4px);
+  position: relative;
+  z-index: 10;
+  min-width: 250px;
+}
+
+.wp-summary-toggle-btn:hover {
+  border-color: rgba(243, 201, 121, 0.6);
+  box-shadow: 0 0 15px 5px rgba(243, 201, 121, 0.15);
+  transform: translateY(-2px);
+}
+
+.wp-summary-toggle-btn:active {
+  transform: translateY(1px);
+}
+
+.wp-summary-toggle-btn .btn-icon {
+  color: rgba(243, 201, 121, 0.8);
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.wp-summary-toggle-btn .btn-text {
+  transition: opacity 0.3s ease;
+}
+
+.wp-summary-toggle-btn .chevron-icon {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* Активное состояние кнопки */
+.wp-summary-toggle-btn.active {
+  background: linear-gradient(to right, rgba(56, 48, 32, 0.8), rgba(45, 39, 29, 0.8));
+  color: #ffffff;
+}
+
+/* Свечение для активной кнопки */
+.wp-summary-toggle-btn.glow {
+  animation: btn-glow 2s infinite alternate;
+}
+
+@keyframes btn-glow {
+  0% {
+    box-shadow: 0 0 8px 2px rgba(243, 201, 121, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px 5px rgba(243, 201, 121, 0.5);
+  }
+}
+
+/* Контейнер для раскрывающегося содержимого */
+.wp-summary-container {
+  position: relative;
+  width: 100%;
+  transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  margin: 0px auto 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  
+  /* Кастомный скроллбар для webkit-браузеров */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(20, 20, 30, 0.3);
+    border-radius: 8px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba(243, 201, 121, 0.2);
+    border-radius: 8px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(243, 201, 121, 0.4);
+  }
+}
+
+/* Для Firefox */
+.wp-summary-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(243, 201, 121, 0.2) rgba(20, 20, 30, 0.3);
+}
+
+.wp-summary-container.expanded {
+  border: 1px solid rgba(243, 201, 121, 0.15);
+  background: rgba(20, 20, 30, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Декоративные элементы */
+.wp-summary-decoration {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 1.2s ease;
+  z-index: 0;
+}
+
+.wp-summary-decoration.left-deco {
+  top: -30px;
+  left: -30px;
+  background: radial-gradient(circle, rgba(243, 201, 121, 0.05) 0%, transparent 70%);
+  transform: scale(0.5) translateX(-50px);
+}
+
+.wp-summary-decoration.right-deco {
+  bottom: -30px;
+  right: -30px;
+  background: radial-gradient(circle, rgba(92, 163, 255, 0.05) 0%, transparent 70%);
+  transform: scale(0.5) translateX(50px);
+}
+
+.wp-summary-decoration.visible {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+/* Контент внутри контейнера */
+.wp-summary-content {
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  max-height: none;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Состояние контейнера при раскрытии */
+.wp-summary-container.expanded .wp-summary-content {
+  opacity: 1;
+  max-height: none;
+}
+
+/* Анимированные декоративные иконки */
+.wp-summary-icons {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+  color: rgba(243, 201, 121, 0.15);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.floating-icon.visible {
+  opacity: 1;
+  transform: scale(1);
+  animation: floating 8s infinite ease-in-out;
+}
+
+.floating-icon.icon-1 {
+  top: 10%;
+  left: 5%;
+}
+
+.floating-icon.icon-2 {
+  top: 70%;
+  left: 15%;
+}
+
+.floating-icon.icon-3 {
+  top: 20%;
+  right: 10%;
+}
+
+.floating-icon.icon-4 {
+  bottom: 10%;
+  right: 5%;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -15px) rotate(5deg);
+  }
+  50% {
+    transform: translate(5px, 10px) rotate(-3deg);
+  }
+  75% {
+    transform: translate(-10px, -5px) rotate(2deg);
+  }
+} 

@@ -1,0 +1,54 @@
+Website upgrades
+
+Landing - Similar to Bittensor
+Video on the main page in the middle
+
+
+About
+The Story
+Tokenomics → including pie chart
+Roadmap
+Whitepaper
+Explore - arrow drop down menu:
+- Outreach 
+- Vision → target price
+Connect
+ - Email
+ - Telegram
+ - X
+
+
+1.
+Name: Bitcoin Limited Edition
+Symbol: BTCLE
+Max Supply: 210.000
+Total Supply: 21,000
+Contract address:
+0x9d2144328e1d618F54Cd38540F5e
+E50671f6A208
+
+2.
+For example https://bittensor.com/intro 
+
+3.
+Information from file - please put in nice format for website
+
+4.
+Roadmap - first year’s plan - nice design you make
+
+5.
+Whitepaper attachment
+
+6.
+Explore - arrow drop down menu:
+Outreach -- the marketing plan
+Vision → target price
+
+7.
+Connect → socials
+ - Email
+ - Telegram
+ - X
+
+ Заказчик хочет реализовать структуру сайта так, чтобы на основной (хоум пейдж) было только 1 видео (видео у меня уеж есть) на весь экран и с музыкой, при загрузке сайта используем лоадбар обязательно, все должно быть плавное и красивое. А также навигацонная панель, откуда он мог бы попасть на соответствующие поисанные секции. На каждой секции должен быть контент, это отдельные страницы (либо реализуй все в рамках одной старницы: чтобы не делать редирект, а перерисовывать интерфейс с какой-то крутой современной анимацией)  
+Дизайн современный, минималистичный, футуристичный, подходящий под crypto тематику. 
