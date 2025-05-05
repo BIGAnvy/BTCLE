@@ -1275,7 +1275,8 @@
     }
     .wp-summary-content {
         padding: 0 1.5rem;
-        max-width: 90%;
+        max-width: 100%;
+        height: 100%;
     }
     .wp-summary-content.expanded {
         padding: 1.5rem 1.5rem;
