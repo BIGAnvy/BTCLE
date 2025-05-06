@@ -164,7 +164,7 @@ const roadmapItems = [
           </ul>
           <p><strong>Strategic Impact:</strong> Secure long-term technological sovereignty, unlock new ecosystem revenue streams through dApp development and transaction fees, establish interoperability, and cement BTCLE's leadership in applying AI within next-generation decentralized infrastructure.</p>
         `
-      }
+    }
   ];
 
 function getStatusIcon(status) {
@@ -181,7 +181,7 @@ export function createRoadmapPage(container) {
   const layout = createLayout();
   const roadmapContainer = document.createElement('div');
   roadmapContainer.className = 'roadmap-container';
-
+  
   roadmapContainer.innerHTML = `
     <div class="roadmap-header">
       <h1>Roadmap</h1>
@@ -211,15 +211,15 @@ export function createRoadmapPage(container) {
       `).join('')}
     </div>
   `;
-
+  
   const homeButton = createHomeButton();
   roadmapContainer.appendChild(homeButton);
-
+  
   layout.mainContainer.appendChild(roadmapContainer);
   container.appendChild(layout.container);
 
   loadStyles();
-
+  
   // Добавляем обработчики кликов на карточки
   setupTimelineCardClicks(roadmapContainer);
 
@@ -228,7 +228,7 @@ export function createRoadmapPage(container) {
     animateTimeline();
     homeButton.classList.add('visible');
   }, 500);
-
+  
   return container;
 }
 
@@ -543,7 +543,7 @@ function animateTimeline() {
         const distanceToCenter = Math.abs(viewportCenter - itemCenter);
         const maxDistance = viewportHeight * 0.5;
         const normalizedDistance = Math.min(distanceToCenter / maxDistance, 1);
-        const scale = 1.05 - (normalizedDistance * 0.1);
+        const scale = 1.05 - (normalizedDistance * 0.1); 
         const glowOpacity = (1 - normalizedDistance) * 0.3;
 
         const card = item.querySelector('.timeline-card');
@@ -552,14 +552,14 @@ function animateTimeline() {
         if (card && point) {
             // Применяем scale только если элемент виден (для оптимизации)
             if (item.classList.contains('visible')) {
-                card.style.transform = `scale(${scale})`;
-                point.style.transform = `scale(${scale})`;
+            card.style.transform = `scale(${scale})`;
+            point.style.transform = `scale(${scale})`;
             } else {
                 // Сбрасываем scale если не видно
                 card.style.transform = `scale(1)`; 
                 point.style.transform = `scale(1)`;
             }
-
+            
             // Применяем glow только если элемент близко к центру
             if (normalizedDistance < 1 && item.classList.contains('visible')) {
                 card.style.boxShadow = `0 0 20px 8px rgba(243, 201, 121, ${glowOpacity})`;
@@ -575,13 +575,13 @@ function animateTimeline() {
         }
     });
   };
-  
+
   // Сохраняем ссылку на обработчик для удаления
   if (!window._roadmapScrollHandler) {
       window._roadmapScrollHandler = handleScroll;
       window.addEventListener('scroll', window._roadmapScrollHandler, { passive: true });
       // Вызываем один раз при инициализации
-      handleScroll();
+  handleScroll(); 
   }
   
   // Добавить логику удаления window._roadmapScrollHandler при смене страницы в роутере

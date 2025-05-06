@@ -232,7 +232,7 @@ export function navigate(pageName) {
     } else {
         console.log(`Programmatic navigation skipped: already on page '${pageName || 'home'}'`);
     }
-}
+} 
 
 // Добавляем слушатель изменения размера окна
 window.addEventListener('resize', () => {

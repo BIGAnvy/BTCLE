@@ -10,7 +10,6 @@
   position: relative;
   background-color: var(--about-info-bg);
   min-height: 100vh;
-  overflow: hidden; 
   display: flex; /* Центрируем контент */
   justify-content: center;
   align-items: flex-start; /* Выравниваем по верху */

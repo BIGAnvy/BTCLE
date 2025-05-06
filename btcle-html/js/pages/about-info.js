@@ -125,7 +125,18 @@ export function createAboutInfoPage(container) {
       // Это запустит анимации fade-in-up для блоков внутри
       initScrollAnimations(aboutContainer);
 
-      document.body.style.overflow = 'hidden';
+      // Устанавливаем overflow: hidden для body ТОЛЬКО на десктопных экранах
+      const isMobile = window.innerWidth < 768;
+      if (!isMobile) {
+        console.log('[about-info.js] Setting body overflow to hidden for desktop');
+        document.body.style.overflow = 'hidden';
+      } else {
+        console.log('[about-info.js] Ensuring body overflow allows scrolling for mobile');
+        // На мобильных экранах router.js уже должен был установить overflow: 'auto' (или '')
+        // Можно дополнительно здесь установить 'auto', чтобы быть уверенным, но обычно это не требуется,
+        // если router.js отрабатывает корректно ДО этого момента.
+        // document.body.style.overflow = 'auto'; 
+      }
 
     }, 50); // Минимальная задержка 50ms
   });

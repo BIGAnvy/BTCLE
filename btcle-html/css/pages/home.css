@@ -40,11 +40,12 @@
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 2rem;
   color: #cccccc;
   max-width: 600px;
+  white-space: nowrap;
 }
 
 /* Кнопка призыва к действию */

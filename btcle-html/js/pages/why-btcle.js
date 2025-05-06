@@ -42,7 +42,7 @@ export function createWhyBtclePage(container) {
         <div class="point-icon-wrapper">${ICONS.diamond}</div>
         <div class="point-content">
           <h2>1. Ultra-Scarce by Design</h2>
-          <h3>Built for Conviction, Not Hype</h3>
+          <h3>Built for Conviction, Not Hype.</h3>
           <p>With a hard-capped supply of 210,000 tokens, BTCLE enforces absolute scarcity, eliminating inflation risk while avoiding the typical pitfalls of cliff unlocks or sudden supply shocks. Its declining issuance curve, embedded directly into audited smart contracts, is designed to reward long-term participation and disciplined holding. This is value earned through time, not manufactured by marketing.</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ export function createWhyBtclePage(container) {
         <div class="point-icon-wrapper">${ICONS.shieldCheck}</div>
         <div class="point-content">
           <h2>2. On-Chain Integrity</h2>
-          <h3>Immutable, Non-Custodial, and Self-Enforcing</h3>
+          <h3>Immutable, Non-Custodial, and Self-Enforcing.</h3>
           <p>Every element of BTCLE's supply logic, from launch through vesting, is governed by autonomous smart contracts, fully auditable and tamper-proof. There are no manual overrides, no hidden reallocations, and no operational backdoors. Every token movement is transparently enforced on-chain, ensuring holders can trust the protocol by design, not by authority.</p>
         </div>
       </div>
@@ -82,7 +82,7 @@ export function createWhyBtclePage(container) {
         <div class="point-icon-wrapper">${ICONS.brainCircuit}</div>
         <div class="point-content">
           <h2>5. Built for the Next Era</h2>
-          <h3>Intelligent, Adaptive, and Community-Led</h3>
+          <h3>Intelligent, Adaptive, and Community-Led.</h3>
           <p>BTCLE is not a static asset. The ecosystem is expanding with next-generation utility layers, including BTCLE AI and the introduction of Proof of Adaptive Intelligence (PoAI), aimed at unlocking purposeful real-world use cases and enhancing token velocity and relevance across decentralized networks.</p>
         </div>
       </div>

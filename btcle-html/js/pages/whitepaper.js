@@ -123,37 +123,232 @@ export function createWhitepaperPage(container) {
   whitepaperContainer.classList.add('section-container');
   whitepaperContainer.classList.add('whitepaper-container');
   
-  // Краткое содержание Whitepaper
+  // Краткое содержание Whitepaper -> Полный текст Whitepaper
   const whitepaperSummaryHtml = `
     <div class="summary-section">
-      <h3>Core Idea</h3>
-      <p>BTCLE is a scarce (210k fixed supply), non-inflationary digital asset prioritizing purpose over hype. It embodies Bitcoin's original ethos: decentralized, secure, built to last, with a fair launch protected against bots and pre-mining.</p>
+      <p>Bitcoin Limited Edition (BTCLE) is a scarce, high-integrity digital asset created for those who value purpose over hype. With a strictly limited supply and uncompromising transparency, BTCLE embodies the original ethos of Bitcoin, decentralized, secure, and built to last. In a market saturated with speculation and noise, BTCLE is a deliberate, long-term asset for those who move with conviction and think beyond the trend cycle, because true value is never mass-produced.</p>
     </div>
+
     <div class="summary-section">
-      <h3>Tokenomics</h3>
+      <h3>THE BTCLE STORY</h3>
+      <h4>A New Standard for a Decentralized Future</h4>
+      <p>Ever wish you could rewind time, not to relive the past, but to act on what you now know? Maybe it was Bitcoin back in its early days. Maybe it was Ethereum before the ICO wave. Maybe it was that quiet voice telling you, this might be something, and the noise that drowned it out.</p>
+      <p>We've all felt that moment — that pause in time where possibility stood just out of reach.</p>
+      <p>But here's the truth: the past is gone. What matters now is what we choose to do with the lessons it left behind. Bitcoin Limited Edition (BTCLE) is not an attempt to rewrite history. It's a chance to respond to it. To finally act with intention, not regret.</p>
+      <p>We didn't create BTCLE to chase a trend. We built it to reignite what crypto was meant to be. Somewhere between the memes, the scams, and the overnight millionaires, the soul of the space was lost.</p>
+      <p><strong>BTCLE is a return to authenticity and purpose.</strong></p>
+      <p>A scarce, fixed-supply token — 210,000 total — just like the original Bitcoin vision. No inflation. No manipulation. No shortcuts.</p>
+      <p>A community launch built to block bots, limit snipers, and eliminate pre-mined advantage. A structure that honors time, trust, and real decentralization.</p>
+      <p>This isn't just about code or tokenomics. It's about people.</p>
+      <p>It's about building a system that respects the ones who show up early, not to dump, but to believe.</p>
+      <p>We've seen what hype can do. Now we're here to see what honesty can build.</p>
+      <p>BTCLE was made for those who missed their first chance, and for those who never stopped believing in decentralized money.</p>
+      <p>It's a token, yes. But it's also a signal. A quiet reminder that something better is still possible.</p>
+      <p>And we're not just protecting the token, we're protecting the ecosystem. No bots. No rugs. No manipulation.</p>
+      <p>BTCLE is guarded from the beginning with fairness-first smart contracts and protective mechanics that give this launch meaning.</p>
+      <p>We're here to build something that lasts.</p>
+      <p>One more thing, because it matters,<br>
+      The BTCLE founding team has chosen to remain unknown, not for secrecy, but to keep the focus where it belongs — on the mission.</p>
+      <p>Every element of BTCLE — from smart contracts to tokenomics — has been built with full transparency, fairness, and security at its core.</p>
+      <p><strong>This is BTCLE.</strong><br>
+      Rare by Design. Secured by Structure. Driven by Collective Belief.<br>
+      Your second chance is here. Clean. Fair. Purpose-built.<br>
+      Welcome to the Future of Sound Money.</p>
+    </div>
+
+    <div class="summary-section">
+      <h3>BTCLE Tokenomics</h3>
+      <h4>Max Supply Overview</h4>
+      <p>Bitcoin Limited Edition (BTCLE) is a fixed-supply crypto asset with a max supply of 210,000 BTCLE.</p>
+      <p>This non-inflationary model reinforces BTCLE's mission of sustainable growth, transparent governance, and alignment with long-term holders.</p>
+      <p>At the time of the Token Generation Event (TGE), 10% of the total supply (21,000 BTCLE) will be released to the public to support trading liquidity and early adoption.</p>
+      <p>The remaining 90% (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract.</p>
+      <p>BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a monthly declining unlock mechanism, where tokens are gradually released in decreasing amounts over a 10-year period, starting January 2026 and concluding December 2035.</p>
+      <h4>Purpose of Distribution</h4>
+      <p>To support responsible circulation, sustainable growth, and long-term value alignment, BTCLE's token distribution is structured as follows:</p>
+      <table class="tokenomics-table">
+        <thead>
+          <tr>
+            <th>Allocation</th>
+            <th>Amount (BTCLE)</th>
+            <th>% of Total Supply</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Token Generation Event (TGE)</td>
+            <td>21,000</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td>Locked Vesting Allocation (10-Year Vesting)</td>
+            <td>189,000</td>
+            <td>90%</td>
+          </tr>
+          <tr>
+            <td><strong>Max Supply</strong></td>
+            <td><strong>210,000</strong></td>
+            <td><strong>100%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>● 10% of the total supply will be made available at launch to provide public access and trading liquidity.<br>
+      ● 90% of the supply is locked and released via a long-term vesting mechanism over 10 years.</p>
+      <h4>Vesting Mechanics</h4>
+      <p>● Vesting Start: January 2026<br>
+      ● Vesting End: December 2035<br>
+      ● Mechanism: Monthly token release via smart contract, following a gradually decreasing emission schedule during the initial phase.<br>
+      ● Governance: Fully transparent and on-chain.</p>
+      <p>This structure is designed to reduce short-term sell pressure and reward holders with a progressively deflationary release curve.</p>
+      <h4>Annual Vesting Schedule (2026–2035)</h4>
+      <table class="tokenomics-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Monthly Unlock Range</th>
+            <th>Annual Total</th>
+            <th>Remaining Locked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2026</td><td>3,800 → 2,700</td><td>39,000</td><td>150,000</td></tr>
+          <tr><td>2027</td><td>2,650 → 2,100</td><td>28,500</td><td>121,500</td></tr>
+          <tr><td>2028</td><td>2,075 → 1,800</td><td>23,250</td><td>98,250</td></tr>
+          <tr><td>2029</td><td>1,785 → 1,620</td><td>20,430</td><td>77,820</td></tr>
+          <tr><td>2030</td><td>1,610 → 1,500</td><td>18,660</td><td>59,160</td></tr>
+          <tr><td>2031</td><td>1,495 → 1,440</td><td>17,610</td><td>41,550</td></tr>
+          <tr><td>2032</td><td>1,420 → 1,200</td><td>15,720</td><td>25,830</td></tr>
+          <tr><td>2033</td><td>1,000 → 835</td><td>11,010</td><td>14,820</td></tr>
+          <tr><td>2034</td><td>700 → 645</td><td>8,070</td><td>6,750</td></tr>
+          <tr><td>2035</td><td>600 → 425</td><td>6,750</td><td>0</td></tr>
+        </tbody>
+      </table>
+      <h4>2026 Vesting Breakdown (Monthly)</h4>
+      <table class="tokenomics-table">
+        <thead>
+          <tr><th>Month</th><th>BTCLE Unlocked</th><th>Cumulative Total</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>January</td><td>3,800</td><td>3,800</td></tr>
+          <tr><td>February</td><td>3,700</td><td>7,500</td></tr>
+          <tr><td>March</td><td>3,600</td><td>11,100</td></tr>
+          <tr><td>April</td><td>3,500</td><td>14,600</td></tr>
+          <tr><td>May</td><td>3,400</td><td>18,000</td></tr>
+          <tr><td>June</td><td>3,300</td><td>21,300</td></tr>
+          <tr><td>July</td><td>3,200</td><td>24,500</td></tr>
+          <tr><td>August</td><td>3,100</td><td>27,600</td></tr>
+          <tr><td>September</td><td>3,000</td><td>30,600</td></tr>
+          <tr><td>October</td><td>2,900</td><td>33,500</td></tr>
+          <tr><td>November</td><td>2,800</td><td>36,300</td></tr>
+          <tr><td>December</td><td>2,700</td><td>39,000</td></tr>
+        </tbody>
+      </table>
+      <p>Remaining Locked Supply (as of December 2026): 150,000 BTCLE</p>
+      <h4>Transparency & Governance Commitment</h4>
+      <p>BTCLE's token release mechanism is designed for full transparency, security, and long-term sustainability. It is:</p>
+      <p>● Immutable and automated via audited smart contracts.<br>
+      ● Fully auditable, with all token movements visible on-chain in real-time.</p>
+      <p>The team reserves the right to propose adjustments to the vesting schedule in response to regulatory changes or community governance proposals.<br>
+      All modifications will be transparently disclosed and aligned with BTCLE's long-term mission and ecosystem development.<br>
+      BTCLE follows a declining monthly issuance model, gradually reducing token release over time to support price stability and incentivize long-term participation.</p>
+      <h4>Summary of Distribution Principles</h4>
+      <p>● Max Supply: 210,000 BTCLE (non-inflationary).<br>
+      ● TGE Circulation: 21,000 BTCLE (10% released for trading at launch).<br>
+      ● Locked Supply: 189,000 BTCLE (90% locked over a 10-year vesting period).<br>
+      ● Release Mechanism: Smart contract-based, deflationary model.</p>
+    </div>
+
+    <div class="summary-section">
+      <h3>BTCLE Year 1 Roadmap (June 2025 – May 2026)</h3>
+      <p>Strategic Launch Plan for Sustainable Growth, Institutional Credibility, and Global Utility.</p>
+      <p>BTCLE is more than a token, it is a next-generation financial instrument engineered for long-term value creation through decentralized innovation, real-world integration, and community-driven growth. Our Year 1 roadmap establishes the critical foundations required to scale sustainably, build global trust, and deliver real-world utility.</p>
+      <h4>Q1 (June – August 2025): Exchange Listings and Early Liquidity Framework</h4>
+      <p><strong>Objective:</strong> Establish multi-market liquidity, enable institutional access, and build the foundations for price discovery.</p>
+      <p>● Progressive listings across top-tier centralized and decentralized exchanges.<br>
+      Targeted Exchanges: MEXC, Bitget, OKX, Coinbase, Bybit, Binance.</p>
+      <p>● Diversified regional targeting to capture early trading volume across major crypto hubs, with an initial focus on regional diversity to penetrate key markets (Asia, MENA, Europe, North America).</p>
+      <p>● Deployment of institutional-grade OTC partnerships to facilitate high-volume transactions with minimal market impact.</p>
+      <p>● Liquidity management strategy to ensure depth, reduce volatility, and support organic volume growth</p>
+      <p><strong>Strategic impact:</strong><br>
+      Expand global access points, facilitate robust early-stage liquidity, and position BTCLE as an investable-grade asset.<br>
+      Foundational groundwork will also begin for the BTCLE Community Hub (Q2), including team expansion, local partnerships, and logistical preparations to ensure a high-impact regional launch.</p>
+      <h4>Q2 (September – November 2025): Global Headquarters Establishment – Dubai Hub</h4>
+      <p><strong>Objective:</strong> Anchor BTCLE's presence in a global blockchain epicenter and operationalize high-trust community building.</p>
+      <p>● Launch of BTCLE Global Headquarters in Dubai, aligning with a jurisdiction renowned for crypto-forward regulatory frameworks.</p>
+      <p>● Activation of a continuous community engagement program:<br>
+      ○ High-touch investor events.<br>
+      ○ Educational initiatives.<br>
+      ○ Strategic partner networking.</p>
+      <p>● Expansion of public relations and media footprint across MENA and surrounding regions.</p>
+      <p><strong>Strategic impact:</strong><br>
+      Enhance global brand credibility, forge direct institutional relationships, and build durable grassroots momentum in high-growth markets.</p>
+      <h4>Q3 (December 2025 – February 2026): BTCLE Pay Wallet – Real-World Utility Onramp</h4>
+      <p><strong>Objective:</strong> Translate digital holdings into frictionless real-world value and unlock daily transactional relevance.</p>
+      <p>● Launch of the BTCLE Pay Wallet Platform with seamless crypto-to-fiat conversion at point-of-sale.</p>
+      <p>● Exclusive loyalty and rewards programs designed to incentivize holding and spending within the BTCLE ecosystem.</p>
+      <p>● Integration with mobile wallets, web dashboards, and NFC-enabled devices for a frictionless user experience.</p>
+      <p>● Strategic partnerships with global payment providers to maximize acceptance and user convenience.</p>
+      <p><strong>Strategic impact:</strong><br>
+      Drive real-world adoption, strengthen utility-based demand, and position BTCLE as a practical financial instrument.</p>
+      <h4>Q4 (March – May 2026) – Proprietary Blockchain Deployment – BTCLE Chain Launch</h4>
+      <p><strong>Objective:</strong> Future-proof the BTCLE ecosystem with a high-performance, AI-enhanced decentralized infrastructure.</p>
+      <p>● Launch of BTCLE Chain: a proprietary, AI-optimized blockchain.</p>
+      <p>● Key technical features include:<br>
+      ○ Native smart contract deployment capabilities.<br>
+      ○ Machine learning modules for dynamic fraud detection and transaction optimization.<br>
+      ○ High-throughput, low-energy consensus architecture designed for mass scalability.</p>
+      <p>● Ecosystem acceleration initiatives:<br>
+      ○ Developer grants.<br>
+      ○ Strategic partnerships.<br>
+      ○ Cross-chain interoperability programs.</p>
+      <p><strong>Strategic impact:</strong><br>
+      Secure technological sovereignty, unlock new revenue streams through ecosystem development, and cement BTCLE's leadership in next-generation decentralized infrastructure</p>
+      <p><strong>Milestone-Driven Growth, Real-World Utility, Future-Ready Innovation.</strong></p>
+    </div>
+
+    <div class="summary-section">
+      <h3>The BTCLE Team: Vision Beyond Identity</h3>
+      <p>In the spirit of BTCLE's unwavering commitment to decentralization, integrity, and collective growth, the founding team made a deliberate choice to remain anonymous during the project's inception.</p>
+      <p>This strategic anonymity is not born from secrecy but is rather a purposeful decision to keep the focus squarely on the mission, the technology, and the community.</p>
+      <p>Inspired by the original ethos of Bitcoin, our approach embodies the belief that true innovation is not defined by the identity of its creators but by the values it upholds. Much like the creator of Bitcoin, whose identity remains shrouded in mystery, BTCLE champions the principle that decentralization is about purpose over personal recognition.</p>
+      <p>This strategy underscores BTCLE's fundamental belief in delivering value before visibility, allowing the project to prove its resilience, gain adoption, and showcase ethical governance on its own merits.</p>
+      <p>BTCLE remains fully committed to achieving all milestones with the highest degree of transparency, audited systems, and governance that prioritizes the community.</p>
+      <p><strong>BTCLE</strong><br>
+      <strong>Purpose First. People Second. Trust Always.</strong></p>
+    </div>
+
+    <div class="summary-section">
+      <h3>Why BTCLE</h3>
+      <p>In a digital asset landscape saturated with hype cycles, inflated promises, and unsustainable tokenomics, Bitcoin Limited Edition (BTCLE) introduces a new paradigm: a scarce, auditable, and liquidity-backed asset, engineered with the rigor of institutional finance and the ethos of decentralized trust.</p>
+      <p>BTCLE isn't just another token. It's a precision-engineered financial instrument, combining structural discipline with crypto-native ideals like transparency, decentralization, and user sovereignty.</p>
+      <ol>
+        <li><strong>Ultra-Scarce by Design — Built for Conviction, Not Hype</strong><br>
+        With a hard-capped supply of 210,000 tokens, BTCLE enforces absolute scarcity, eliminating inflation risk while avoiding the typical pitfalls of cliff unlocks or sudden supply shocks.<br>
+        Its declining issuance curve, embedded directly into audited smart contracts, is designed to reward long-term participation and disciplined holding. This is value earned through time, not manufactured by marketing.</li>
+        <li><strong>On-Chain Integrity — Immutable, Non-Custodial, and Self-Enforcing</strong><br>
+        Every element of BTCLE's supply logic, from launch through vesting, is governed by autonomous smart contracts, fully auditable and tamper-proof.<br>
+        There are no manual overrides, no hidden reallocations, and no operational backdoors. Every token movement is transparently enforced on-chain, ensuring holders can trust the protocol by design, not by authority.</li>
+        <li><strong>100% Liquidity-Backed — Not Synthetic. Not Illiquid. Not a Mirage.</strong><br>
+        Every BTCLE token in circulation is supported by real, verifiable capital, secured in public liquidity pools designed for access across both decentralized and centralized trading environments.<br>
+        This is not theoretical depth; it's tangible support designed to uphold price integrity, mitigate volatility, and instill confidence in long-term holders. Stability isn't aspirational, it's structural.</li>
+        <li><strong>Legally Structured — Real Entity. Real Accountability. Real Standards.</strong><br>
+        BTCLE is issued through a legally registered entity governed by a structured compliance framework and a clear operational charter.<br>
+        While the team maintains principled anonymity in line with decentralized ideals, the project itself operates with institutional-grade integrity, meeting the expectations of serious investors while preserving the foundational values of decentralization and user sovereignty.</li>
+        <li><strong>Built for the Next Era — Intelligent, Adaptive, and Community-Led</strong><br>
+        BTCLE is not a static asset. The ecosystem is expanding with next-generation utility layers, including BTCLE AI and the introduction of Proof of Adaptive Intelligence (PoAI), aimed at unlocking purposeful real-world use cases and enhancing token velocity and relevance across decentralized networks.</li>
+      </ol>
+      <p><strong>BTCLE is Where Scarcity Meets Strategy, and Transparency Meets Trust.</strong></p>
+    </div>
+
+    <div class="summary-section">
+      <h3>Fundamental Goals</h3>
       <ul>
-        <li><strong>Max Supply:</strong> 210,000 BTCLE (Fixed)</li>
-        <li><strong>TGE Circulation:</strong> 21,000 BTCLE (10%) for trading liquidity.</li>
-        <li><strong>Locked Supply:</strong> 189,000 BTCLE (90%) vested over 10 years (Jan 2026 - Dec 2035).</li>
-        <li><strong>Release Mechanism:</strong> Monthly declining emission via audited, immutable smart contracts.</li>
+        <li>Achieve a target price of $25,000 per BTCLE.</li>
+        <li>Cultivate and expand our global community to unprecedented levels.</li>
+        <li>Establish BTCLE among the Top 10 cryptocurrencies worldwide.</li>
+        <li>Build a legacy comparable to Bitcoin's, becoming a valid symbol of decentralized finance.</li>
+        <li>Develop our headquarters and establish a specialized company dedicated to continuous innovation.</li>
       </ul>
-    </div>
-    <div class="summary-section">
-      <h3>Year 1 Roadmap Highlights</h3>
-      <ul class="roadmap-summary-list">
-        <li><strong>Q1 (Jun-Aug '25):</strong> Strategic CEX/DEX Listings (MEXC, Bitget, OKX, Coinbase, etc.) & Liquidity Framework.</li>
-        <li><strong>Q2 (Sep-Nov '25):</strong> Establish Global HQ & Community Hub in Dubai.</li>
-        <li><strong>Q3 (Dec '25-Feb '26):</strong> Launch BTCLE Pay Wallet for crypto-to-fiat utility.</li>
-        <li><strong>Q4 (Mar-May '26):</strong> Deploy proprietary, AI-enhanced BTCLE Chain.</li>
-      </ul>
-    </div>
-    <div class="summary-section">
-      <h3>Why BTCLE?</h3>
-      <p>Ultra-scarce design, on-chain integrity, verifiable liquidity backing, and a structure built for long-term value and trust, moving beyond hype.</p>
-    </div>
-    <div class="summary-section">
-      <h3>Team</h3>
-      <p>Founding team remains anonymous initially (inspired by Bitcoin's ethos) to focus on the mission and technology. Full transparency in operations and audited contracts.</p>
     </div>
   `;
 
@@ -196,7 +391,7 @@ export function createWhitepaperPage(container) {
     </section>
 
     <!-- Остальные секции страницы (Core Principles, Key Features, etc.) -->
-    <section class="core-tech-section"> 
+    <section class="core-tech-section">
       <div class="section-header">
         <h2>Core Principles</h2>
         <div class="header-line"></div>
@@ -244,7 +439,7 @@ export function createWhitepaperPage(container) {
         </div>
       </div>
     </section>
-    <section class="benefits-section"> 
+    <section class="benefits-section">
       <div class="section-header">
         <h2>Tokenomics Highlights</h2>
         <div class="header-line"></div>
@@ -267,7 +462,7 @@ export function createWhitepaperPage(container) {
         </div>
       </div>
     </section>
-    <section class="market-section"> 
+    <section class="market-section">
       <div class="section-header">
         <h2>Supply Distribution</h2>
         <div class="header-line"></div>
@@ -296,7 +491,7 @@ export function createWhitepaperPage(container) {
         </div>
       </div>
     </section>
-    <section class="roadmap-section"> 
+    <section class="roadmap-section">
       <div class="section-header">
         <h2>Roadmap Preview (Year 1: June 2025 – May 2026)</h2>
         <div class="header-line"></div>
@@ -321,7 +516,7 @@ export function createWhitepaperPage(container) {
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">Q3 (Dec 2025-Feb 2026)</div>
+            <div class="timeline-year">Q3 (Dec 2025-Feb '26)</div>
             <h3>BTCLE Pay Wallet Launch</h3>
             <p>Dedicated wallet for seamless crypto-to-fiat conversion, rewards, and mobile/web integration.</p>
           </div>
@@ -329,7 +524,7 @@ export function createWhitepaperPage(container) {
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">Q4 (Mar-May 2026)</div>
+            <div class="timeline-year">Q4 (Mar-May '26)</div>
             <h3>Proprietary Blockchain Launch</h3>
             <p>Deployment of custom blockchain with smart contracts, potential AI modules, scalability, and efficiency.</p>
           </div>
@@ -340,7 +535,7 @@ export function createWhitepaperPage(container) {
     <!-- Home Button -->
     <a href="/" class="home-button" data-navigate>${ICONS.home}</a>
   `;
-
+  
   // Добавляем контент в layout
   layout.mainContainer.appendChild(whitepaperContainer);
   
