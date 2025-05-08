@@ -129,31 +129,28 @@ export function createWhitepaperPage(container) {
       <p>Bitcoin Limited Edition (BTCLE) is a scarce, high-integrity digital asset created for those who value purpose over hype. With a strictly limited supply and uncompromising transparency, BTCLE embodies the original ethos of Bitcoin, decentralized, secure, and built to last. In a market saturated with speculation and noise, BTCLE is a deliberate, long-term asset for those who move with conviction and think beyond the trend cycle, because true value is never mass-produced.</p>
     </div>
 
-    <div class="summary-section">
+     <div class="summary-section">
       <h3>THE BTCLE STORY</h3>
       <h4>A New Standard for a Decentralized Future</h4>
       <p>Ever wish you could rewind time, not to relive the past, but to act on what you now know? Maybe it was Bitcoin back in its early days. Maybe it was Ethereum before the ICO wave. Maybe it was that quiet voice telling you, this might be something, and the noise that drowned it out.</p>
-      <p>We've all felt that moment — that pause in time where possibility stood just out of reach.</p>
-      <p>But here's the truth: the past is gone. What matters now is what we choose to do with the lessons it left behind. Bitcoin Limited Edition (BTCLE) is not an attempt to rewrite history. It's a chance to respond to it. To finally act with intention, not regret.</p>
-      <p>We didn't create BTCLE to chase a trend. We built it to reignite what crypto was meant to be. Somewhere between the memes, the scams, and the overnight millionaires, the soul of the space was lost.</p>
+      <p>We’ve all felt that moment. That pause in time where possibility stood just out of reach.</p>
+      <p>But here’s the truth: the past is gone. What matters now is what we choose to do with the lessons it left behind.</p>
+      <p>Bitcoin Limited Edition (BTCLE) is not an attempt to rewrite history. It’s a chance to respond to it. To finally act with intention, not regret.</p>
+      <p>We didn’t create BTCLE to chase a trend. We built it to reignite what crypto was meant to be. Somewhere between the memes, the scams, and the overnight millionaires, the soul of the space was lost.</p>
       <p><strong>BTCLE is a return to authenticity and purpose.</strong></p>
-      <p>A scarce, fixed-supply token — 210,000 total — just like the original Bitcoin vision. No inflation. No manipulation. No shortcuts.</p>
+      <p>A scarce, fixed-supply token, 210,000 total, just like the original Bitcoin vision. No inflation. No manipulation. No shortcuts.</p>
       <p>A community launch built to block bots, limit snipers, and eliminate pre-mined advantage. A structure that honors time, trust, and real decentralization.</p>
-      <p>This isn't just about code or tokenomics. It's about people.</p>
-      <p>It's about building a system that respects the ones who show up early, not to dump, but to believe.</p>
-      <p>We've seen what hype can do. Now we're here to see what honesty can build.</p>
+      <p>This isn’t just about code or tokenomics. It’s about people. It\'s about building a system that respects the ones who show up early, not to dump, but to believe. We’ve seen what hype can do. Now we’re here to see what honesty can build.</p>
       <p>BTCLE was made for those who missed their first chance, and for those who never stopped believing in decentralized money.</p>
-      <p>It's a token, yes. But it's also a signal. A quiet reminder that something better is still possible.</p>
-      <p>And we're not just protecting the token, we're protecting the ecosystem. No bots. No rugs. No manipulation.</p>
-      <p>BTCLE is guarded from the beginning with fairness-first smart contracts and protective mechanics that give this launch meaning.</p>
-      <p>We're here to build something that lasts.</p>
-      <p>One more thing, because it matters,<br>
-      The BTCLE founding team has chosen to remain unknown, not for secrecy, but to keep the focus where it belongs — on the mission.</p>
-      <p>Every element of BTCLE — from smart contracts to tokenomics — has been built with full transparency, fairness, and security at its core.</p>
-      <p><strong>This is BTCLE.</strong><br>
-      Rare by Design. Secured by Structure. Driven by Collective Belief.<br>
-      Your second chance is here. Clean. Fair. Purpose-built.<br>
-      Welcome to the Future of Sound Money.</p>
+      <p>It’s a token, yes. But it’s also a signal. A quiet reminder that something better is still possible.</p>
+      <p>And we’re not just protecting the token, we’re protecting the ecosystem. No bots. No rugs. No manipulation. BTCLE is guarded from the beginning with fairness-first smart contracts and protective mechanics that give this launch meaning. We’re here to build something that lasts.</p>
+      <p>One more thing, because it matters.</p>
+      <p>The BTCLE founding team has chosen to remain unknown, not for secrecy, but to keep the focus where it belongs: on the mission. Every element of BTCLE, from smart contracts to tokenomics, has been built with full transparency, fairness, and security at its core.</p>
+      <p><strong>This is BTCLE.</strong></p>
+      <p>Rare by Design. Secured by Structure. Driven by Collective Belief.</p>
+      <p>Your second chance is here.</p>
+      <p>Clean. Fair. Purpose-built.</p>
+      <p>Welcome to the Future of Sound Money.</p>
     </div>
 
     <div class="summary-section">
@@ -369,21 +366,9 @@ export function createWhitepaperPage(container) {
         
         <!-- КОНТЕЙНЕР ДЛЯ АНИМАЦИИ РАСКРЫТИЯ -->
         <div id="wp-summary-container" class="wp-summary-container">
-          <!-- ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ -->
-          <div class="wp-summary-decoration left-deco"></div>
-          <div class="wp-summary-decoration right-deco"></div>
-          
           <!-- СОДЕРЖИМОЕ -->
           <div class="wp-summary-content">
             ${whitepaperSummaryHtml}
-            
-            <!-- ДЕКОРАТИВНЫЕ ИКОНКИ -->
-            <div class="wp-summary-icons">
-              <div class="floating-icon icon-1">${ICONS.file}</div>
-              <div class="floating-icon icon-2">${ICONS.file}</div>
-              <div class="floating-icon icon-3">${ICONS.lock}</div>
-              <div class="floating-icon icon-4">${ICONS.star}</div>
-            </div>
           </div>
         </div>
         

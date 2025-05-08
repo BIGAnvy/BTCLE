@@ -6,7 +6,7 @@
 /* Фон страницы - стили из whitepaper.css */
 .about-container::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -21,12 +21,12 @@
 
 .about-container::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 10% 20%, #252530 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(46, 125, 255, 0.08) 0%, transparent 35%);
+    /* background: radial-gradient(circle at 10% 20%, #252530 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(46, 125, 255, 0.08) 0%, transparent 35%); */
     z-index: -2;
     opacity: 0.6;
     animation: bg-glow-subtle-move 45s ease-in-out infinite alternate;

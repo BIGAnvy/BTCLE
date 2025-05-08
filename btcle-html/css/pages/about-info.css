@@ -71,7 +71,7 @@
 /* --- Заголовок страницы --- */
 .about-info-title {
   font-size: 3rem; /* Крупнее */
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 0.5rem; /* Больше отступ */
   color: #fff;
   letter-spacing: 0.02em;

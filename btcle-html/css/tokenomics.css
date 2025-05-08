@@ -35,7 +35,7 @@
 /* Фон страницы - стили из whitepaper.css */
 .tokenomics-container::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -44,13 +44,13 @@
     background-size: 3rem 3rem;
     z-index: -2;
     opacity: 0.7;
-    mask-image: radial-gradient(ellipse 90% 70% at 50% -10%, black 40%, transparent 80%);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 80%);
     animation: bg-grid-subtle-move 60s linear infinite;
 }
 
 .tokenomics-container::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -90,7 +90,7 @@
 
 .section-title {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 0.5rem;
   background: #C5B483;
   -webkit-background-clip: text;
@@ -102,7 +102,7 @@
 }
 
 .section-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
   margin-top: 0.5rem;
@@ -119,6 +119,7 @@
   height: 100%;
   overflow: hidden;
   pointer-events: none;
+  display: none;
 }
 
 .particle {
@@ -697,7 +698,6 @@
 }
 
 .highlight-text {
-  background: rgba(247, 147, 26, 0.15);
   padding: 0.15em 0.4em;
   border-radius: 3px;
   font-weight: 600;
