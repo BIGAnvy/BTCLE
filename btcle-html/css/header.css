@@ -212,16 +212,15 @@
 }
 
 .mobile-dropdown-menu {
-  display: none;
+  display: none; /* Это свойство скрывает меню по умолчанию */
   background-color: rgba(184, 157, 88, 0.05);
   padding-left: 1rem;
-  display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
 .mobile-dropdown-menu.active {
-  display: flex;
+  display: flex; /* Это свойство показывает меню, когда оно активно */
 }
 
 .mobile-dropdown-menu .mobile-nav-item {
