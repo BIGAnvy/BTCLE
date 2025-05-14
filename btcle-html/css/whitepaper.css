@@ -1294,4 +1294,34 @@
     .wp-summary-content li {
         margin-bottom: 0.5rem;
     }
+}
+
+/* Стили для улучшенного списка Core Features */
+.wp-summary-content ul.core-features-list > li {
+    /* Основной пункт списка уже имеет нужный отступ и маркер из общих стилей .wp-summary-content li */
+    /* Можно добавить margin-bottom, если нужно больше пространства между основными пунктами */
+}
+
+.wp-summary-content ul.core-features-list > li > strong {
+    display: block; /* Заголовок фичи занимает всю строку */
+    margin-bottom: 0.4rem; /* Небольшой отступ под заголовком фичи */
+    /* color: var(--color-primary); /* Если хотим выделить заголовок цветом, можно раскомментировать */
+}
+
+.wp-summary-content ul.core-features-list > li > ul {
+    list-style-type: none; /* Убираем маркеры у вложенного списка (описания) */
+    padding-left: 0;       /* Убираем стандартный отступ для вложенного списка */
+    margin-left: 0;        /* Убираем стандартный внешний отступ, если есть */
+    margin-top: 0;         /* Убираем отступ сверху, если есть, т.к. strong уже имеет margin-bottom */
+}
+
+.wp-summary-content ul.core-features-list > li > ul > li {
+    padding-left: 0; /* Убираем отступы у самого элемента описания */
+    position: relative; /* Сбрасываем position, если он наследовался и мешает */
+    /* margin-bottom: 0.5rem; /* Если описание может быть в несколько пунктов и нужен отступ */
+}
+
+/* Убираем псевдоэлемент ::before для вложенных li, если он наследуется */
+.wp-summary-content ul.core-features-list > li > ul > li::before {
+    content: none;
 } 

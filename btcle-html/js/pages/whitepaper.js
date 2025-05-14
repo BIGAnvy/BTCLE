@@ -366,7 +366,7 @@ export function createWhitepaperPage(container) {
       <h4>BTCLE Pay Wallet</h4>
       <p>The BTCLE Pay Wallet is designed to be a pioneering crypto payment experience, offering seamless, fee-free services to BTCLE holders while integrating key crypto assets, including stablecoins and Bitcoin, with fiat payment capabilities. Positioned as a versatile and globally accessible platform, the wallet supports everyday financial transactions with crypto-to-fiat conversion, enabling practical utility beyond holding.</p>
       <h5>Core Features</h5>
-      <ol>
+      <ul class="core-features-list">
         <li><strong>Fee-Free Service:</strong>
           <ul>
             <li>The BTCLE Pay Wallet operates as a zero-fee service for BTCLE holders, promoting adoption and long-term usage.</li>
@@ -414,7 +414,7 @@ export function createWhitepaperPage(container) {
             <li>Integration with leading crypto payment gateways to facilitate real-world transactions and merchant adoption. This feature will enhance the practical use of BTCLE and stablecoins as a means of payment.</li>
           </ul>
         </li>
-      </ol>
+      </ul>
       <p>The BTCLE Pay Wallet serves as a comprehensive digital payment solution, integrating crypto assets into practical, everyday use. By offering fee-free transactions and multi-asset support, the wallet addresses the needs of both crypto enthusiasts and mainstream users. Its global availability and cross-chain compatibility make it a versatile tool for managing digital assets efficiently.</p>
     </div>
 
