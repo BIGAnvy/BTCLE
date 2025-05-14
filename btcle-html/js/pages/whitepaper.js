@@ -133,17 +133,17 @@ export function createWhitepaperPage(container) {
       <h3>THE BTCLE STORY</h3>
       <h4>A New Standard for a Decentralized Future</h4>
       <p>Ever wish you could rewind time, not to relive the past, but to act on what you now know? Maybe it was Bitcoin back in its early days. Maybe it was Ethereum before the ICO wave. Maybe it was that quiet voice telling you, this might be something, and the noise that drowned it out.</p>
-      <p>We’ve all felt that moment. That pause in time where possibility stood just out of reach.</p>
-      <p>But here’s the truth: the past is gone. What matters now is what we choose to do with the lessons it left behind.</p>
-      <p>Bitcoin Limited Edition (BTCLE) is not an attempt to rewrite history. It’s a chance to respond to it. To finally act with intention, not regret.</p>
-      <p>We didn’t create BTCLE to chase a trend. We built it to reignite what crypto was meant to be. Somewhere between the memes, the scams, and the overnight millionaires, the soul of the space was lost.</p>
+      <p>We've all felt that moment. That pause in time where possibility stood just out of reach.</p>
+      <p>But here's the truth: the past is gone. What matters now is what we choose to do with the lessons it left behind.</p>
+      <p>Bitcoin Limited Edition (BTCLE) is not an attempt to rewrite history. It's a chance to respond to it. To finally act with intention, not regret.</p>
+      <p>We didn't create BTCLE to chase a trend. We built it to reignite what crypto was meant to be. Somewhere between the memes, the scams, and the overnight millionaires, the soul of the space was lost.</p>
       <p><strong>BTCLE is a return to authenticity and purpose.</strong></p>
       <p>A scarce, fixed-supply token, 210,000 total, just like the original Bitcoin vision. No inflation. No manipulation. No shortcuts.</p>
       <p>A community launch built to block bots, limit snipers, and eliminate pre-mined advantage. A structure that honors time, trust, and real decentralization.</p>
-      <p>This isn’t just about code or tokenomics. It’s about people. It\'s about building a system that respects the ones who show up early, not to dump, but to believe. We’ve seen what hype can do. Now we’re here to see what honesty can build.</p>
+      <p>This isn't just about code or tokenomics. It's about people. It's about building a system that respects the ones who show up early, not to dump, but to believe. We've seen what hype can do. Now we're here to see what honesty can build.</p>
       <p>BTCLE was made for those who missed their first chance, and for those who never stopped believing in decentralized money.</p>
-      <p>It’s a token, yes. But it’s also a signal. A quiet reminder that something better is still possible.</p>
-      <p>And we’re not just protecting the token, we’re protecting the ecosystem. No bots. No rugs. No manipulation. BTCLE is guarded from the beginning with fairness-first smart contracts and protective mechanics that give this launch meaning. We’re here to build something that lasts.</p>
+      <p>It's a token, yes. But it's also a signal. A quiet reminder that something better is still possible.</p>
+      <p>And we're not just protecting the token, we're protecting the ecosystem. No bots. No rugs. No manipulation. BTCLE is guarded from the beginning with fairness-first smart contracts and protective mechanics that give this launch meaning. We're here to build something that lasts.</p>
       <p>One more thing, because it matters.</p>
       <p>The BTCLE founding team has chosen to remain unknown, not for secrecy, but to keep the focus where it belongs: on the mission. Every element of BTCLE, from smart contracts to tokenomics, has been built with full transparency, fairness, and security at its core.</p>
       <p><strong>This is BTCLE.</strong></p>
@@ -335,6 +335,87 @@ export function createWhitepaperPage(container) {
         BTCLE is not a static asset. The ecosystem is expanding with next-generation utility layers, including BTCLE AI and the introduction of Proof of Adaptive Intelligence (PoAI), aimed at unlocking purposeful real-world use cases and enhancing token velocity and relevance across decentralized networks.</li>
       </ol>
       <p><strong>BTCLE is Where Scarcity Meets Strategy, and Transparency Meets Trust.</strong></p>
+    </div>
+
+    <div class="summary-section">
+      <h3>BTCLE Utility</h3>
+
+      <h4>BTCLE Staking</h4>
+      <p>BTCLE staking empowers token holders to lock their assets in designated vaults, thereby supporting ecosystem growth and liquidity while earning competitive yield returns over fixed commitment periods. The staking model is designed to incentivize long-term holding and provide consistent yield to participants.</p>
+      <table class="tokenomics-table">
+        <thead>
+          <tr>
+            <th>Staking Tier</th>
+            <th>BTCLE amount</th>
+            <th>Lock Period</th>
+            <th>Monthly Yield (MPY)</th>
+            <th>Annual Yield (APY)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Essential</td><td>100</td><td>3 months</td><td>0.25%</td><td>3%</td></tr>
+          <tr><td>Premium</td><td>250</td><td>6 months</td><td>0.375%</td><td>4.5%</td></tr>
+          <tr><td>Executive</td><td>500</td><td>1 year</td><td>0.5%</td><td>6%</td></tr>
+          <tr><td>Elite</td><td>800</td><td>3 years</td><td>0.625%</td><td>7.5%</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Staking Yield Calculation</strong></p>
+      <p>Staking yields are dynamically calculated based on the locked token amount and the duration of the staking commitment. Payouts occur monthly, ensuring consistent and transparent distribution directly to the staker's wallet.</p>
+      <p>By participating in BTCLE staking, holders not only secure competitive returns but also actively contribute to supporting BTCLE's liquidity infrastructure, reinforcing the stability and growth of the ecosystem.</p>
+
+      <h4>BTCLE Pay Wallet</h4>
+      <p>The BTCLE Pay Wallet is designed to be a pioneering crypto payment experience, offering seamless, fee-free services to BTCLE holders while integrating key crypto assets, including stablecoins and Bitcoin, with fiat payment capabilities. Positioned as a versatile and globally accessible platform, the wallet supports everyday financial transactions with crypto-to-fiat conversion, enabling practical utility beyond holding.</p>
+      <h5>Core Features</h5>
+      <ol>
+        <li><strong>Fee-Free Service:</strong>
+          <ul>
+            <li>The BTCLE Pay Wallet operates as a zero-fee service for BTCLE holders, promoting adoption and long-term usage.</li>
+          </ul>
+        </li>
+        <li><strong>Multi-Asset Compatibility:</strong>
+          <ul>
+            <li>Supports BTCLE, stablecoins (USDT, USDC), and Bitcoin, allowing users to make payments or transfers with diverse digital assets.</li>
+          </ul>
+        </li>
+        <li><strong>Crypto-to-Fiat Integration:</strong>
+          <ul>
+            <li>Enables real-time conversion from crypto assets (BTCLE, BTC, stablecoins) to major fiat currencies, enhancing usability for day-to-day transactions.</li>
+          </ul>
+        </li>
+        <li><strong>Cross-Chain Accessibility:</strong>
+          <ul>
+            <li>The wallet supports multiple blockchain networks, allowing users to manage assets seamlessly across chains, improving accessibility and flexibility.</li>
+          </ul>
+        </li>
+        <li><strong>Global Availability:</strong>
+          <ul>
+            <li>Designed to be accessible worldwide, promoting BTCLE adoption on a global scale.</li>
+          </ul>
+        </li>
+        <li><strong>Security and Compliance:</strong>
+          <ul>
+            <li>Robust security protocols, including multi-factor authentication (MFA) and biometric login.</li>
+            <li>Compliance with global regulations to ensure safe and legal transactions.</li>
+          </ul>
+        </li>
+        <li><strong>User Incentive Programs:</strong>
+          <ul>
+            <li>Introduce wallet-specific perks, such as small cashback in BTCLE for transactions made using the wallet. This will enhance user engagement and foster long-term loyalty.</li>
+          </ul>
+        </li>
+        <li><strong>Fiat On-Ramp and Off-Ramp:</strong>
+          <ul>
+            <li>The wallet will support direct purchases of BTCLE, BTC, and stablecoins using fiat via credit/debit cards.</li>
+            <li>Additionally, users will be able to cash out their crypto assets to fiat and transfer the funds to linked bank accounts, offering full financial flexibility.</li>
+          </ul>
+        </li>
+        <li><strong>Payment Gateway Integration:</strong>
+          <ul>
+            <li>Integration with leading crypto payment gateways to facilitate real-world transactions and merchant adoption. This feature will enhance the practical use of BTCLE and stablecoins as a means of payment.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>The BTCLE Pay Wallet serves as a comprehensive digital payment solution, integrating crypto assets into practical, everyday use. By offering fee-free transactions and multi-asset support, the wallet addresses the needs of both crypto enthusiasts and mainstream users. Its global availability and cross-chain compatibility make it a versatile tool for managing digital assets efficiently.</p>
     </div>
 
     <div class="summary-section">
