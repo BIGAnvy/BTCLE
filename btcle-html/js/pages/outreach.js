@@ -93,17 +93,7 @@ export function createOutreachPage(container) {
         <h1 class="page-title">Outreach</h1>
         <p class="page-subtitle">Our strategic approach to building an authentic global community</p>
         
-        <div class="particles">
-          ${Array(6).fill(0).map((_, i) => `
-            <div class="particle" style="
-              width: ${Math.random() * 6 + 2}px;
-              height: ${Math.random() * 6 + 2}px;
-              left: ${Math.random() * 100}%;
-              top: ${Math.random() * 100}%;
-              animation-delay: ${Math.random() * 3}s;
-            "></div>
-          `).join('')}
-        </div>
+        
       </div>
     </div>
     

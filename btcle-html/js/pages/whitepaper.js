@@ -158,7 +158,7 @@ export function createWhitepaperPage(container) {
       <h4>Max Supply Overview</h4>
       <p>Bitcoin Limited Edition (BTCLE) is a fixed-supply crypto asset with a max supply of 210,000 BTCLE.</p>
       <p>This non-inflationary model reinforces BTCLE's mission of sustainable growth, transparent governance, and alignment with long-term holders.</p>
-      <p>At the time of the Token Generation Event (TGE), 10% of the total supply (21,000 BTCLE) will be released to the public to support trading liquidity and early adoption.</p>
+      <p>At the time of the Initial Token Distribution (ITD), 10% of the total supply (21,000 BTCLE) will be released to the public to support trading liquidity and early adoption.</p>
       <p>The remaining 90% (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract.</p>
       <p>BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a monthly declining unlock mechanism, where tokens are gradually released in decreasing amounts over a 10-year period, starting January 2026 and concluding December 2035.</p>
       <h4>Purpose of Distribution</h4>
@@ -173,7 +173,7 @@ export function createWhitepaperPage(container) {
         </thead>
         <tbody>
           <tr>
-            <td>Token Generation Event (TGE)</td>
+            <td>Initial Token Distribution (ITD)</td>
             <td>21,000</td>
             <td>10%</td>
           </tr>
@@ -250,7 +250,7 @@ export function createWhitepaperPage(container) {
       BTCLE follows a declining monthly issuance model, gradually reducing token release over time to support price stability and incentivize long-term participation.</p>
       <h4>Summary of Distribution Principles</h4>
       <p>● Max Supply: 210,000 BTCLE (non-inflationary).<br>
-      ● TGE Circulation: 21,000 BTCLE (10% released for trading at launch).<br>
+      ● ITD Circulation: 21,000 BTCLE (10% released for trading at launch).<br>
       ● Locked Supply: 189,000 BTCLE (90% locked over a 10-year vesting period).<br>
       ● Release Mechanism: Smart contract-based, deflationary model.</p>
     </div>
@@ -519,7 +519,7 @@ export function createWhitepaperPage(container) {
         <div class="benefit-card">
           <div class="benefit-icon">${ICONS.gauge}</div>
           <div class="benefit-counter" data-target="21000">0</div>
-          <p>Initial Circulating Supply (TGE)</p>
+          <p>Initial Circulating Supply (ITD)</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">${ICONS.shield}</div>
@@ -550,7 +550,7 @@ export function createWhitepaperPage(container) {
         </div>
         <div class="market-card">
           <div class="market-icon">${ICONS.droplet}</div>
-          <h3>TGE Supply</h3>
+          <h3>ITD Supply</h3>
           <div class="market-value">21,000</div>
           <p>BTCLE (10% Circulating)</p>
           <svg class="circular-progress" viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="progress" cx="60" cy="60" r="50" data-value="10"></circle></svg>
@@ -568,7 +568,7 @@ export function createWhitepaperPage(container) {
           <div class="timeline-content">
             <div class="timeline-year">Q1 (Jun-Aug 2025)</div>
             <h3>Exchange Listings & Liquidity</h3>
-            <p>Strategic rollout across CEX/DEX (MEXC, Bitget, OKX, Coinbase, Bybit, Binance) for global exposure.</p>
+            <p>Strategic rollout across CEX/DEX for global exposure.</p>
           </div>
         </div>
         <div class="timeline-item">

@@ -161,7 +161,7 @@
 
 @media (min-width: 1024px) {
   .tokens-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -193,9 +193,6 @@
   border-color: rgba(243, 201, 121, 0.4);
 }
 
-.token-card.highlighted .card-value {
-  color: var(--color-gold);
-}
 
 .card-icon-container {
   width: 48px;
@@ -698,7 +695,7 @@
 }
 
 .highlight-text {
-  padding: 0.15em 0.4em;
+  padding: 0.15em 0em 0.15em 0.4em;
   border-radius: 3px;
   font-weight: 600;
   white-space: nowrap;

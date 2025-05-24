@@ -23,9 +23,7 @@ export function createWhyBtclePage(container) {
 
   const content = `
     <div class="why-btcle-hero fade-in">
-      <div class="particles">
-        ${generateParticles(15)} <!-- Добавляем частицы -->
-      </div>
+      
       <h1 class="section-title">Why <span class="highlight">BTCLE</span>?</h1>
       <p class="why-btcle-subtitle">A New Paradigm: Scarce, Auditable, and Liquidity-Backed.</p>
     </div>

@@ -69,19 +69,7 @@ export function createAboutInfoPage(container) {
             <span class="detail-value">21,000</span>
           </div>
         </div>
-        <div class="detail-item contract-item fade-in-up" data-animation-delay="0.6">
-          <div class="detail-icon">${ICONS.contract}</div>
-          <div class="detail-text">
-            <span class="detail-label">Contract Address</span>
-            <div class="contract-value-wrapper">
-              <span class="detail-value contract-address-text" title="${contractAddress}">${contractAddress}</span>
-              <button class="copy-button" title="Copy address" data-clipboard-text="${contractAddress}">
-                ${ICONS.copy}
-                <span class="copy-tooltip">Copy</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
      

@@ -636,6 +636,7 @@
 .benefit-card p {
   font-size: 1.3rem;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 /* Market Section */

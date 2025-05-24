@@ -8,8 +8,8 @@ import { navigate } from '../libs/router.js';
 
 // SVG иконки (взяты из lucide-react, упрощены)
 const ICONS = {
-  Microscope: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>`,
-  Rocket: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.09-3.1A5.78 5.78 0 0 0 5.6 10.4a5.78 5.78 0 0 0-1.1 6.1Z"/><path d="M12.5 11.5c1.26 1.5 5 2 5 2s-.5-3.74-2-5c-.84-.71-2.3-.7-3.1-.09A5.78 5.78 0 0 0 10.4 11a5.78 5.78 0 0 0 6.1 1.1Z"/><path d="M11.5 12.5a9.77 9.77 0 0 1-1.05 2.05L8.5 16.5l1.95-1.95c.5-.5.95-1.05 1.3-1.65"/><path d="M12.5 11.5a9.77 9.77 0 0 1 2.05-1.05L16.5 8.5l-1.95 1.95c-.5.5-1.05.95-1.65 1.3"/><path d="m16.5 16.5.95.95c.57.57 1.53.57 2.1 0L22 15l-1.5-1.5-.95-.95c-.57-.57-.57-1.53 0-2.1L18 8l-2.5 2.5z"/><path d="m7.5 7.5-.95-.95C6 6 5.04 6 4.46 6.54L2 9l1.5 1.5.95.95c.57.57.57 1.53 0 2.1L6 16l2.5-2.5z"/></svg>`,
+  Microscope: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>`,
+  Rocket: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.09-3.1A5.78 5.78 0 0 0 5.6 10.4a5.78 5.78 0 0 0-1.1 6.1Z"/><path d="M12.5 11.5c1.26 1.5 5 2 5 2s-.5-3.74-2-5c-.84-.71-2.3-.7-3.1-.09A5.78 5.78 0 0 0 10.4 11a5.78 5.78 0 0 0 6.1 1.1Z"/><path d="M11.5 12.5a9.77 9.77 0 0 1-1.05 2.05L8.5 16.5l1.95-1.95c.5-.5.95-1.05 1.3-1.65"/><path d="M12.5 11.5a9.77 9.77 0 0 1 2.05-1.05L16.5 8.5l-1.95 1.95c-.5.5-1.05.95-1.65 1.3"/><path d="m16.5 16.5.95.95c.57.57 1.53.57 2.1 0L22 15l-1.5-1.5-.95-.95c-.57-.57-.57-1.53 0-2.1L18 8l-2.5 2.5z"/><path d="m7.5 7.5-.95-.95C6 6 5.04 6 4.46 6.54L2 9l1.5 1.5.95.95c.57.57.57 1.53 0 2.1L6 16l2.5-2.5z"/></svg>`,
   TrendingUp: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`,
   Megaphone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>`,
   Landmark: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>`,
@@ -33,7 +33,7 @@ const roadmapItems = [
         <p><strong>Objective:</strong> Establish ironclad security, regulatory alignment, and operational readiness before public launch.</p>
         <ul>
           <li><strong>Comprehensive Smart Contract Audits:</strong> Multiple independent audits by top-tier blockchain security firms (e.g., CertiK, Halborn) focusing on vulnerability detection, gas optimization, and logic verification. All audit reports published transparently.</li>
-          <li><strong>Legal & Compliance Framework:</strong> Finalized legal opinions on token classification, jurisdictional analysis (focusing on crypto-friendly regulations like Dubai, Singapore), and establishment of KYC/AML protocols compliant with international standards.</li>
+          <li><strong>Legal & Compliance Framework:</strong> Finalized legal opinions on token classification, jurisdictional analysis aligned with leading crypto regulatory frameworks and global best practices, and establishment of KYC/AML protocols compliant with international standards.</li>
           <li><strong>Core Team & Advisory Board Finalization:</strong> Onboarding key technical, financial, and marketing experts. Solidifying strategic advisory board with industry veterans.</li>
           <li><strong>Initial Partnership Agreements:</strong> Secured foundational partnerships for market making, initial liquidity provision, and technology integration.</li>
         </ul>
@@ -50,13 +50,13 @@ const roadmapItems = [
         <h2>Q1 2025: Mainnet Launch & Initial Liquidity Framework</h2>
         <p><strong>Objective:</strong> Execute a seamless public launch, establish initial trading liquidity, and enable early community access.</p>
         <ul>
-          <li><strong>Token Generation Event (TGE):</strong> Successful deployment of the BTCLE token contract on the Ethereum mainnet (or chosen L1/L2). Distribution of TGE allocation (10%) according to predefined tokenomics.</li>
-          <li><strong>Initial Exchange Listings (Tier 2/3 & DEXs):</strong> Listing on select Tier 2/3 CEXs (e.g., MEXC, Bitget) and major DEXs (e.g., Uniswap, Sushiswap) to establish baseline liquidity and price discovery.</li>
-          <li><strong>Liquidity Pool Seeding:</strong> Deployment of initial capital into DEX liquidity pools (e.g., BTCLE/ETH, BTCLE/USDC) to ensure stable trading environment. Implementation of initial liquidity management strategy.</li>
-          <li><strong>Community Launch & Early Access Program:</strong> Public announcement, launch of official website V2, social media channels, and community forums (Discord/Telegram). Potential early access or airdrop programs for initial supporters (details TBD).</li>
+          <li><strong>Initial Token Distribution (ITD):</strong> The first 10% of total supply is released, supporting early trading liquidity and market access in alignment with predefined tokenomics.</li>
+          <li><strong>Initial Exchange Listings (Tier 2/3 & DEXs):</strong> Listing on select Tier 2/3 CEXs and major DEXs (e.g., Uniswap) to establish baseline liquidity and price discovery.</li>
+          <li><strong>Liquidity Pool Seeding:</strong> Deployment of initial capital into DEX liquidity pools (e.g., BTCLE/USDT) to ensure a stable trading environment. Implementation of initial liquidity management strategy.</li>
+          <li><strong>Community Launch & Early Access Program:</strong> Public announcement, launch of official website V2, social media channels, and community forums (Discord/Telegram).  Optional community incentives under review, including early supporter recognition and contribution-based rewards (details TBD).</li>
           <li><strong>Website & Explorer Integration:</strong> Updated website with live token data, contract links, and integrated blockchain explorer views.</li>
         </ul>
-        <p><strong>Strategic Impact:</strong> Ensure successful token launch, provide initial accessibility for trading, and begin building the core BTCLE community.</p>
+        <p><strong>Strategic Impact:</strong> Establish BTCLE’s public presence, ensure reliable trading access, and begin building a values-driven community aligned with long-term growth.</p>
       `
     },
     {
@@ -69,18 +69,18 @@ const roadmapItems = [
         <h2>Q2 2025: Tier-1 Exchange Listings & Global Headquarters Establishment – Dubai Hub</h2>
         <p><strong>Objective:</strong> Secure listings on major global exchanges, establish a strategic operational base in a key crypto hub, and begin high-impact community building.</p>
         <ul>
-          <li><strong>Tier-1 CEX Listings:</strong> Progressive listings on top-tier centralized exchanges (targeting OKX, Bybit, KuCoin, potentially initial talks with Coinbase/Binance depending on market conditions and regulatory clarity). Focus on exchanges with strong regional presence (Asia, MENA, Europe).</li>
+          <li><strong>Tier-1 CEX Listings:</strong> Progressive listings on top-tier centralized exchanges (targeting OKX, Bybit, KuCoin, potentially initial talks with Coinbase/Binance depending on market conditions and regulatory clarity). Focus on exchanges with strong regional presence.</li>
           <li><strong>Launch of BTCLE Global Headquarters (Dubai):</strong> Establishment of a physical presence in Dubai. This includes office setup, local team hiring (community management, business development), and registration processes. Aligning with Dubai's crypto-forward regulatory framework (e.g., VARA).</li>
           <li><strong>MENA Community Activation Program:</strong> Initiate targeted community building efforts in the Middle East and North Africa region:
             <ul>
-              <li>High-touch local investor meetups and private briefings.</li>
-              <li>Educational workshops on BTCLE tokenomics and vision.</li>
-              <li>Partnerships with local crypto influencers and media outlets.</li>
+              <li>Host high-touch investor meetups and private briefings.</li>
+              <li>Run educational sessions on BTCLE’s value model and tokenomics.</li>
+              <li>Form partnerships with regional influencers and crypto media.</li>
             </ul>
           </li>
-          <li><strong>Institutional OTC Desk Activation:</strong> Fully operational Over-The-Counter trading desk catering to institutional investors and high-net-worth individuals, facilitating large block trades with minimal slippage.</li>
+
         </ul>
-        <p><strong>Strategic Impact:</strong> Significantly enhance global liquidity and brand credibility, forge direct institutional and regional relationships, and build strong, localized community momentum in a high-growth market.</p>
+        <p><strong>Strategic Impact:</strong> Advance BTCLE’s global footprint by securing high-liquidity exchange access, establishing a regulated presence in a top crypto jurisdiction, and activating grassroots momentum through community-led education and engagement across the region.</p>
       `
     },
     {
@@ -101,10 +101,10 @@ const roadmapItems = [
             </ul>
           </li>
           <li><strong>Point-of-Sale Integration (Pilot Program):</strong> Partnership with select payment processors or POS providers to test seamless BTCLE spending at participating merchants in specific regions (potentially starting in Dubai). Focus on NFC/QR code payments.</li>
-          <li><strong>Loyalty & Rewards Program Design:</strong> Finalization of the BTCLE rewards program structure, incentivizing holding, staking (if applicable later), and spending within the ecosystem (e.g., cashback in BTCLE, tiered benefits).</li>
-          <li><strong>Global Payment Provider Partnerships:</strong> Ongoing negotiations and integration groundwork with major payment networks (e.g., Visa/Mastercard collaborations via crypto card partners, or direct integrations where possible) to enable wider future acceptance.</li>
+          <li><strong>Loyalty & Rewards Program Design:</strong> Design of BTCLE loyalty rewards structure, incentivizing holding, ecosystem spending, and future staking (if applicable), including cashback in BTCLE and tiered user benefits.</li>
+          <li><strong>Global Payment Provider Partnerships:</strong> Early-stage exploration of integrations with global payment providers via crypto card issuers or fintech intermediaries, with the goal of enabling wider future BTCLE acceptance.</li>
         </ul>
-        <p><strong>Strategic Impact:</strong> Drive tangible real-world adoption, create utility-based demand beyond speculation, and position BTCLE as a practical tool for daily financial interactions.</p>
+        <p><strong>Strategic Impact:</strong> Accelerate BTCLE’s adoption by grounding it in real-world usage, driving utility-based demand, and establishing it as a practical bridge between the crypto economy and everyday life.</p>
       `
     },
     {
@@ -115,22 +115,21 @@ const roadmapItems = [
       status: 'upcoming',
       details: `
         <h2>Q4 2025: Community Governance Launch & BTCLE Chain Testnet</h2>
-        <p><strong>Objective:</strong> Empower the community with decision-making capabilities and prepare the technical foundation for the proprietary blockchain.</p>
+        <p><strong>Objective:</strong> Initiate decentralized governance and begin laying the technical groundwork for BTCLE’s proprietary blockchain ecosystem.</p>
         <ul>
-          <li><strong>Decentralized Governance Portal Launch (V1):</strong> Implementation of an on-chain voting platform allowing BTCLE holders to propose and vote on Bitcoin Improvement Proposals (BIPs) related to treasury allocation, protocol upgrades, and strategic initiatives. Initial focus on weighted voting based on holdings/staking.</li>
+          <li><strong>Decentralized Governance Portal Launch (V1):</strong> Implementation of an on-chain voting platform allowing BTCLE holders to propose and vote on BTCLE Governance Proposals (BGPs) related to treasury allocation, protocol upgrades, and strategic initiatives. Initial focus on weighted voting based on holdings/staking.</li>
           <li><strong>BTCLE Chain (Proprietary Blockchain) - Testnet Launch:</strong> Public release of the BTCLE Chain testnet for developers and community members. Features include:
             <ul>
               <li>High-performance consensus mechanism (details TBD - PoS variant likely).</li>
-              <li>Native smart contract environment (EVM compatible initially).</li>
+              <li>Native smart contract environment (EVM-compatible, Ethereum Virtual Machine).</li>
               <li>Initial implementation of AI-driven fraud detection modules (for testing).</li>
               <li>Basic block explorer and developer tooling.</li>
             </ul>
           </li>
-          <li><strong>Developer Outreach & Testnet Incentives:</strong> Launch programs to attract developers to build and test applications on the BTCLE Chain testnet, potentially offering grants or rewards for bug bounties and innovative dApp concepts.</li>
+          <li><strong>Developer Outreach & Testnet Incentives:</strong> Initiate developer incentive programs, including bug bounties, testnet challenges, and grants for innovative dApp prototypes</li>
           <li><strong>Ecosystem Expansion Strategy Finalization:</strong> Detailed plan for attracting projects, fostering dApp development, and ensuring interoperability post-mainnet launch of BTCLE Chain.</li>
         </ul>
-        <p><strong>Strategic Impact:</strong> Transition towards community-led development, rigorously test the proprietary blockchain infrastructure, and begin cultivating the future BTCLE Chain ecosystem.</p>
-        <p><em>Note: The transition from Q4 2025 details to the provided "Q4 (March – May 2026)" seems to indicate a slightly shifted timeline or focus. The above Q4 2025 details focus on Governance and Testnet, leading into the Q1 2026 Mainnet launch of the chain.</em></p>
+        <p><strong>Strategic Impact:</strong> Lay the foundation for community-driven governance and blockchain self-sovereignty, while rigorously testing BTCLE’s proprietary chain infrastructure and cultivating its developer ecosystem.</p>
       `
     },
     // Adding the item corresponding to Q4 (March-May 2026) from the text as Q1 2026
@@ -138,11 +137,11 @@ const roadmapItems = [
         period: 'Q1 2026',
         title: 'BTCLE Chain Mainnet Launch',
         description: 'Deployment of the proprietary, AI-optimized BTCLE Chain mainnet, enabling high-performance decentralized applications.',
-        icon: 'Landmark', // Reusing Landmark, consider a specific Chain icon later
+        icon: 'Rocket',
         status: 'upcoming',
         details: `
           <h2>Q1 2026 (March – May 2026): Proprietary Blockchain Deployment – BTCLE Chain Launch</h2>
-          <p><strong>Objective:</strong> Future-proof the BTCLE ecosystem with a high-performance, AI-enhanced decentralized infrastructure, transitioning core functions and enabling next-generation dApps.</p>
+          <p><strong>Objective:</strong> Establish a high-performance, AI-integrated blockchain infrastructure that future-proofs BTCLE’s ecosystem and enables next-generation decentralized applications.</p>
           <ul>
             <li><strong>Launch of BTCLE Chain Mainnet:</strong> Official deployment of the proprietary, AI-optimized blockchain following successful testnet phase and audits.</li>
             <li><strong>Key Technical Features Activated:</strong>
@@ -160,9 +159,9 @@ const roadmapItems = [
                 <li>Rollout of cross-chain interoperability solutions beyond ETH (e.g., bridging to other major L1s/L2s).</li>
               </ul>
             </li>
-             <li><strong>Migration Plan Execution:</strong> Begin phased migration of specific BTCLE utilities or governance functions to the native chain where applicable.</li>
+             <li><strong>Migration Plan Execution:</strong> Begin phased migration of key BTCLE functionalities (staking, governance, utility services) to the native chain infrastructure.</li>
           </ul>
-          <p><strong>Strategic Impact:</strong> Secure long-term technological sovereignty, unlock new ecosystem revenue streams through dApp development and transaction fees, establish interoperability, and cement BTCLE's leadership in applying AI within next-generation decentralized infrastructure.</p>
+          <p><strong>Strategic Impact:</strong> Establish long-term technological sovereignty, unlock revenue through dApp and transaction infrastructure, enable multi-chain interoperability, and position BTCLE at the forefront of AI-integrated decentralized architecture.</p>
         `
     }
   ];
@@ -185,7 +184,7 @@ export function createRoadmapPage(container) {
   roadmapContainer.innerHTML = `
     <div class="roadmap-header">
       <h1>Roadmap</h1>
-      <p>Our strategic timeline for building the future of decentralized finance</p>
+      <p>Our strategic timeline for building the future of decentralized finance.</p>
     </div>
     
     <div class="roadmap-timeline">
@@ -544,7 +543,7 @@ function animateTimeline() {
         const maxDistance = viewportHeight * 0.5;
         const normalizedDistance = Math.min(distanceToCenter / maxDistance, 1);
         const scale = 1.05 - (normalizedDistance * 0.1); 
-        const glowOpacity = (1 - normalizedDistance) * 0.3;
+        const glowOpacity = (1 - normalizedDistance) * 0.5;
 
         const card = item.querySelector('.timeline-card');
         const point = item.querySelector('.timeline-point-container');
@@ -560,17 +559,18 @@ function animateTimeline() {
                 point.style.transform = `scale(1)`;
             }
             
-            // Применяем glow только если элемент близко к центру
+            // Применяем glow для карточки, если элемент близко к центру
             if (normalizedDistance < 1 && item.classList.contains('visible')) {
                 card.style.boxShadow = `0 0 20px 8px rgba(243, 201, 121, ${glowOpacity})`;
                 card.style.borderColor = `rgba(243, 201, 121, ${0.2 + glowOpacity * 1.5})`;
-                point.style.boxShadow = `0 0 15px 5px rgba(243, 201, 121, ${glowOpacity * 0.6})`;
-                // point.classList.add('glow'); // Класс glow больше не нужен, управляем через style
+                
+                // Убираем применение box-shadow для point
+                point.style.boxShadow = 'none'; // Явно убираем тень, если она была установлена ранее
+
             } else {
                 card.style.boxShadow = 'none';
                 card.style.borderColor = 'rgba(243, 201, 121, 0.2)';
                 point.style.boxShadow = 'none';
-                // point.classList.remove('glow');
             }
         }
     });

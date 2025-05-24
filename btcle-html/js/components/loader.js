@@ -13,6 +13,7 @@ function initGlobalLoader() {
   // Проверяем существующий лоадер
   const existingLoader = document.getElementById('global-loader');
   if (existingLoader) {
+    existingLoader.innerHTML = ''; // Очищаем содержимое существующего лоадера
     return existingLoader;
   }
   
@@ -20,12 +21,7 @@ function initGlobalLoader() {
   const loaderElement = document.createElement('div');
   loaderElement.id = 'global-loader';
   loaderElement.className = 'loader-container';
-  loaderElement.innerHTML = `
-    <div class="loader">
-      <img src="/images/loader.png" alt="Loading..." class="loader-image">
-      <div class="loader-text">Loading...</div>
-    </div>
-  `;
+  loaderElement.innerHTML = ''; // Это изменение из прошлого раза, оставляем
   
   // Добавляем в DOM
   document.body.appendChild(loaderElement);

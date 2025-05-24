@@ -7,23 +7,10 @@ import { hideGlobalLoader } from '../components/loader.js';
 
 // SVG иконки
 const ICONS = {
-  creditCard: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect width="20" height="14" x="2" y="5" rx="2" />
-    <line x1="2" x2="22" y1="10" y2="10" />
-  </svg>`,
-  trendingUp: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="m3 3 7 7 4-4 7 7" />
-    <path d="M18 6h3v3" />
-  </svg>`,
-  barChart: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" x2="12" y1="20" y2="10" />
-    <line x1="18" x2="18" y1="20" y2="4" />
-    <line x1="6" x2="6" y1="20" y2="16" />
-  </svg>`,
-  lineChart: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="3" x2="21" y1="16" y2="16" />
-    <path d="M19 6 9 16l-5-5" />
-  </svg>`,
+  creditCard: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zM1 4v8h13V4z"></path><path d="M5 10.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"></path></svg>`,
+  trendingUp: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M3 6.035a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5"></path></svg>`,
+  barChart: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>`,
+  lineChart: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>`,
   shield: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
   </svg>`,
@@ -92,20 +79,20 @@ const tokenCardData = [
     highlight: true,
   },
   {
-    title: 'TGE SUPPLY',
+    title: 'ITD SUPPLY',
     value: '21,000',
     icon: ICONS.lineChart,
   },
-  {
-    title: 'CONTRACT',
-    isContract: true,
-    icon: ICONS.shield,
-    value: contractAddress,
-  }
+//   {
+//     title: 'CONTRACT',
+//     isContract: true,
+//     icon: ICONS.shield,
+//     value: contractAddress,
+//   }
 ];
 
 const distributionData = [
-  { name: 'TGE Supply (Trading)', value: 10, color: '#C5B483' },
+  { name: 'ITD Supply (Trading)', value: 10, color: '#C5B483' },
   { name: 'Locked (10-Year Vesting)', value: 90, color: '#4a314d' },
 ];
 
@@ -158,12 +145,7 @@ export function createTokenomicsPage(container) {
     <div class="tokenomics-header fade-in">
       <h1 class="section-title">BTCLE Tokenomics</h1>
       <p class="section-subtitle">Fixed Supply. Transparent. Fair. Non-Inflationary.</p>
-      <div class="particles">
-        ${Array(8).fill().map(() => {
-          const size = Math.random() * 6 + 2;
-          return `<div class="particle" style="width: ${size}px; height: ${size}px; left: ${Math.random() * 100}%; top: ${Math.random() * 100}%; animation-delay: ${Math.random() * 3}s"></div>`;
-        }).join('')}
-      </div>
+      
     </div>
   `;
   
@@ -179,7 +161,7 @@ export function createTokenomicsPage(container) {
         <p>Bitcoin Limited Edition (BTCLE) is a <strong>fixed-supply crypto asset</strong> with a max supply of <span class="highlight-text">210,000 BTCLE</span>.</p> 
         <p>This non-inflationary model reinforces BTCLE's mission of sustainable growth, transparent governance, and alignment with long-term holders.</p>
         
-        <p>At the time of the Token Generation Event (TGE), <strong>10% of the total supply</strong> (21,000 BTCLE) will be released to the public to support trading liquidity and early adoption.</p>
+        <p>At the time of the Initial Token Distribution (ITD), <strong>10% of the total supply</strong> (21,000 BTCLE) will be released to the public to support trading liquidity and early adoption.</p>
         
         <p>The remaining <strong>90%</strong> (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract. BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a <span class="highlight-text">monthly declining unlock mechanism</span>, where tokens are gradually released in decreasing amounts over a 10-year period, starting January 2026 and concluding December 2035.</p>
       </div>
@@ -266,7 +248,7 @@ export function createTokenomicsPage(container) {
         </thead>
         <tbody>
           <tr>
-            <td>Token Generation Event (TGE)</td>
+            <td>Initial Token Distribution (ITD)</td>
             <td class="amount-cell">21,000</td>
             <td class="percent-cell">10%</td>
           </tr>
@@ -407,7 +389,7 @@ export function createTokenomicsPage(container) {
     <h2 class="principles-title">Summary of Distribution Principles</h2>
     <ul class="principles-list">
       <li><span class="point-icon">●</span> Max Supply: <strong>210,000 BTCLE</strong> (non-inflationary).</li>
-      <li><span class="point-icon">●</span> TGE Circulation: <strong>21,000 BTCLE</strong> (10% released for trading at launch).</li>
+      <li><span class="point-icon">●</span> ITD Circulation: <strong>21,000 BTCLE</strong> (10% released for trading at launch).</li>
       <li><span class="point-icon">●</span> Locked: <strong>189,000 BTCLE</strong> (90% locked with a 10-year vesting period).</li>
       <li><span class="point-icon">●</span> Release Mechanism: Smart contract-based, with a deflationary model.</li>
     </ul>
