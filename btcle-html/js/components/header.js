@@ -56,6 +56,11 @@ export async function loadHeader(element) {
           <button id="mobile-menu-toggle" class="mobile-menu-toggle">
             ${icons.menu}
           </button>
+
+          <!-- Кнопка "Домой" для мобильного хедера -->
+          <a href="?" class="mobile-header-home-logo" data-navigate>
+            <img src="/images/logo-main.png" alt="Home" class="logo-image">
+          </a>
         </div>
       </div>
 

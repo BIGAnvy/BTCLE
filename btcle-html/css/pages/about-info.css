@@ -1,14 +1,14 @@
 /* Стили для страницы About Info - РЕДИЗАЙН */
 
 /* --- Переменные --- */
-/* Удаляем локальные переменные, будем использовать глобальные */
+
 
 /* --- Общий контейнер и фон --- */
 .about-info-container {
   padding: 20px 20px 80px; /* Больше отступ сверху */
-  color: var(--about-info-text);
+  color: var(--text-light);
   position: relative;
-  background-color: var(--about-info-bg);
+  background-color: transparent;
   min-height: 100vh;
   display: flex; /* Центрируем контент */
   justify-content: center;
@@ -18,7 +18,7 @@
 /* --- Сложный фон (псевдоэлементы) --- */
 .about-info-container::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -35,14 +35,15 @@
 
 .about-info-container::after {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   /* Мягкие градиентные пятна */
-  background: radial-gradient(circle at 10% 20%, #252530 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(46, 125, 255, 0.08) 0%, transparent 35%);
-  z-index: -2;
+  background-color: var(--dark-bg-1);
+  background-image: radial-gradient(circle at 10% 20%, #252530 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(46, 125, 255, 0.08) 0%, transparent 35%);
+  z-index: -3;
   opacity: 0.6;
   animation: bg-glow-subtle-move 45s ease-in-out infinite alternate;
 }
@@ -169,7 +170,7 @@
 .detail-value {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--about-info-text);
+  color: var(--text-light);
 }
 
 /* Стили для адреса контракта */
@@ -209,7 +210,7 @@
 .copy-button:hover {
   background-color: rgba(184, 157, 88, 0.25);
   border-color: var(--color-primary);
-  color: var(--about-info-bg);
+  color: var(--dark-bg-1);
 }
 
 .copy-button svg {
@@ -224,7 +225,7 @@
 
 .copy-button.copied {
   background-color: var(--color-primary);
-  color: var(--about-info-bg);
+  color: var(--dark-bg-1);
   border-color: var(--color-primary);
 }
 
@@ -259,7 +260,7 @@
 }
 
 .description-text strong {
-  color: var(--about-info-text);
+  color: var(--text-light);
   font-weight: 600;
 }
 

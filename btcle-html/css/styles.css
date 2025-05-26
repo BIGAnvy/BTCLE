@@ -265,3 +265,10 @@ p {
   .home-button {
     display: none !important;
   }
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+  .fixed-logo-container {
+    display: none; /* Скрываем логотип в правом нижнем углу на мобильных */
+  }
+}

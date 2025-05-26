@@ -256,50 +256,74 @@ export function createWhitepaperPage(container) {
     </div>
 
     <div class="summary-section">
-      <h3>BTCLE Year 1 Roadmap (June 2025 – May 2026)</h3>
+      <h3>BTCLE Strategic Roadmap (Q1 2025 – Q2 2026)</h3>
       <p>Strategic Launch Plan for Sustainable Growth, Institutional Credibility, and Global Utility.</p>
-      <p>BTCLE is more than a token, it is a next-generation financial instrument engineered for long-term value creation through decentralized innovation, real-world integration, and community-driven growth. Our Year 1 roadmap establishes the critical foundations required to scale sustainably, build global trust, and deliver real-world utility.</p>
-      <h4>Q1 (June – August 2025): Exchange Listings and Early Liquidity Framework</h4>
-      <p><strong>Objective:</strong> Establish multi-market liquidity, enable institutional access, and build the foundations for price discovery.</p>
-      <p>● Progressive listings across top-tier centralized and decentralized exchanges.<br>
-      Targeted Exchanges: MEXC, Bitget, OKX, Coinbase, Bybit, Binance.</p>
-      <p>● Diversified regional targeting to capture early trading volume across major crypto hubs, with an initial focus on regional diversity to penetrate key markets (Asia, MENA, Europe, North America).</p>
-      <p>● Deployment of institutional-grade OTC partnerships to facilitate high-volume transactions with minimal market impact.</p>
-      <p>● Liquidity management strategy to ensure depth, reduce volatility, and support organic volume growth</p>
-      <p><strong>Strategic impact:</strong><br>
-      Expand global access points, facilitate robust early-stage liquidity, and position BTCLE as an investable-grade asset.<br>
-      Foundational groundwork will also begin for the BTCLE Community Hub (Q2), including team expansion, local partnerships, and logistical preparations to ensure a high-impact regional launch.</p>
-      <h4>Q2 (September – November 2025): Global Headquarters Establishment – Dubai Hub</h4>
-      <p><strong>Objective:</strong> Anchor BTCLE's presence in a global blockchain epicenter and operationalize high-trust community building.</p>
-      <p>● Launch of BTCLE Global Headquarters in Dubai, aligning with a jurisdiction renowned for crypto-forward regulatory frameworks.</p>
-      <p>● Activation of a continuous community engagement program:<br>
-      ○ High-touch investor events.<br>
-      ○ Educational initiatives.<br>
-      ○ Strategic partner networking.</p>
-      <p>● Expansion of public relations and media footprint across MENA and surrounding regions.</p>
-      <p><strong>Strategic impact:</strong><br>
-      Enhance global brand credibility, forge direct institutional relationships, and build durable grassroots momentum in high-growth markets.</p>
-      <h4>Q3 (December 2025 – February 2026): BTCLE Pay Wallet – Real-World Utility Onramp</h4>
-      <p><strong>Objective:</strong> Translate digital holdings into frictionless real-world value and unlock daily transactional relevance.</p>
-      <p>● Launch of the BTCLE Pay Wallet Platform with seamless crypto-to-fiat conversion at point-of-sale.</p>
-      <p>● Exclusive loyalty and rewards programs designed to incentivize holding and spending within the BTCLE ecosystem.</p>
-      <p>● Integration with mobile wallets, web dashboards, and NFC-enabled devices for a frictionless user experience.</p>
-      <p>● Strategic partnerships with global payment providers to maximize acceptance and user convenience.</p>
-      <p><strong>Strategic impact:</strong><br>
-      Drive real-world adoption, strengthen utility-based demand, and position BTCLE as a practical financial instrument.</p>
-      <h4>Q4 (March – May 2026) – Proprietary Blockchain Deployment – BTCLE Chain Launch</h4>
-      <p><strong>Objective:</strong> Future-proof the BTCLE ecosystem with a high-performance, AI-enhanced decentralized infrastructure.</p>
-      <p>● Launch of BTCLE Chain: a proprietary, AI-optimized blockchain.</p>
-      <p>● Key technical features include:<br>
-      ○ Native smart contract deployment capabilities.<br>
-      ○ Machine learning modules for dynamic fraud detection and transaction optimization.<br>
-      ○ High-throughput, low-energy consensus architecture designed for mass scalability.</p>
-      <p>● Ecosystem acceleration initiatives:<br>
-      ○ Developer grants.<br>
-      ○ Strategic partnerships.<br>
-      ○ Cross-chain interoperability programs.</p>
-      <p><strong>Strategic impact:</strong><br>
-      Secure technological sovereignty, unlock new revenue streams through ecosystem development, and cement BTCLE's leadership in next-generation decentralized infrastructure</p>
+      <p>BTCLE is more than a token, it is a next-generation financial instrument engineered for long-term value creation through decentralized innovation, real-world integration, and community-driven growth. Our roadmap establishes the critical foundations required to scale sustainably, build global trust, and deliver real-world utility.</p>
+      <h4>Q1 2025: Pre-launch Audit & Foundation</h4>
+      <p><strong>Objective:</strong> Establish ironclad security, regulatory alignment, and operational readiness before public launch.</p>
+      <p>● Comprehensive Smart Contract Audits: Multiple independent audits by top-tier blockchain security firms (e.g., CertiK, Halborn) focusing on vulnerability detection, gas optimization, and logic verification. All audit reports published transparently.<br>
+      ● Legal & Compliance Framework: Finalized legal opinions on token classification, jurisdictional analysis aligned with leading crypto regulatory frameworks and global best practices, and establishment of KYC/AML protocols compliant with international standards.<br>
+      ● Core Team & Advisory Board Finalization: Onboarding key technical, financial, and marketing experts. Solidifying strategic advisory board with industry veterans.<br>
+      ● Initial Partnership Agreements: Secured foundational partnerships for market making, initial liquidity provision, and technology integration.</p>
+      <p><strong>Strategic Impact:</strong><br>
+      Ensure maximum security, build foundational trust through transparency, and mitigate regulatory risks from day one.</p>
+      <h4>Q2 2025: Mainnet Launch & Initial Liquidity Framework</h4>
+      <p><strong>Objective:</strong> Execute a seamless public launch, establish initial trading liquidity, and enable early community access.</p>
+      <p>● Initial Token Distribution (ITD): The first 10% of total supply is released, supporting early trading liquidity and market access in alignment with predefined tokenomics.<br>
+      ● Initial Exchange Listings (Tier 2/3 & DEXs): Listing on select Tier 2/3 CEXs and major DEXs (e.g., Uniswap) to establish baseline liquidity and price discovery.<br>
+      ● Liquidity Pool Seeding: Deployment of initial capital into DEX liquidity pools (e.g., BTCLE/USDT) to ensure a stable trading environment. Implementation of initial liquidity management strategy.<br>
+      ● Community Launch & Early Access Program: Public announcement, launch of official website V2, social media channels, and community forums (Discord/Telegram). Optional community incentives under review, including early supporter recognition and contribution-based rewards (details TBD).<br>
+      ● Website & Explorer Integration: Updated website with live token data, contract links, and integrated blockchain explorer views.</p>
+      <p><strong>Strategic Impact:</strong><br>
+      Establish BTCLE's public presence, ensure reliable trading access, and begin building a values-driven community aligned with long-term growth.</p>
+      <h4>Q3 2025: Tier-1 Exchange Listings & Global Headquarters Establishment – Dubai Hub</h4>
+      <p><strong>Objective:</strong> Secure listings on major global exchanges, establish a strategic operational base in a key crypto hub, and begin high-impact community building.</p>
+      <p>● Tier-1 CEX Listings: Progressive listings on top-tier centralized exchanges (targeting OKX, Bybit, KuCoin, potentially initial talks with Coinbase/Binance depending on market conditions and regulatory clarity). Focus on exchanges with strong regional presence.<br>
+      ● Launch of BTCLE Global Headquarters (Dubai): Establishment of a physical presence in Dubai. This includes office setup, local team hiring (community management, business development), and registration processes. Aligning with Dubai\'s crypto-forward regulatory framework (e.g., VARA).<br>
+      ● MENA Community Activation Program: Initiate targeted community building efforts in the Middle East and North Africa region:<br>
+      &nbsp;&nbsp;○ Host high-touch investor meetups and private briefings.<br>
+      &nbsp;&nbsp;○ Run educational sessions on BTCLE's value model and tokenomics.<br>
+      &nbsp;&nbsp;○ Form partnerships with regional influencers and crypto media.</p>
+      <p><strong>Strategic Impact:</strong><br>
+      Advance BTCLE's global footprint by securing high-liquidity exchange access, establishing a regulated presence in a top crypto jurisdiction, and activating grassroots momentum through community-led education and engagement across the region.</p>
+      <h4>Q4 2025: BTCLE Pay Wallet – Real-World Utility Onramp</h4>
+      <p><strong>Objective:</strong> Bridge the gap between digital assets and real-world spending, unlocking daily transactional utility for BTCLE.</p>
+      <p>● BTCLE Pay Wallet Platform Launch (Beta): Initial release of the wallet application (iOS/Android/Web) featuring:<br>
+      &nbsp;&nbsp;○ Secure storage and management of BTCLE and other major cryptocurrencies (BTC, ETH, stablecoins).<br>
+      &nbsp;&nbsp;○ Integrated DEX aggregator for in-app swaps.<br>
+      &nbsp;&nbsp;○ Core crypto-to-fiat off-ramp functionality via licensed partners.<br>
+      ● Point-of-Sale Integration (Pilot Program): Partnership with select payment processors or POS providers to test seamless BTCLE spending at participating merchants in specific regions (potentially starting in Dubai). Focus on NFC/QR code payments.<br>
+      ● Loyalty & Rewards Program Design: Design of BTCLE loyalty rewards structure, incentivizing holding, ecosystem spending, and future staking (if applicable), including cashback in BTCLE and tiered user benefits.<br>
+      ● Global Payment Provider Partnerships: Early-stage exploration of integrations with global payment providers via crypto card issuers or fintech intermediaries, with the goal of enabling wider future BTCLE acceptance.</p>
+      <p><strong>Strategic Impact:</strong><br>
+      Accelerate BTCLE's adoption by grounding it in real-world usage, driving utility-based demand, and establishing it as a practical bridge between the crypto economy and everyday life.</p>
+      <h4>Q1 2026: Community Governance Launch & BTCLE Chain Testnet</h4>
+      <p><strong>Objective:</strong> Initiate decentralized governance and begin laying the technical groundwork for BTCLE's proprietary blockchain ecosystem.</p>
+      <p>● Decentralized Governance Portal Launch (V1): Implementation of an on-chain voting platform allowing BTCLE holders to propose and vote on BTCLE Governance Proposals (BGPs) related to treasury allocation, protocol upgrades, and strategic initiatives. Initial focus on weighted voting based on holdings/staking.<br>
+      ● BTCLE Chain (Proprietary Blockchain) - Testnet Launch: Public release of the BTCLE Chain testnet for developers and community members. Features include:<br>
+      &nbsp;&nbsp;○ High-performance consensus mechanism (details TBD - PoS variant likely).<br>
+      &nbsp;&nbsp;○ Native smart contract environment (EVM-compatible, Ethereum Virtual Machine).<br>
+      &nbsp;&nbsp;○ Initial implementation of AI-driven fraud detection modules (for testing).<br>
+      &nbsp;&nbsp;○ Basic block explorer and developer tooling.<br>
+      ● Developer Outreach & Testnet Incentives: Initiate developer incentive programs, including bug bounties, testnet challenges, and grants for innovative dApp prototypes.<br>
+      ● Ecosystem Expansion Strategy Finalization: Detailed plan for attracting projects, fostering dApp development, and ensuring interoperability post-mainnet launch of BTCLE Chain.</p>
+      <p><strong>Strategic Impact:</strong><br>
+      Lay the foundation for community-driven governance and blockchain self-sovereignty, while rigorously testing BTCLE's proprietary chain infrastructure and cultivating its developer ecosystem.</p>
+      <h4>Q2 2026: Proprietary Blockchain Deployment – BTCLE Chain Launch</h4>
+      <p><strong>Objective:</strong> Establish a high-performance, AI-integrated blockchain infrastructure that future-proofs BTCLE's ecosystem and enables next-generation decentralized applications.</p>
+      <p>● Launch of BTCLE Chain Mainnet: Official deployment of the proprietary, AI-optimized blockchain following successful testnet phase and audits.<br>
+      ● Key Technical Features Activated:<br>
+      &nbsp;&nbsp;○ Native smart contract deployment capabilities (fully EVM compatible).<br>
+      &nbsp;&nbsp;○ Activated machine learning modules for dynamic fraud detection and transaction pattern analysis/optimization.<br>
+      &nbsp;&nbsp;○ High-throughput, low-energy consensus architecture operational for mass scalability.<br>
+      &nbsp;&nbsp;○ Bridge infrastructure for seamless asset transfer between Ethereum and BTCLE Chain.<br>
+      ● Ecosystem Acceleration Initiatives Launch:<br>
+      &nbsp;&nbsp;○ Formal launch of developer grant programs to incentivize building on BTCLE Chain.<br>
+      &nbsp;&nbsp;○ Strategic partnerships announced with projects migrating to or building natively on BTCLE Chain.<br>
+      &nbsp;&nbsp;○ Rollout of cross-chain interoperability solutions beyond ETH (e.g., bridging to other major L1s/L2s).<br>
+      ● Migration Plan Execution: Begin phased migration of key BTCLE functionalities (staking, governance, utility services) to the native chain infrastructure.</p>
+      <p><strong>Strategic Impact:</strong><br>
+      Establish long-term technological sovereignty, unlock revenue through dApp and transaction infrastructure, enable multi-chain interoperability, and position BTCLE at the forefront of AI-integrated decentralized architecture.</p>
       <p><strong>Milestone-Driven Growth, Real-World Utility, Future-Ready Innovation.</strong></p>
     </div>
 
@@ -559,40 +583,56 @@ export function createWhitepaperPage(container) {
     </section>
     <section class="roadmap-section">
       <div class="section-header">
-        <h2>Roadmap Preview (Year 1: June 2025 – May 2026)</h2>
+        <h2>Roadmap Preview (Q1 2025 – Q2 2026)</h2>
         <div class="header-line"></div>
       </div>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">Q1 (Jun-Aug 2025)</div>
-            <h3>Exchange Listings & Liquidity</h3>
-            <p>Strategic rollout across CEX/DEX for global exposure.</p>
+            <div class="timeline-year">Q1 2025</div>
+            <h3>Pre-launch Audit & Foundation</h3>
+            <p>Security audits, legal framework, team finalization.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">Q2 (Sep-Nov 2025)</div>
-            <h3>Dubai Community Hub</h3>
-            <p>Establish permanent HQ in Dubai for community initiatives, PR, partnerships, and ambassador programs.</p>
+            <div class="timeline-year">Q2 2025</div>
+            <h3>Mainnet Launch & Initial Liquidity</h3>
+            <p>Token distribution, initial exchange listings, community launch.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">Q3 (Dec 2025-Feb '26)</div>
+            <div class="timeline-year">Q3 2025</div>
+            <h3>Tier-1 Listings & Dubai HQ</h3>
+            <p>Major exchange listings, Dubai HQ establishment, MENA community activation.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">Q4 2025</div>
             <h3>BTCLE Pay Wallet Launch</h3>
-            <p>Dedicated wallet for seamless crypto-to-fiat conversion, rewards, and mobile/web integration.</p>
+            <p>Beta wallet, POS integration pilot, loyalty program design.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-year">Q4 (Mar-May '26)</div>
-            <h3>Proprietary Blockchain Launch</h3>
-            <p>Deployment of custom blockchain with smart contracts, potential AI modules, scalability, and efficiency.</p>
+            <div class="timeline-year">Q1 2026</div>
+            <h3>Governance & BTCLE Chain Testnet</h3>
+            <p>Governance portal, BTCLE Chain testnet launch.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">Q2 2026</div>
+            <h3>BTCLE Chain Mainnet Launch</h3>
+            <p>Proprietary blockchain deployment, ecosystem acceleration.</p>
           </div>
         </div>
       </div>

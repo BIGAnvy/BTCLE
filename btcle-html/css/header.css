@@ -228,6 +228,21 @@
   box-sizing: border-box;
 }
 
+/* Мобильное выпадающее меню Connect */
+
+/* Кнопка "Домой" в мобильном хедере (по умолчанию скрыта) */
+.mobile-header-home-logo {
+  display: none; 
+  height: 30px; /* Адаптированный размер для хедера */
+  line-height: 0; /* Убираем возможную высоту строки, если ссылка пустая */
+}
+
+.mobile-header-home-logo .logo-image {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
 /* Медиа-запросы */
 @media (min-width: 768px) {
   .desktop-nav {
@@ -248,12 +263,19 @@
 
   #mobile-menu-toggle {
     display: block;
-    margin-left: auto;
+    order: -1; /* Бургер слева */
+  }
+
+  .mobile-header-home-logo {
+    display: block; /* Показать кнопку "домой" в мобильном хедере */
+    /* order: 1; /* Можно не указывать, т.к. space-between должен отработать */
   }
   
   .header-content {
       justify-content: space-between;
       width: 100%;
+      display: flex; /* Убедимся, что это flex-контейнер */
+      align-items: center; /* Для вертикального выравнивания элементов */
   }
   
   .header-container {
