@@ -299,6 +299,9 @@
     justify-content: start;
   }
 
+  #mobile-connect-toggle {
+    margin-left: 9px;
+  }
 }
 
 #main-header, .header {
