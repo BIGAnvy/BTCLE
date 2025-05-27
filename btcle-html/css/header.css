@@ -299,7 +299,7 @@
     justify-content: start;
   }
 
-  #mobile-connect-toggle {
+  #mobile-connect-toggle svg {
     margin-left: 9px;
   }
 }
