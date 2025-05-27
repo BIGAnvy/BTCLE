@@ -123,6 +123,7 @@
   
   .hero-subtitle {
     font-size: 1.2rem;
+    white-space: normal;
   }
   
   .bitcoin-model-container {

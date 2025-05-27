@@ -28,7 +28,7 @@ const roadmapItems = [
       description: 'Establish ironclad security, regulatory alignment, and operational readiness before public launch.',
       icon: 'Microscope',
       status: 'completed',
-      details: `
+      details: ` 
         <h2>Q1 2025: Pre-launch Audit & Foundation</h2>
         <p><strong>Objective:</strong> Establish ironclad security, regulatory alignment, and operational readiness before public launch.</p>
         <ul>
@@ -135,34 +135,34 @@ const roadmapItems = [
       period: 'Q2 2026',
       title: 'Proprietary Blockchain Deployment – BTCLE Chain Launch',
       description: 'Establish a high-performance, AI-integrated blockchain infrastructure that future-proofs BTCLE\'s ecosystem and enables next-generation decentralized applications.',
-      icon: 'Rocket',
-      status: 'upcoming',
-      details: `
+        icon: 'Rocket',
+        status: 'upcoming',
+        details: `
         <h2>Q2 2026: Proprietary Blockchain Deployment – BTCLE Chain Launch</h2>
         <p><strong>Objective:</strong> Establish a high-performance, AI-integrated blockchain infrastructure that future-proofs BTCLE's ecosystem and enables next-generation decentralized applications.</p>
-        <ul>
-          <li><strong>Launch of BTCLE Chain Mainnet:</strong> Official deployment of the proprietary, AI-optimized blockchain following successful testnet phase and audits.</li>
-          <li><strong>Key Technical Features Activated:</strong>
-            <ul>
-              <li>Native smart contract deployment capabilities (fully EVM compatible).</li>
-              <li>Activated machine learning modules for dynamic fraud detection and transaction pattern analysis/optimization.</li>
-              <li>High-throughput, low-energy consensus architecture operational for mass scalability.</li>
-              <li>Bridge infrastructure for seamless asset transfer between Ethereum and BTCLE Chain.</li>
-            </ul>
-          </li>
-          <li><strong>Ecosystem Acceleration Initiatives Launch:</strong>
-            <ul>
-              <li>Formal launch of developer grant programs to incentivize building on BTCLE Chain.</li>
-              <li>Strategic partnerships announced with projects migrating to or building natively on BTCLE Chain.</li>
-              <li>Rollout of cross-chain interoperability solutions beyond ETH (e.g., bridging to other major L1s/L2s).</li>
-            </ul>
-          </li>
-          <li><strong>Migration Plan Execution:</strong> Begin phased migration of key BTCLE functionalities (staking, governance, utility services) to the native chain infrastructure.</li>
-        </ul>
-        <p><strong>Strategic Impact:</strong> Establish long-term technological sovereignty, unlock revenue through dApp and transaction infrastructure, enable multi-chain interoperability, and position BTCLE at the forefront of AI-integrated decentralized architecture.</p>
-      `
+          <ul>
+            <li><strong>Launch of BTCLE Chain Mainnet:</strong> Official deployment of the proprietary, AI-optimized blockchain following successful testnet phase and audits.</li>
+            <li><strong>Key Technical Features Activated:</strong>
+              <ul>
+                <li>Native smart contract deployment capabilities (fully EVM compatible).</li>
+                <li>Activated machine learning modules for dynamic fraud detection and transaction pattern analysis/optimization.</li>
+                <li>High-throughput, low-energy consensus architecture operational for mass scalability.</li>
+                <li>Bridge infrastructure for seamless asset transfer between Ethereum and BTCLE Chain.</li>
+              </ul>
+            </li>
+            <li><strong>Ecosystem Acceleration Initiatives Launch:</strong>
+              <ul>
+                <li>Formal launch of developer grant programs to incentivize building on BTCLE Chain.</li>
+                <li>Strategic partnerships announced with projects migrating to or building natively on BTCLE Chain.</li>
+                <li>Rollout of cross-chain interoperability solutions beyond ETH (e.g., bridging to other major L1s/L2s).</li>
+              </ul>
+            </li>
+             <li><strong>Migration Plan Execution:</strong> Begin phased migration of key BTCLE functionalities (staking, governance, utility services) to the native chain infrastructure.</li>
+          </ul>
+          <p><strong>Strategic Impact:</strong> Establish long-term technological sovereignty, unlock revenue through dApp and transaction infrastructure, enable multi-chain interoperability, and position BTCLE at the forefront of AI-integrated decentralized architecture.</p>
+        `
     }
-];
+  ];
 
 function getStatusIcon(status) {
     if (status === 'completed') return ICONS.CheckCircle2;

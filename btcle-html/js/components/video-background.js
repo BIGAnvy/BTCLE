@@ -83,6 +83,9 @@ export function createVideoBackground(options) {
     content
   } = options;
   
+  const isMobile = window.innerWidth <= 768;
+  const videoSrc = isMobile ? 'images/Header-video-mobile.mp4' : src;
+
   // HTML для видео-фона (БЕЗ деталей и дисклеймера)
   const videoHtml = `
     <div class="video-background">
@@ -96,7 +99,7 @@ export function createVideoBackground(options) {
         ${loop ? 'loop' : ''}
         ${controls ? 'controls' : ''}
       >
-        <source src="${src}" type="video/mp4">
+        <source src="${videoSrc}" type="video/mp4">
         Ваш браузер не поддерживает видео.
       </video>
       

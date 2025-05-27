@@ -608,31 +608,33 @@
   }
 
   .principles-title {
-    font-size: 1.8rem; /* Уменьшаем заголовок */
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
   
   .principles-list {
-      max-width: 100%; /* Список занимает всю ширину */
-      padding: 0 0.5rem; /* Небольшие боковые отступы */
-      margin-bottom: 1.5rem;
+    max-width: 100%;
+    margin-top: 1.5rem;
   }
   
   .principles-list li {
-      font-size: 1rem; /* Уменьшаем текст */
-      margin-bottom: 0.8rem;
-      flex-direction: row; /* Убедимся, что иконка и текст в ряд */
-      align-items: flex-start;
+    margin-bottom: 1.2rem;
+    padding-left: 1.8rem;
+    font-size: 0.95rem;
+    display: block;
   }
   
   .principles-list .point-icon {
-      margin-right: 0.6rem;
-      font-size: 1rem; /* Уменьшаем иконку */
-      line-height: 1.6; /* Выравнивание */
+    font-size: 1.3rem;
+    top: 0.1em;
+  }
+  
+  .principles-list strong {
+    margin-left: 0.4em;
   }
 
   .principles-goal {
-    font-size: 1rem; /* Уменьшаем текст */
+    font-size: 1rem;
     padding: 1rem;
   }
 }
@@ -1096,6 +1098,10 @@ canvas + div ul li {
     width: 100%;
     margin-top: 30px;
   }
+
+  .vesting-mechanics {
+    margin-top: 10rem;
+  }
 } 
 
 @media (min-width: 1800px) {
@@ -1149,19 +1155,26 @@ canvas + div ul li {
   /* --- Адаптивность для Списка Принципов --- */
   
   @media (max-width: 768px) {
+    .principles-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  
     .principles-list {
-      max-width: 100%; /* На планшетах можно шире */
+      max-width: 100%;
       margin-top: 1.5rem;
     }
   
     .principles-list li {
       margin-bottom: 1.2rem;
-      padding-left: 1.8rem; /* Слегка уменьшаем отступ */
+      padding-left: 1.8rem;
       font-size: 0.95rem;
+      display: block;
     }
   
     .principles-list .point-icon {
-      font-size: 1.3rem; /* Уменьшаем иконку */
+      font-size: 1.3rem;
+      top: 0.1em;
     }
   
     .principles-list strong {
@@ -1176,14 +1189,15 @@ canvas + div ul li {
   
     .principles-list li {
       margin-bottom: 1rem;
-      padding-left: 1.5rem; /* Еще уменьшаем */
+      padding-left: 1.5rem;
       font-size: 0.9rem;
       line-height: 1.6;
+      display: block;
     }
   
      .principles-list .point-icon {
        font-size: 1.2rem;
-       top: 0.05em; /* Может потребоваться тонкая подстройка */
+       top: 0.05em;
      }
   
      .principles-list strong {

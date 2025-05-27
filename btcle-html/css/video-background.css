@@ -374,6 +374,11 @@
       max-width: 90%;
       font-size: 0.8rem;
   }
+
+  /* Делаем так, чтобы видео на мобильных устройствах было видно полностью */
+  /* .video-background .video-element { */
+  /*   object-fit: contain; */
+  /* } */
 } 
 
 @media (max-width: 480px) {
