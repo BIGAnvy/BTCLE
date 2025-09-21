@@ -198,28 +198,30 @@ export function createWhitepaperPage(container) {
       ● Governance: Fully transparent and on-chain.</p>
       <p>This structure is designed to reduce short-term sell pressure and reward holders with a progressively deflationary release curve.</p>
       <h4>Annual Vesting Schedule (2026–2035)</h4>
-      <table class="tokenomics-table">
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Monthly Unlock Range</th>
-            <th>Annual Total</th>
-            <th>Remaining Locked</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>2026</td><td>3,800 → 2,700</td><td>39,000</td><td>150,000</td></tr>
-          <tr><td>2027</td><td>2,650 → 2,100</td><td>28,500</td><td>121,500</td></tr>
-          <tr><td>2028</td><td>2,075 → 1,800</td><td>23,250</td><td>98,250</td></tr>
-          <tr><td>2029</td><td>1,785 → 1,620</td><td>20,430</td><td>77,820</td></tr>
-          <tr><td>2030</td><td>1,610 → 1,500</td><td>18,660</td><td>59,160</td></tr>
-          <tr><td>2031</td><td>1,495 → 1,440</td><td>17,610</td><td>41,550</td></tr>
-          <tr><td>2032</td><td>1,420 → 1,200</td><td>15,720</td><td>25,830</td></tr>
-          <tr><td>2033</td><td>1,000 → 835</td><td>11,010</td><td>14,820</td></tr>
-          <tr><td>2034</td><td>700 → 645</td><td>8,070</td><td>6,750</td></tr>
-          <tr><td>2035</td><td>600 → 425</td><td>6,750</td><td>0</td></tr>
-        </tbody>
-      </table>
+      <div class="table-responsive-wrapper">
+        <table class="tokenomics-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Monthly Unlock Range</th>
+              <th>Annual Total</th>
+              <th>Remaining Locked</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2026</td><td>3,800 → 2,700</td><td>39,000</td><td>150,000</td></tr>
+            <tr><td>2027</td><td>2,650 → 2,100</td><td>28,500</td><td>121,500</td></tr>
+            <tr><td>2028</td><td>2,075 → 1,800</td><td>23,250</td><td>98,250</td></tr>
+            <tr><td>2029</td><td>1,785 → 1,620</td><td>20,430</td><td>77,820</td></tr>
+            <tr><td>2030</td><td>1,610 → 1,500</td><td>18,660</td><td>59,160</td></tr>
+            <tr><td>2031</td><td>1,495 → 1,440</td><td>17,610</td><td>41,550</td></tr>
+            <tr><td>2032</td><td>1,420 → 1,200</td><td>15,720</td><td>25,830</td></tr>
+            <tr><td>2033</td><td>1,000 → 835</td><td>11,010</td><td>14,820</td></tr>
+            <tr><td>2034</td><td>700 → 645</td><td>8,070</td><td>6,750</td></tr>
+            <tr><td>2035</td><td>600 → 425</td><td>6,750</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
       <h4>2026 Vesting Breakdown (Monthly)</h4>
       <table class="tokenomics-table">
         <thead>
@@ -366,23 +368,25 @@ export function createWhitepaperPage(container) {
 
       <h4>BTCLE Staking</h4>
       <p>BTCLE staking empowers token holders to lock their assets in designated vaults, thereby supporting ecosystem growth and liquidity while earning competitive yield returns over fixed commitment periods. The staking model is designed to incentivize long-term holding and provide consistent yield to participants.</p>
-      <table class="tokenomics-table">
-        <thead>
-          <tr>
-            <th>Staking Tier</th>
-            <th>BTCLE amount</th>
-            <th>Lock Period</th>
-            <th>Monthly Yield (MPY)</th>
-            <th>Annual Yield (APY)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Essential</td><td>100</td><td>3 months</td><td>0.25%</td><td>3%</td></tr>
-          <tr><td>Premium</td><td>250</td><td>6 months</td><td>0.375%</td><td>4.5%</td></tr>
-          <tr><td>Executive</td><td>500</td><td>1 year</td><td>0.5%</td><td>6%</td></tr>
-          <tr><td>Elite</td><td>800</td><td>3 years</td><td>0.625%</td><td>7.5%</td></tr>
-        </tbody>
-      </table>
+      <div class="table-responsive-wrapper">
+        <table class="tokenomics-table">
+          <thead>
+            <tr>
+              <th>Staking Tier</th>
+              <th>BTCLE amount</th>
+              <th>Lock Period</th>
+              <th>Monthly Yield (MPY)</th>
+              <th>Annual Yield (APY)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Essential</td><td>100</td><td>3 months</td><td>0.25%</td><td>3%</td></tr>
+            <tr><td>Premium</td><td>250</td><td>6 months</td><td>0.375%</td><td>4.5%</td></tr>
+            <tr><td>Executive</td><td>500</td><td>1 year</td><td>0.5%</td><td>6%</td></tr>
+            <tr><td>Elite</td><td>800</td><td>3 years</td><td>0.625%</td><td>7.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
       <p><strong>Staking Yield Calculation</strong></p>
       <p>Staking yields are dynamically calculated based on the locked token amount and the duration of the staking commitment. Payouts occur monthly, ensuring consistent and transparent distribution directly to the staker's wallet.</p>
       <p>By participating in BTCLE staking, holders not only secure competitive returns but also actively contribute to supporting BTCLE's liquidity infrastructure, reinforcing the stability and growth of the ecosystem.</p>
