@@ -73,6 +73,9 @@
   position: relative;
   padding-bottom: 4px;
   overflow: hidden;
+  width: fit-content;
+  white-space: nowrap;
+  padding: 0 2px;
 }
 
 .nav-link:hover {

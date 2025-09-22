@@ -28,20 +28,10 @@ export async function loadHeader(element) {
           <!-- Навигация для десктопа -->
           <nav class="desktop-nav">
             <a href="?page=about" class="nav-link" data-navigate>About</a>
-            <a href="?page=story" class="nav-link" data-navigate>Story</a>
+            <a href="?page=why-btcle" class="nav-link" data-navigate>Why BTCLE?</a>
             <a href="?page=tokenomics" class="nav-link" data-navigate>Tokenomics</a>
+            <a href="?page=roadmap" class="nav-link" data-navigate>Roadmap</a>
             <a href="?page=whitepaper" class="nav-link" data-navigate>Whitepaper</a>
-            
-            <!-- Выпадающее меню Explore -->
-            <div class="dropdown">
-              <button class="nav-link dropdown-toggle">
-                Explore ${icons.chevronDown}
-              </button>
-              <div class="dropdown-menu">
-                <a href="?page=why-btcle" class="dropdown-item" data-navigate>Why BTCLE?</a>
-                <a href="?page=roadmap" class="dropdown-item" data-navigate>Roadmap</a>
-              </div>
-            </div>
             
             <!-- Выпадающее меню Connect -->
             <div class="dropdown">
@@ -72,19 +62,10 @@ export async function loadHeader(element) {
       <div id="mobile-menu" class="mobile-menu">
         <nav class="mobile-nav">
           <a href="?page=about" class="mobile-nav-item" data-navigate>About</a>
-          <a href="?page=story" class="mobile-nav-item" data-navigate>Story</a>
+          <a href="?page=why-btcle" class="mobile-nav-item" data-navigate>Why BTCLE?</a>
           <a href="?page=tokenomics" class="mobile-nav-item" data-navigate>Tokenomics</a>
+          <a href="?page=roadmap" class="mobile-nav-item" data-navigate>Roadmap</a>
           <a href="?page=whitepaper" class="mobile-nav-item" data-navigate>Whitepaper</a>
-          
-          <!-- Мобильное выпадающее меню Explore -->
-          <button id="mobile-explore-toggle" class="mobile-nav-item mobile-dropdown-toggle">
-            <span>Explore</span>
-            ${icons.chevronDown}
-          </button>
-          <div id="mobile-explore-menu" class="mobile-dropdown-menu">
-            <a href="?page=why-btcle" class="mobile-nav-item" data-navigate>Why BTCLE?</a>
-            <a href="?page=roadmap" class="mobile-nav-item" data-navigate>Roadmap</a>
-          </div>
           
           <!-- Мобильное выпадающее меню Connect -->
           <button id="mobile-connect-toggle" class="mobile-nav-item mobile-dropdown-toggle">
@@ -116,8 +97,6 @@ function initHeaderEvents() {
   const header = document.getElementById('main-header');
   const menuToggle = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  const exploreToggle = document.getElementById('mobile-explore-toggle');
-  const exploreMenu = document.getElementById('mobile-explore-menu');
   const connectToggle = document.getElementById('mobile-connect-toggle');
   const connectMenu = document.getElementById('mobile-connect-menu');
   
@@ -146,12 +125,6 @@ function initHeaderEvents() {
     } else {
       menuToggle.innerHTML = icons.menu;
     }
-  });
-  
-  // Мобильное выпадающее меню Explore
-  exploreToggle.addEventListener('click', () => {
-    exploreToggle.classList.toggle('active');
-    exploreMenu.classList.toggle('active');
   });
   
   // Мобильное выпадающее меню Connect

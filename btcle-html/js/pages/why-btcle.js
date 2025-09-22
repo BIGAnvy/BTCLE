@@ -23,45 +23,44 @@ export function createWhyBtclePage(container) {
 
   const content = `
     <div class="why-btcle-hero fade-in">
-      
-      <h1 class="section-title">Why <span class="highlight">BTCLE</span>?</h1>
-      <p class="why-btcle-subtitle">A New Paradigm: Scarce, Auditable, and Liquidity-Backed.</p>
-    </div>
-
-    <div class="why-btcle-intro fade-in-up" data-animation-delay="0.1">
-      <p>In a digital asset landscape saturated with hype cycles, inflated promises, and unsustainable tokenomics, Bitcoin Limited Edition (BTCLE) introduces a new paradigm: a scarce, auditable, and liquidity-backed asset, engineered with the rigor of institutional finance and the ethos of decentralized trust.</p>
-      <p>BTCLE isn't just another token. It's a precision-engineered financial instrument, combining structural discipline with crypto-native ideals like transparency, decentralization, and user sovereignty.</p>
+      <h1 class="section-title">Why <span class="highlight">BTCLE</span></h1>
     </div>
 
     <div class="why-btcle-points">
 
-      <!-- Point 1 - Используем why-point вместо why-point-card -->
+      <!-- Point 1 -->
       <div class="why-point fade-in-up" data-animation-delay="0.2">
-        <div class="point-icon-wrapper">${ICONS.diamond}</div>
+        <div class="point-icon-wrapper">${ICONS.shieldCheck}</div>
         <div class="point-content">
-          <h2>1. Ultra-Scarce by Design</h2>
-          <h3>Built for Conviction, Not Hype.</h3>
-          <p>With a hard-capped supply of 210,000 tokens, BTCLE enforces absolute scarcity, eliminating inflation risk while avoiding the typical pitfalls of cliff unlocks or sudden supply shocks. Its declining issuance curve, embedded directly into audited smart contracts, is designed to reward long-term participation and disciplined holding. This is value earned through time, not manufactured by marketing.</p>
+          <h2>1. Security – Anchored on Bitcoin</h2>
+          <p>BTCLE is built as a Layer 2 anchored to Bitcoin, leveraging the unmatched security and immutability of the Bitcoin blockchain.</p>
+          <p>By inheriting Bitcoin's proof-of-work consensus and settlement layer, BTCLE ensures that every transaction and every asset bridged into the ecosystem is protected by the most decentralized and battle-tested network in the world.</p>
+          <p>This foundation provides institutional-grade security for Real World Assets (RWA), financial instruments, and DeFi applications that demand trust at scale.</p>
+          <p>Unlike many experimental L2s, BTCLE minimizes attack vectors by directly linking back to Bitcoin's base layer—making it not just a blockchain, but a fortress for value.</p>
         </div>
       </div>
 
       <!-- Point 2 -->
       <div class="why-point fade-in-up" data-animation-delay="0.3">
-        <div class="point-icon-wrapper">${ICONS.shieldCheck}</div>
+        <div class="point-icon-wrapper">${ICONS.diamond}</div>
         <div class="point-content">
-          <h2>2. On-Chain Integrity</h2>
-          <h3>Immutable, Non-Custodial, and Self-Enforcing.</h3>
-          <p>Every element of BTCLE's supply logic, from launch through vesting, is governed by autonomous smart contracts, fully auditable and tamper-proof. There are no manual overrides, no hidden reallocations, and no operational backdoors. Every token movement is transparently enforced on-chain, ensuring holders can trust the protocol by design, not by authority.</p>
+          <h2>2. Ease of Accessibility & Use</h2>
+          <p>BTCLE is designed to break down the complexity of blockchain, making it accessible to mainstream users, enterprises, and institutions alike.</p>
+          <p>Through simplified interfaces, seamless wallet integration, and optimized transaction flows, users can interact with BTCLE with the same ease as traditional apps.</p>
+          <p>Low-cost, high-speed transactions ensure scalability, while tools like fiat on/off ramps, multi-chain bridges, and plug-and-play APIs provide accessibility to developers, partners, and enterprises.</p>
+          <p>The goal: make the BTCLE experience intuitive enough for a newcomer, yet powerful enough for sophisticated users and developers—removing barriers to adoption and scaling toward mass usage.</p>
         </div>
       </div>
 
       <!-- Point 3 -->
       <div class="why-point fade-in-up" data-animation-delay="0.4">
-        <div class="point-icon-wrapper">${ICONS.banknote}</div>
+        <div class="point-icon-wrapper">${ICONS.brainCircuit}</div>
         <div class="point-content">
-          <h2>3. 100% Liquidity-Backed</h2>
-          <h3>Not Synthetic. Not Illiquid. Not a Mirage.</h3>
-          <p>Every BTCLE token in circulation is supported by real, verifiable capital, secured in public liquidity pools designed for access across both decentralized and centralized trading environments. This is not theoretical depth; it's tangible support designed to uphold price integrity, mitigate volatility, and instill confidence in long-term holders. Stability isn't aspirational, it's structural.</p>
+          <h2>3. Expert Team & Strategic Partnerships</h2>
+          <p>BTCLE is powered by a team with deep blockchain expertise, financial acumen, and technical execution ability. The team's track record spans global exchanges, DeFi protocols, institutional advisory, and real-world finance.</p>
+          <p>Beyond the core contributors, BTCLE leverages a broad network of partners across venture capital, market makers, liquidity providers, institutional investors, and blockchain infrastructure firms.</p>
+          <p>This ensures that BTCLE is not just a technology project but an ecosystem play, supported by an interconnected web of advisors, developers, and enterprise collaborators.</p>
+          <p>By combining knowledge, credibility, and execution capability, BTCLE positions itself as a trusted platform to lead the Bitcoin Layer 2 and RWA revolution.</p>
         </div>
       </div>
 
@@ -69,26 +68,14 @@ export function createWhyBtclePage(container) {
       <div class="why-point fade-in-up" data-animation-delay="0.5">
         <div class="point-icon-wrapper">${ICONS.landmark}</div>
         <div class="point-content">
-          <h2>4. Legally Structured</h2>
-          <h3>Real Entity. Real Accountability. Real Standards.</h3>
-          <p>BTCLE is issued through a legally registered entity governed by a structured compliance framework and a clear operational charter. While the team maintains principled anonymity in line with decentralized ideals, the project itself operates with institutional-grade integrity, meeting the expectations of serious investors while preserving the foundational values of decentralization and user sovereignty.</p>
+          <h2>4. Rooted in Real World Assets (RWA)</h2>
+          <p>BTCLE's vision goes beyond speculation—it is bridging the physical and digital economies.</p>
+          <p>By tokenizing and anchoring Real World Assets (commodities, real estate, bonds, and other financial instruments) onto Bitcoin's most secure blockchain layer, BTCLE transforms Bitcoin from a store of value into the backbone of a new financial system.</p>
+          <p>Users, institutions, and enterprises will be able to access digitally native, blockchain-secured RWAs with global settlement, 24/7 accessibility, and instant liquidity.</p>
+          <p>This pillar ensures that BTCLE is not just another Layer 2—it is the gateway where traditional finance and decentralized finance converge, unlocking trillions in global economic value.</p>
         </div>
       </div>
 
-      <!-- Point 5 -->
-      <div class="why-point fade-in-up" data-animation-delay="0.6">
-        <div class="point-icon-wrapper">${ICONS.brainCircuit}</div>
-        <div class="point-content">
-          <h2>5. Built for the Next Era</h2>
-          <h3>Intelligent, Adaptive, and Community-Led.</h3>
-          <p>BTCLE is not a static asset. The ecosystem is expanding with next-generation utility layers, including BTCLE AI and the introduction of Proof of Adaptive Intelligence (PoAI), aimed at unlocking purposeful real-world use cases and enhancing token velocity and relevance across decentralized networks.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="why-btcle-conclusion fade-in-up" data-animation-delay="0.7">
-      <p>BTCLE is Where Scarcity Meets Strategy, and Transparency Meets Trust.</p>
     </div>
   `;
 
@@ -106,6 +93,9 @@ export function createWhyBtclePage(container) {
   // Скрываем лоадер и анимируем контент
   requestAnimationFrame(() => {
     hideGlobalLoader();
+
+    // Добавляем класс для белых страниц к body
+    document.body.classList.add('white-page');
 
     // Показываем кнопку домой
     homeButton.classList.add('visible');

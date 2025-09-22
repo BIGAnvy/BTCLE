@@ -1,416 +1,411 @@
-/* Styles for the Why BTCLE page - Redesigned */
+/* Styles for the Why BTCLE page - White Minimalist Design */
 :root {
-    --why-color-primary: #C5B483; /* Gold */
-    --why-color-background: #0B0B0F; /* Dark background similar to tokenomics */
-    --why-color-text: #EAEAEA; /* Light text */
-    --why-color-text-secondary: #b0b0b0; /* Slightly dimmer text */
-    --why-color-icon-bg: rgba(197, 180, 131, 0.08);
-    --why-border-color: rgba(197, 180, 131, 0.2);
-    --why-section-bg-subtle: rgba(255, 255, 255, 0.02); /* Very subtle bg for sections */
+  --why-bg: #ffffff;
+  --why-text-primary: #000000;
+  --why-text-secondary: #666666;
+  --why-card-bg: #ffffff;
+  --why-card-border: #e5e5e5;
+  --why-accent: #000000;
+  --why-icon-bg: #f5f5f5;
+  --why-icon-border: #e0e0e0;
 }
 
 .why-btcle-container {
-    color: var(--why-color-text);
-    position: relative;
-    z-index: 1;
-    margin: 0 auto;
-    padding: 80px 20px 60px; /* Adjusted padding */
-    overflow: hidden; /* Prevent pseudo-elements overflow */
-    background-color: var(--why-color-background); /* Dark base background */
-    /* Remove card-like styling */
-    /* max-width, margin-auto, background-color, border-radius, box-shadow removed */
-}
-
-/* Background effects similar to tokenomics */
-.why-btcle-container::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 2.5rem 2.5rem; /* Adjusted grid size */
-    z-index: -2;
-    opacity: 0.6;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 80%);
-    animation: bg-grid-subtle-move 70s linear infinite;
-}
-
-.why-btcle-container::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 30%, rgba(197, 180, 131, 0.06) 0%, transparent 35%), radial-gradient(circle at 80% 70%, rgba(46, 125, 255, 0.05) 0%, transparent 40%);
-    z-index: -2;
-    opacity: 0.7;
-    animation: bg-glow-subtle-move 50s ease-in-out infinite alternate;
-}
-
-/* Reusing animations from tokenomics */
-@keyframes bg-grid-subtle-move {
-  0% { background-position: 0 0; }
-  100% { background-position: 40px 40px; }
-}
-
-@keyframes bg-glow-subtle-move {
-  0% { opacity: 0.5; transform: scale(1); }
-  100% { opacity: 0.8; transform: scale(1.05); }
+  background-color: var(--why-bg);
+  color: var(--why-text-primary);
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 /* Hero Section */
 .why-btcle-hero {
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative; /* For particles */
-    padding: 20px 0;
-}
-
-/* Add particles container */
-.why-btcle-hero .particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: -1; /* Behind text */
-}
-
-.why-btcle-hero .particle {
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(197, 180, 131, 0.2); /* Subtle gold particles */
-  pointer-events: none;
-  animation: float 20s infinite ease-in-out alternate;
-}
-
-@keyframes float {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  50% { transform: translate(calc(var(--x-drift, 0) * 1px), calc(var(--y-drift, 0) * 1px)) scale(1.1); opacity: 0.6; }
-  100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding: 20px 0;
 }
 
 .why-btcle-hero h1.section-title {
-    color: var(--why-color-primary);
-    font-size: 3rem;
-    margin-bottom: 15px;
-    font-weight: 400;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color: var(--why-text-primary);
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .why-btcle-hero .highlight {
-    color: var(--why-color-primary);
-    /* Maybe a subtle effect later */
+  color: var(--why-text-primary);
+  font-weight: 600;
 }
 
 .why-btcle-subtitle {
-    font-size: 1.3rem;
-    color: var(--why-color-text-secondary);
-    margin-bottom: 0;
-    font-weight: 400;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 1.3rem;
+  color: var(--why-text-secondary);
+  margin-bottom: 0;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Intro Section - Styled as Disclaimer */
+/* Intro Section */
 .why-btcle-intro {
-    margin: 0 auto 60px auto;
-    max-width: 800px;
-    /* border-left: 4px solid var(--why-color-primary); */ /* Removed */
-    border: 1px solid var(--why-border-color); /* Thin border all around */
-    padding: 20px 25px; /* Adjusted padding */
-    /* background: var(--why-section-bg-subtle); */ /* Removed background */
-    background-color: rgba(11, 11, 15, 0.5); /* Slightly different subtle bg, less contrast */
-    border-radius: 8px; /* Consistent radius */
-    /* Removed box-shadow implicitly as it wasn't there */
+  margin: 0 auto 60px auto;
+  max-width: 800px;
+  border: 1px solid var(--why-card-border);
+  padding: 30px;
+  background-color: var(--why-card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .why-btcle-intro p {
-    font-size: 1rem; /* Slightly smaller */
-    line-height: 1.7;
-    margin-bottom: 10px;
-    color: var(--why-color-text-secondary); /* Use secondary color for disclaimer feel */
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: var(--why-text-secondary);
 }
 
 .why-btcle-intro p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-/* Points Section - Redesigned (No cards) */
+/* Points Section */
 .why-btcle-points {
-    display: flex;
-    flex-direction: column;
-    gap: 60px; /* Increased gap between points */
-    max-width: 900px;
-    margin: 0 auto; /* Center the points section */
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Individual Point Styling */
 .why-point {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--why-border-color);
-    /* Removed card background/border/shadow */
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 40px 0;
+  position: relative;
+  transition: opacity 0.3s ease;
 }
 
-.why-point:last-child {
-    border-bottom: none;
+.why-point:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--why-card-border) 50%, transparent 100%);
+}
+
+.why-point:hover {
+  opacity: 0.8;
 }
 
 /* Icon styling */
 .point-icon-wrapper {
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    background-color: var(--why-color-icon-bg);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--why-border-color);
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.point-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--why-icon-bg) 0%, transparent 100%);
+  border-radius: 12px;
+  opacity: 0.6;
 }
 
 .point-icon-wrapper svg {
-    width: 28px;
-    height: 28px;
-    stroke: var(--why-color-primary);
-    stroke-width: 1.5; /* Thinner stroke maybe */
+  width: 32px;
+  height: 32px;
+  stroke: var(--why-text-primary);
+  stroke-width: 1.5;
+  position: relative;
+  z-index: 1;
 }
 
 /* Content styling within a point */
 .point-content h2 {
-    color: var(--why-color-primary);
-    font-size: 1.8rem;
-    margin-top: 5px; /* Align with icon */
-    margin-bottom: 8px;
-    font-weight: 600;
-    /* Removed border from H2 */
+  color: var(--why-text-primary);
+  font-size: 1.8rem;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .point-content h3 {
-    font-size: 1.2rem;
-    color: var(--why-color-text-secondary);
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-weight: 400;
-    font-style: italic;
+  font-size: 1.2rem;
+  color: var(--why-text-secondary);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .point-content p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 0;
-    color: var(--why-color-text);
-    text-align: left; /* Justify might look messy */
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+  color: var(--why-text-primary);
+  text-align: left;
 }
 
 /* Conclusion Section */
 .why-btcle-conclusion {
-    text-align: center;
-    margin: 70px auto 0 auto; /* Center and add top margin */
-    padding-top: 40px;
-    max-width: 700px;
-    border-top: 1px solid var(--why-border-color);
+  text-align: center;
+  margin: 100px auto 0 auto;
+  padding: 60px 0;
+  max-width: 700px;
+  position: relative;
+}
+
+.why-btcle-conclusion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--why-text-secondary) 50%, transparent 100%);
 }
 
 .why-btcle-conclusion p {
-    font-size: 1.2rem;
-    color: var(--why-color-primary);
-    font-weight: 500;
-    line-height: 1.5;
-    margin-bottom: 0;
+  font-size: 1.4rem;
+  color: var(--why-text-primary);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
 }
 
-/* Base styles for animations (applied by JS via classList.add) */
+/* Base styles for animations */
 .fade-in,
 .fade-in-up {
-    opacity: 0;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, transform; /* Optimization */
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
 }
 
 .fade-in {
-    transform: translateY(10px);
+  transform: translateY(10px);
 }
 
 .fade-in-up {
-    transform: translateY(30px); /* Increased initial offset */
+  transform: translateY(30px);
 }
 
 /* Visible state for animations */
 .fade-in.visible,
 .fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Home button positioning (ensure base styles exist in main.css or tokenomics.css) */
+/* Home button styling */
 .home-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: rgba(197, 180, 131, 0.1);
-    border: 1px solid var(--why-border-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--why-color-primary);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.4s ease, transform 0.4s ease, background-color 0.3s ease;
-    z-index: 1001;
-    backdrop-filter: blur(5px);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--why-card-bg);
+  border: 1px solid var(--why-card-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--why-text-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease, background-color 0.3s ease;
+  z-index: 1001;
+  backdrop-filter: blur(5px);
 }
 
 .home-button.visible {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .home-button:hover {
-    background: rgba(197, 180, 131, 0.2);
-    transform: scale(1.05);
+  background: var(--why-text-primary);
+  color: var(--why-bg);
+  transform: scale(1.05);
 }
 
 .home-button svg {
-    stroke: var(--why-color-primary);
-    transition: stroke 0.3s ease;
+  stroke: currentColor;
+  transition: stroke 0.3s ease;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .why-btcle-container {
-        padding: 60px 15px 40px;
-    }
+  .why-btcle-container {
+    padding: 60px 15px 40px;
+  }
 
-    .why-btcle-hero h1.section-title {
-        font-size: 2.6rem;
-    }
+  .why-btcle-hero h1.section-title {
+    font-size: 2.6rem;
+  }
 
-    .why-btcle-subtitle {
-        font-size: 1.1rem;
-    }
+  .why-btcle-subtitle {
+    font-size: 1.1rem;
+  }
 
-    .why-btcle-intro {
-        padding: 15px 0 15px 20px;
-        margin-bottom: 50px;
-    }
+  .why-btcle-intro {
+    padding: 20px;
+    margin-bottom: 50px;
+  }
 
-    .why-btcle-intro p {
-        font-size: 1rem;
-    }
+  .why-btcle-intro p {
+    font-size: 1rem;
+  }
 
-    .why-btcle-points {
-        gap: 40px;
-    }
+  .why-btcle-points {
+    gap: 60px;
+  }
 
-    .why-point {
-        flex-direction: column; /* Stack icon and content */
-        align-items: center; /* Center items */
-        text-align: center; /* Center text */
-        gap: 20px;
-        padding: 25px 0;
-    }
+  .why-point {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    padding: 30px 0;
+  }
 
-    .point-icon-wrapper {
-        width: 55px;
-        height: 55px;
-    }
+  .why-point:not(:last-child)::after {
+    width: 40px;
+    bottom: -30px;
+  }
 
-    .point-icon-wrapper svg {
-        width: 26px;
-        height: 26px;
-    }
+  .point-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
 
-    .point-content h2 {
-        font-size: 1.6rem;
-        margin-top: 0;
-    }
-    .point-content h3 {
-        font-size: 1.1rem;
-    }
-    .point-content p {
-        font-size: 0.95rem;
-        text-align: center;
-    }
+  .point-icon-wrapper svg {
+    width: 28px;
+    height: 28px;
+  }
 
-    .why-btcle-conclusion p {
-        font-size: 1.2rem;
-    }
+  .point-content h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
 
-    .home-button {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-    }
+  .point-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .point-content p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .why-btcle-conclusion {
+    margin-top: 80px;
+    padding: 50px 0;
+  }
+
+  .why-btcle-conclusion::before {
+    width: 60px;
+  }
+
+  .why-btcle-conclusion p {
+    font-size: 1.2rem;
+  }
+
+  .home-button {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
 }
 
 @media (max-width: 480px) {
-    .why-btcle-container {
-        padding: 50px 10px 30px;
-    }
+  .why-btcle-container {
+    padding: 50px 10px 30px;
+  }
 
-     .why-btcle-hero h1.section-title {
-        font-size: 2.2rem;
-    }
+  .why-btcle-hero h1.section-title {
+    font-size: 2.2rem;
+  }
 
-    .why-btcle-subtitle {
-        font-size: 1rem;
-    }
+  .why-btcle-subtitle {
+    font-size: 1rem;
+  }
 
-    .why-btcle-intro {
-        padding: 10px 0 10px 15px;
-        margin-bottom: 40px;
-    }
+  .why-btcle-intro {
+    padding: 15px;
+    margin-bottom: 40px;
+  }
 
-     .why-btcle-intro p {
-        font-size: 0.95rem;
-    }
+  .why-btcle-intro p {
+    font-size: 0.95rem;
+  }
 
-    .why-point {
-        padding: 20px 0;
-    }
+  .why-point {
+    padding: 25px 0;
+  }
 
-    .point-icon-wrapper {
-        width: 50px;
-        height: 50px;
-    }
+  .why-point:not(:last-child)::after {
+    width: 30px;
+    bottom: -25px;
+  }
 
-    .point-icon-wrapper svg {
-        width: 24px;
-        height: 24px;
-    }
+  .point-icon-wrapper {
+    width: 55px;
+    height: 55px;
+  }
 
-     .point-content h2 {
-        font-size: 1.4rem;
-    }
-     .point-content h3 {
-        font-size: 1rem;
-    }
-    .point-content p {
-        font-size: 0.9rem;
-    }
+  .point-icon-wrapper svg {
+    width: 26px;
+    height: 26px;
+  }
 
-    .why-btcle-conclusion {
-        margin-top: 50px;
-        padding-top: 30px;
-    }
+  .point-content h2 {
+    font-size: 1.4rem;
+  }
 
-    .why-btcle-conclusion p {
-        font-size: 1.1rem;
-    }
-} 
+  .point-content h3 {
+    font-size: 1rem;
+  }
+
+  .point-content p {
+    font-size: 0.9rem;
+  }
+
+  .why-btcle-conclusion {
+    margin-top: 60px;
+    padding: 40px 0;
+  }
+
+  .why-btcle-conclusion::before {
+    width: 50px;
+  }
+
+  .why-btcle-conclusion p {
+    font-size: 1.1rem;
+  }
+}
