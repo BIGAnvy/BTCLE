@@ -92,8 +92,8 @@ const tokenCardData = [
 ];
 
 const distributionData = [
-  { name: 'ITD Supply (Trading)', value: 10, color: '#C5B483' },
-  { name: 'Locked (10-Year Vesting)', value: 90, color: '#4a314d' },
+  { name: 'ITD Supply (Trading)', value: 10, color: '#000000' },
+  { name: 'Locked (10-Year Vesting)', value: 90, color: '#666666' },
 ];
 
 const monthlyBreakdown2026 = [
@@ -443,6 +443,10 @@ export function createTokenomicsPage(container) {
   // Скрываем лоадер
   setTimeout(() => {
     hideGlobalLoader();
+    
+    // Добавляем класс для белых страниц к body
+    document.body.classList.add('white-page');
+    
     // Анимируем заголовок (оставляем как есть)
     const tokenomicsHeader = document.querySelector('.tokenomics-header');
     if (tokenomicsHeader) {
@@ -482,16 +486,16 @@ function initChart() {
   const ctx = document.getElementById('distribution-chart').getContext('2d');
   
   // --- Создаем градиенты ---
-  const primaryColor = '#C5B483'; // Золотой
-  const luxuryPurple = '#4a314d'; // Новый фиолетовый
+  const primaryColor = '#000000'; // Черный
+  const secondaryColor = '#666666'; // Серый
 
-  const gradient1 = ctx.createRadialGradient(150, 150, 50, 150, 150, 150); // Градиент для золотого
+  const gradient1 = ctx.createRadialGradient(150, 150, 50, 150, 150, 150); // Градиент для черного
   gradient1.addColorStop(0, primaryColor);       
-  gradient1.addColorStop(1, '#A08C5A'); // Край золотого
+  gradient1.addColorStop(1, '#333333'); // Край черного
 
-  const gradient2 = ctx.createRadialGradient(150, 150, 50, 150, 150, 150); // Градиент для фиолетового
-  gradient2.addColorStop(0, luxuryPurple);     // Центр фиолетового
-  gradient2.addColorStop(1, '#362438'); // Край фиолетового (темнее)
+  const gradient2 = ctx.createRadialGradient(150, 150, 50, 150, 150, 150); // Градиент для серого
+  gradient2.addColorStop(0, secondaryColor);     // Центр серого
+  gradient2.addColorStop(1, '#999999'); // Край серого (светлее)
   // ------------------------
   
   const chart = new Chart(ctx, {
@@ -501,9 +505,9 @@ function initChart() {
       datasets: [{
         data: distributionData.map(d => d.value),
         backgroundColor: [gradient1, gradient2], // Используем новые градиенты
-        borderColor: [primaryColor, luxuryPurple], // Цвета границ
+        borderColor: [primaryColor, secondaryColor], // Цвета границ
         borderWidth: [2, 1],
-        hoverBorderColor: ['#FFFFFF', '#E6D6F6'], // Цвет при наведении (для фиолетового - светлый)
+        hoverBorderColor: ['#333333', '#999999'], // Цвет при наведении
         hoverBorderWidth: [4, 2],
         hoverOffset: 8
       }]
@@ -525,10 +529,10 @@ function initChart() {
               return ` ${context.label}: ${context.raw}%`;
             }
           },
-          backgroundColor: 'rgba(20, 20, 30, 0.95)',
-          titleColor: '#ffffff',
-          bodyColor: '#ffffff',
-          borderColor: 'var(--color-gold)', // Можно оставить золотой или сделать динамическим
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          titleColor: '#000000',
+          bodyColor: '#000000',
+          borderColor: '#e5e5e5',
           borderWidth: 1,
           cornerRadius: 8,
           padding: 12,
