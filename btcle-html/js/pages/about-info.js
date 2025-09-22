@@ -22,7 +22,7 @@ const ICONS = {
 export function createAboutInfoPage(container) {
   const layout = createLayout();
   const aboutContainer = document.createElement('div');
-  aboutContainer.classList.add('about-info-container', 'section-container');
+  aboutContainer.classList.add('about-info-container', 'section-container', 'white-page');
 
   const contractAddress = '0x9d2144328e1d618F54Cd38540F5eE50671f6A208';
 
@@ -32,12 +32,7 @@ export function createAboutInfoPage(container) {
       <h1 class="section-title about-info-title fade-in" data-animation-delay="0.1">About <span class="highlight">BTCLE</span></h1>
 
        <div class="info-section description-section fade-in-up" data-animation-delay="0.7">
-        <p class="description-text">Bitcoin Limited Edition (BTCLE) is a scarce, high-integrity digital asset created for those who 
-        value purpose over hype. With a strictly limited supply and uncompromising transparency, 
-        BTCLE embodies the original ethos of Bitcoin, decentralized, secure, and built to last. In a 
-        market saturated with speculation and noise, BTCLE is a deliberate, long-term asset for those 
-        who move with conviction and think beyond the trend cycle, because true value is never 
-        mass-produced.</p>
+        <p class="description-text">Bitcoin Limited Edition (BTCLE) is more than just another token—it represents a bold redefinition of scarcity in a market oversaturated with speculative cryptocurrencies and. As part of a broader vision to launch Bitcoin Layer 2 Limited, BTCLE stands at the forefront of innovation, combining exclusivity, transparency, and decentralization with a long-term roadmap to reshape blockchain finance. At its core, BTCLE is not simply an investment; it is a vision for the future of finance, where scarcity meets innovation. With the upcoming Bitcoin Layer 2 Limited initiative, we are building a scalable, efficient, and secure second layer anchored to the Bitcoin blockchain— the most secure network in existence. With a clear goal to bridge Real World Assets (RWA) into crypto, we are providing a simplified and accessible pathway for the next billion users still tied to traditional finance. Through BTCLE governance, stakeholders will help shape a democratized financial system, empowering individuals and communities to participate in this new decentralized economy.</p>
       </div>
       
       <div class="info-section token-details-section fade-in-up" data-animation-delay="0.2">
@@ -59,17 +54,31 @@ export function createAboutInfoPage(container) {
           <div class="detail-icon">${ICONS.supply}</div>
           <div class="detail-text">
             <span class="detail-label">Max Supply</span>
-            <span class="detail-value">210,000</span>
+            <span class="detail-value">210,000 BTCLE</span>
           </div>
         </div>
         <div class="detail-item fade-in-up" data-animation-delay="0.5">
-          <div class="detail-icon">${ICONS.supply}</div> <!-- Та же иконка? Или другая нужна? -->
+          <div class="detail-icon">${ICONS.supply}</div>
           <div class="detail-text">
             <span class="detail-label">Total Supply</span>
-            <span class="detail-value">21,000</span>
+            <span class="detail-value">210,000 BTCLE</span>
           </div>
         </div>
-        
+        <div class="detail-item fade-in-up" data-animation-delay="0.6">
+          <div class="detail-icon">${ICONS.supply}</div>
+          <div class="detail-text">
+            <span class="detail-label">Circulating Supply</span>
+            <span class="detail-value">21,000 BTCLE</span>
+          </div>
+        </div>
+        <div class="detail-item fade-in-up" data-animation-delay="0.7">
+          <div class="detail-icon">${ICONS.contract}</div>
+          <div class="detail-text">
+            <span class="detail-label">Contract Address</span>
+            <span class="detail-value"><code>${contractAddress}</code></span>
+          </div>
+          <button class="copy-button" data-clipboard-text="${contractAddress}" aria-label="Copy contract address">${ICONS.copy}<span class="copy-tooltip">Copy</span></button>
+        </div>
       </div>
 
      
@@ -96,21 +105,21 @@ export function createAboutInfoPage(container) {
   // Скрываем лоадер и ПОТОМ показываем контент
   requestAnimationFrame(() => {
     hideGlobalLoader();
+    
+    // Добавляем класс для белых страниц к body
+    document.body.classList.add('white-page');
 
     // Небольшая задержка перед показом контента для плавности
     setTimeout(() => {
       // Делаем видимым основной контейнер
       if (sectionContent) {
         sectionContent.classList.add('visible'); 
-        // Если CSS для .about-info-content.visible не задает opacity: 1,
-        // можно добавить и sectionContent.style.opacity = '1';
       }
 
       // Показываем кнопку домой
       homeButton.classList.add('visible');
 
       // Инициализируем скролл-анимации для дочерних элементов
-      // Это запустит анимации fade-in-up для блоков внутри
       initScrollAnimations(aboutContainer);
 
       // Устанавливаем overflow: hidden для body ТОЛЬКО на десктопных экранах
@@ -120,10 +129,6 @@ export function createAboutInfoPage(container) {
         document.body.style.overflow = 'hidden';
       } else {
         console.log('[about-info.js] Ensuring body overflow allows scrolling for mobile');
-        // На мобильных экранах router.js уже должен был установить overflow: 'auto' (или '')
-        // Можно дополнительно здесь установить 'auto', чтобы быть уверенным, но обычно это не требуется,
-        // если router.js отрабатывает корректно ДО этого момента.
-        // document.body.style.overflow = 'auto'; 
       }
 
     }, 50); // Минимальная задержка 50ms
@@ -137,27 +142,29 @@ export function createAboutInfoPage(container) {
  * @param {HTMLElement} parentElement
  */
 function initClipboard(parentElement) {
-  const copyButton = parentElement.querySelector('.copy-button');
-  if (copyButton) {
+  const copyButtons = parentElement.querySelectorAll('.copy-button');
+  if (!copyButtons.length) return;
+  
+  copyButtons.forEach(copyButton => {
     const tooltip = copyButton.querySelector('.copy-tooltip');
     copyButton.addEventListener('click', () => {
       const textToCopy = copyButton.getAttribute('data-clipboard-text');
       navigator.clipboard.writeText(textToCopy).then(() => {
-        tooltip.textContent = 'Copied!';
+        if (tooltip) tooltip.textContent = 'Copied!';
         copyButton.classList.add('copied');
         setTimeout(() => {
-          tooltip.textContent = 'Copy';
+          if (tooltip) tooltip.textContent = 'Copy';
           copyButton.classList.remove('copied');
         }, 1500);
       }).catch(err => {
         console.error('Failed to copy text: ', err);
-        tooltip.textContent = 'Error!';
-        setTimeout(() => {
-          tooltip.textContent = 'Copy';
-        }, 1500);
+        if (tooltip) {
+          tooltip.textContent = 'Error!';
+          setTimeout(() => { tooltip.textContent = 'Copy'; }, 1500);
+        }
       });
     });
-  }
+  });
 }
 
 /**

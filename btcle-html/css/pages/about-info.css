@@ -1,69 +1,37 @@
-/* Стили для страницы About Info - РЕДИЗАЙН */
+/* Стили для страницы About Info - МИНИМАЛИСТИЧНЫЙ ДИЗАЙН */
 
 /* --- Переменные --- */
-
+:root {
+  --about-bg: #ffffff;
+  --about-text-primary: #000000;
+  --about-text-secondary: #666666;
+  --about-card-bg: #ffffff;
+  --about-card-border: #e5e5e5;
+  --about-accent: #000000;
+}
 
 /* --- Общий контейнер и фон --- */
 .about-info-container {
-  padding: 20px 20px 80px; /* Больше отступ сверху */
-  color: var(--text-light);
+  padding: 60px 20px 80px;
+  color: var(--about-text-primary);
   position: relative;
-  background-color: transparent;
+  background-color: var(--about-bg);
   min-height: 100vh;
-  display: flex; /* Центрируем контент */
+  display: flex;
   justify-content: center;
-  align-items: flex-start; /* Выравниваем по верху */
+  align-items: flex-start;
 }
 
-/* --- Сложный фон (псевдоэлементы) --- */
-.about-info-container::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Тонкая сетка */
-  background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), 
-                    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 3rem 3rem;
-  z-index: -2;
-  opacity: 0.7;
-  mask-image: radial-gradient(ellipse 90% 70% at 50% -10%, black 40%, transparent 80%);
-  animation: bg-grid-subtle-move 60s linear infinite;
-}
+/* --- Убираем декоративные фоны --- */
 
-.about-info-container::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Мягкие градиентные пятна */
-  background-color: var(--dark-bg-1);
-  background-image: radial-gradient(circle at 10% 20%, #252530 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(46, 125, 255, 0.08) 0%, transparent 35%);
-  z-index: -3;
-  opacity: 0.6;
-  animation: bg-glow-subtle-move 45s ease-in-out infinite alternate;
-}
-
-@keyframes bg-grid-subtle-move {
-  0% { background-position: 0 0; }
-  100% { background-position: 6rem 6rem; }
-}
-
-@keyframes bg-glow-subtle-move {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-  100% { transform: translate(20px, -15px) scale(1.1); opacity: 0.8; }
-}
+/* Убираем анимации фона */
 
 
 /* --- Контентная область --- */
 .about-info-content {
   position: relative;
   z-index: 2;
-  max-width: 800px; /* Оптимальная ширина для чтения */
+  max-width: 1100px; /* Оптимальная ширина для чтения */
   width: 100%;
   text-align: center; /* Центрируем заголовок */
   margin-top: 10vh;
@@ -71,18 +39,17 @@
 
 /* --- Заголовок страницы --- */
 .about-info-title {
-  font-size: 3rem; /* Крупнее */
+  font-size: 3rem;
   font-weight: 400;
-  margin-bottom: 0.5rem; /* Больше отступ */
-  color: #fff;
+  margin-bottom: 0.5rem;
+  color: var(--about-text-primary);
   letter-spacing: 0.02em;
-  opacity: 0; /* For animation */
-  transform: translateY(20px); /* For animation */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .about-info-title .highlight {
-  color: var(--color-primary);
-  text-shadow: 0 0 20px rgba(184, 157, 88, 0.25);
+  color: var(--about-accent);
 }
 
 /* --- Секции контента --- */
@@ -125,28 +92,28 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(17, 17, 22, 0.4); /* Полупрозрачный фон */
+  background: var(--about-card-bg);
   padding: 1rem 1.2rem;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 1px solid var(--about-card-border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .detail-item:hover {
-  background: rgba(24, 24, 30, 0.6);
-  transform: translateY(-3px);
+  border-color: var(--about-text-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .detail-icon {
-  color: var(--color-primary);
+  color: var(--about-text-secondary);
   flex-shrink: 0;
-  background: rgba(184, 157, 88, 0.05);
+  background: #f8f8f8;
   padding: 8px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-primary, rgba(184, 157, 88, 0.15));
+  border: 1px solid var(--about-card-border);
 }
 
 .detail-icon svg {
@@ -158,11 +125,13 @@
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  flex: 1;
+  min-width: 0; /* Позволяет flex-элементу сжиматься меньше своего содержимого */
 }
 
 .detail-label {
   font-size: 0.8rem;
-  color: var(--about-info-text-secondary);
+  color: var(--about-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -170,7 +139,24 @@
 .detail-value {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-light);
+  color: var(--about-text-primary);
+}
+
+/* Стили для code элемента в карточках */
+.detail-value code {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--about-text-primary);
+  font-family: inherit;
+  background: none;
+  padding: 0;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
 
 /* Стили для адреса контракта */
@@ -194,9 +180,9 @@
 }
 
 .copy-button {
-  background: rgba(184, 157, 88, 0.05);
-  border: 1px solid var(--color-primary, rgba(184, 157, 88, 0.15));
-  color: var(--color-primary);
+  background: #f8f8f8;
+  border: 1px solid var(--about-card-border);
+  color: var(--about-text-secondary);
   border-radius: 4px;
   padding: 6px 8px;
   cursor: pointer;
@@ -204,19 +190,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Для тултипа */
+  position: relative;
 }
 
 .copy-button:hover {
-  background-color: rgba(184, 157, 88, 0.25);
-  border-color: var(--color-primary);
-  color: var(--dark-bg-1);
+  background-color: #e8e8e8;
+  border-color: var(--about-text-secondary);
+  color: var(--about-text-primary);
 }
 
 .copy-button svg {
   width: 16px;
   height: 16px;
-  margin-right: 5px; /* Отступ для тултипа */
+  margin-right: 5px;
 }
 
 .copy-button .copy-tooltip {
@@ -224,43 +210,43 @@
 }
 
 .copy-button.copied {
-  background-color: var(--color-primary);
-  color: var(--dark-bg-1);
-  border-color: var(--color-primary);
+  background-color: var(--about-text-primary);
+  color: white;
+  border-color: var(--about-text-primary);
 }
 
 /* --- Секция описания --- */
 .description-section {
-  padding: 2rem; /* Отступы внутри */
-  background: rgba(17, 17, 22, 0.3);
+  padding: 2rem;
+  background: var(--about-card-bg);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--about-card-border);
   margin-top: 3rem;
 }
 
 .description-title {
   font-size: 2rem;
-  color: var(--color-primary);
+  color: var(--about-text-primary);
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 700;
 }
 
 .description-title .highlight {
-  text-shadow: 0 0 15px rgba(184, 157, 88, 0.25);
+  color: var(--about-accent);
 }
 
 .description-text {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--about-info-text-secondary);
-  max-width: 650px; /* Ограничиваем ширину текста */
-  margin: 0 auto; /* Центрируем текст */
+  color: var(--about-text-primary);
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .description-text strong {
-  color: var(--text-light);
+  color: var(--about-text-primary);
   font-weight: 600;
 }
 
@@ -396,6 +382,12 @@
   
   .detail-value {
       font-size: 0.9rem;
+  }
+  
+  .detail-value code {
+    font-size: 0.9rem;
+    min-width: 0;
+    color: var(--about-text-primary);
   }
 
   .contract-address-text {

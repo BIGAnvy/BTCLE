@@ -35,17 +35,18 @@
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Лого слева, навигация справа на мобильных */
   height: 100%;
   width: 100%;
 }
 
 /* Логотип */
-.logo {
+.header-logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   height: 40px;
+  flex-shrink: 0; /* Предотвращает сжатие логотипа */
 }
 
 /* Новые стили для изображения логотипа */
@@ -76,6 +77,19 @@
 
 .nav-link:hover {
   color: white;
+}
+
+/* Стили для белых страниц */
+body.white-page .nav-link {
+  color: #000000;
+}
+
+body.white-page .nav-link:hover {
+  color: #666666;
+}
+
+body.white-page .header-logo {
+  color: #000000;
 }
 
 /* Линия под ссылкой */
@@ -246,32 +260,44 @@
 
 /* Медиа-запросы */
 @media (min-width: 768px) {
+  .header-content {
+    justify-content: flex-start; /* Лого слева, навигация по центру */
+    position: relative;
+  }
+  
   .desktop-nav {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем навигацию */
   }
   
   .mobile-menu-toggle {
     display: none;
   }
-
   
+  .mobile-header-home-logo {
+    display: none; /* Скрываем мобильный логотип на десктопе */
+  }
 }
 
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
   }
+  
+  .header-logo {
+    display: none; /* Скрываем десктопный логотип на мобильных */
+  }
 
   #mobile-menu-toggle {
     display: block;
-    order: -1; /* Бургер слева */
   }
 
   .mobile-header-home-logo {
-    display: block; /* Показать кнопку "домой" в мобильном хедере */
-    /* order: 1; /* Можно не указывать, т.к. space-between должен отработать */
+    display: block; /* Показываем мобильный логотип */
   }
   
   .header-content {

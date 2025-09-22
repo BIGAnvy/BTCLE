@@ -113,9 +113,10 @@ function updateBodyOverflow(path) {
  */
 async function loadContent(path, isInitialLoad = false) {
     try {
-        // Сбрасываем overflow перед загрузкой, чтобы избежать проблем с переходом
-        console.log('Resetting body overflow to default before loading content');
+        // Сбрасываем overflow и класс white-page перед загрузкой новой страницы
+        console.log('Resetting body overflow and white-page class to default before loading content');
         document.body.style.overflow = '';
+        document.body.classList.remove('white-page');
 
         // --- Управление видимостью хедера --- (оставляем как было)
         const headerContainer = document.getElementById('header');

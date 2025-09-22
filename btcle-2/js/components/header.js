@@ -20,10 +20,6 @@ export async function loadHeader(element) {
     <div class="header header-transparent" id="main-header">
       <div class="header-container">
         <div class="header-content">
-          <!-- Логотип -->
-          <a href="?" class="header-logo" data-navigate="">
-            <img src="/images/logo-main.png" alt="BTC Limited Edition Logo" class="logo-image">
-          </a>
           
           <!-- Навигация для десктопа -->
           <nav class="desktop-nav">
@@ -56,15 +52,15 @@ export async function loadHeader(element) {
             </div>
           </nav>
           
-          <!-- Логотип для мобильной версии -->
-          <a href="?" class="mobile-header-home-logo" data-navigate>
-            <img src="/images/logo-main.png" alt="Home" class="logo-image">
-          </a>
-
           <!-- Кнопка мобильного меню -->
           <button id="mobile-menu-toggle" class="mobile-menu-toggle">
             ${icons.menu}
           </button>
+
+          <!-- Кнопка "Домой" для мобильного хедера -->
+          <a href="?" class="mobile-header-home-logo" data-navigate>
+            <img src="/images/logo-main.png" alt="Home" class="logo-image">
+          </a>
         </div>
       </div>
 
