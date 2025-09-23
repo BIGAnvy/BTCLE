@@ -1,5 +1,62 @@
 /* Стили для подвала сайта */
 
+#footer {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#footer.visible {
+  opacity: 1;
+}
+
+/* Стили футера для белых страниц */
+body.white-page .footer {
+  background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+  color: #000000;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+body.white-page .social-bar {
+  background-color: #f0f0f0;
+}
+
+body.white-page .social-link {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body.white-page .social-link:hover {
+  color: var(--color-primary);
+}
+
+body.white-page .footer-logo,
+body.white-page .footer-nav-title {
+  color: #000000;
+}
+
+body.white-page .footer-token {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+body.white-page .footer-description,
+body.white-page .footer-nav-link {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+body.white-page .footer-nav-link:hover {
+  color: var(--color-primary);
+}
+
+body.white-page .footer-disclaimer-text,
+body.white-page .footer-copyright {
+  color: #666666;
+}
+
+body.white-page .footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .footer {
   position: relative;
   padding-top: 6rem;
@@ -23,6 +80,10 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.footer-disclaimer-text {
+    display: none;
 }
 
 .social-link {
@@ -60,13 +121,10 @@
   margin-bottom: 1rem;
 }
 
-.footer-logo-gold {
-  color: var(--color-primary);
-}
 
 .footer-token {
   font-size: 0.875rem;
-  color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-description {
@@ -179,6 +237,6 @@
   }
   
   .footer-nav {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 } 

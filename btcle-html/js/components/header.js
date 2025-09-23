@@ -22,7 +22,7 @@ export async function loadHeader(element) {
         <div class="header-content">
           <!-- Логотип -->
           <a href="?" class="header-logo" data-navigate="">
-            <img src="/images/logo-main.png" alt="BTC Limited Edition Logo" class="logo-image">
+            <img src="/images/BTCLELAYER2-white.svg" alt="BTCLE Layer II Limited Logo" class="logo-image">
           </a>
           
           <!-- Навигация для десктопа -->
@@ -30,25 +30,16 @@ export async function loadHeader(element) {
             <a href="?page=about" class="nav-link" data-navigate>About</a>
             <a href="?page=why-btcle" class="nav-link" data-navigate>Why BTCLE?</a>
             <a href="?page=tokenomics" class="nav-link" data-navigate>Tokenomics</a>
+            <a href="?page=whitepaper" class="nav-link" data-navigate>Light paper</a>
             <a href="?page=roadmap" class="nav-link" data-navigate>Roadmap</a>
-            <a href="?page=whitepaper" class="nav-link" data-navigate>Whitepaper</a>
             
-            <!-- Выпадающее меню Connect -->
-            <div class="dropdown">
-              <button class="nav-link dropdown-toggle">
-                Connect ${icons.chevronDown}
-              </button>
-              <div class="dropdown-menu">
-                <a href="mailto:info@bitcoin-limitededition.com" class="dropdown-item">Email</a>
-                <a href="https://t.me/bitcoinlimitededition" class="dropdown-item" target="_blank" rel="noopener noreferrer">Telegram</a>
-                <a href="https://x.com/bitcoinbtcle" class="dropdown-item" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-              </div>
-            </div>
+            
+            <a href="?page=connect" class="nav-link" data-navigate>Connect</a>
           </nav>
           
           <!-- Логотип для мобильной версии -->
           <a href="?" class="mobile-header-home-logo" data-navigate>
-            <img src="/images/logo-main.png" alt="Home" class="logo-image">
+            <img src="/images/BTCLELAYER2-white.svg" alt="Home" class="logo-image">
           </a>
 
           <!-- Кнопка мобильного меню -->
@@ -67,16 +58,7 @@ export async function loadHeader(element) {
           <a href="?page=roadmap" class="mobile-nav-item" data-navigate>Roadmap</a>
           <a href="?page=whitepaper" class="mobile-nav-item" data-navigate>Whitepaper</a>
           
-          <!-- Мобильное выпадающее меню Connect -->
-          <button id="mobile-connect-toggle" class="mobile-nav-item mobile-dropdown-toggle">
-            <span>Connect</span>
-            ${icons.chevronDown}
-          </button>
-          <div id="mobile-connect-menu" class="mobile-dropdown-menu">
-            <a href="mailto:info@bitcoin-limitededition.com" class="mobile-nav-item">Email</a>
-            <a href="https://t.me/bitcoinlimitededition" class="mobile-nav-item" target="_blank" rel="noopener noreferrer">Telegram</a>
-            <a href="https://x.com/bitcoinbtcle" class="mobile-nav-item" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-          </div>
+          <a href="?page=connect" class="mobile-nav-item" data-navigate>Connect</a>
         </nav>
       </div>
     </div>
@@ -89,6 +71,7 @@ export async function loadHeader(element) {
   initHeaderEvents();
 }
 
+
 /**
  * Инициализация обработчиков событий шапки
  */
@@ -97,17 +80,27 @@ function initHeaderEvents() {
   const header = document.getElementById('main-header');
   const menuToggle = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  const connectToggle = document.getElementById('mobile-connect-toggle');
-  const connectMenu = document.getElementById('mobile-connect-menu');
   
   // Обработка скролла страницы
   window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
       header.classList.remove('header-transparent');
       header.classList.add('header-scrolled');
+      
+      // Если это белая страница, добавляем белый фон
+      if (document.body.classList.contains('white-page')) {
+        header.classList.add('header-white-bg');
+      }
+      
+      // Обновляем логотип
+      updateLogoForPage();
     } else {
       header.classList.add('header-transparent');
       header.classList.remove('header-scrolled');
+      header.classList.remove('header-white-bg');
+      
+      // Обновляем логотип
+      updateLogoForPage();
     }
   });
   
@@ -115,6 +108,14 @@ function initHeaderEvents() {
   if (window.scrollY > 10) {
     header.classList.remove('header-transparent');
     header.classList.add('header-scrolled');
+    
+    // Если это белая страница, добавляем белый фон
+    if (document.body.classList.contains('white-page')) {
+      header.classList.add('header-white-bg');
+    }
+    
+    // Обновляем логотип
+    updateLogoForPage();
   }
   
   // Переключение мобильного меню
@@ -127,11 +128,6 @@ function initHeaderEvents() {
     }
   });
   
-  // Мобильное выпадающее меню Connect
-  connectToggle.addEventListener('click', () => {
-    connectToggle.classList.toggle('active');
-    connectMenu.classList.toggle('active');
-  });
   
   // Закрытие мобильного меню при клике по ссылке
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-item[data-navigate]');
@@ -141,4 +137,42 @@ function initHeaderEvents() {
       menuToggle.innerHTML = icons.menu;
     });
   });
+  
+  // Функция для обновления логотипа в зависимости от страницы
+  updateLogoForPage();
+  
+  // Наблюдатель за изменениями класса white-page
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        updateLogoForPage();
+      }
+    });
+  });
+  
+  // Начинаем наблюдение за изменениями класса body
+  observer.observe(document.body, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+}
+
+/**
+ * Обновляет логотип в зависимости от типа страницы
+ */
+export function updateLogoForPage() {
+  const headerLogo = document.querySelector('.header-logo .logo-image');
+  const mobileLogo = document.querySelector('.mobile-header-home-logo .logo-image');
+  
+  if (!headerLogo || !mobileLogo) return;
+  
+  // Если это белая страница, используем черный логотип
+  if (document.body.classList.contains('white-page')) {
+    headerLogo.src = '/images/BTCLELAYER2-black.svg';
+    mobileLogo.src = '/images/BTCLELAYER2-black.svg';
+  } else {
+    // Если это черная страница (главная), используем белый логотип
+    headerLogo.src = '/images/BTCLELAYER2-white.svg';
+    mobileLogo.src = '/images/BTCLELAYER2-white.svg';
+  }
 } 

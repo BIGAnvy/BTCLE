@@ -3,11 +3,30 @@
  */
 
 import { showGlobalLoader, hideGlobalLoader } from '../components/loader.js';
+import { updateLogoForPage } from '../components/header.js';
 
 let routes = {};
 let contentElement = null;
 const QUERY_PARAM = 'page'; // Имя параметра для страниц
 const FADE_DURATION = 300; // Длительность анимации в мс
+
+/**
+ * Обновляет стили хэдера для белых страниц
+ */
+function updateHeaderForWhitePages() {
+  const mainHeader = document.getElementById('main-header');
+  if (!mainHeader) return;
+  
+  // Если это белая страница и хэдер уже имеет классы sticky или header-scrolled
+  if (document.body.classList.contains('white-page')) {
+    if (mainHeader.classList.contains('sticky') || mainHeader.classList.contains('header-scrolled')) {
+      mainHeader.classList.add('header-white-bg');
+    }
+  } else {
+    // Если это не белая страница, убираем белый фон
+    mainHeader.classList.remove('header-white-bg');
+  }
+}
 
 /**
  * Инициализация роутера
@@ -206,6 +225,12 @@ async function loadContent(path, isInitialLoad = false) {
              } else {
                  hideGlobalLoader(); 
              }
+             
+             // 9. Обновляем стили хэдера для белых страниц
+             updateHeaderForWhitePages();
+             
+             // 10. Обновляем логотип в зависимости от страницы
+             updateLogoForPage();
         }
 
     } catch (error) {

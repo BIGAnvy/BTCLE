@@ -1,84 +1,42 @@
-/* Стили для страницы Roadmap */
-
-/* Переменные фона (добавлены для фона) */
+/* Roadmap - Black & White Minimalist Design */
 :root {
-  --dark-bg-1: #0B0B0F;
-  --dark-bg-2: #13131A;
-  --accent-gold: #C5B483; /* Используйте ваш основной золотой, например #f7931a */
-  --accent-blue: #2E7DFF;
-  --text-light: #EAEAEA;
-  --text-medium: #A0A0B0;
+  --roadmap-bg: #ffffff;
+  --roadmap-text-primary: #000000;
+  --roadmap-text-secondary: #666666;
+  --roadmap-border: #e5e5e5;
+  --roadmap-card-bg: #ffffff;
+  --roadmap-accent: #000000;
+  --roadmap-icon-bg: rgba(0, 0, 0, 0.05);
 }
 
 .roadmap-container {
   padding: 4rem 1.5rem;
-  color: var(--text-light); /* Добавляем стандартный цвет текста */
-  background-color: var(--dark-bg-1); /* Базовый темный фон */
-  position: relative; /* Нужно для псевдоэлементов */
-  z-index: 1; /* Чтобы контент был над фоном */
+  color: var(--roadmap-text-primary);
+  background-color: var(--roadmap-bg);
+  min-height: auto;
 }
 
-/* Фон страницы - стили из vision/outreach.css */
-.roadmap-container::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 3rem 3rem;
-    z-index: -2;
-    opacity: 0.7;
-    mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 80%);
-    animation: bg-grid-subtle-move 60s linear infinite;
-}
-
-.roadmap-container::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
-  opacity: 0.8;
-}
+/* Убираем сложные фоновые эффекты для минималистичного дизайна */
 
 .roadmap-header {
   text-align: center;
   margin-bottom: 4rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  padding: 2rem;
-}
-
-.roadmap-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZGVmcz4KICA8cGF0dGVybiBpZD0icGF0dGVybiIgeD0iMCIgeT0iMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj4KICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNGM0M5NzkiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPgogIDwvcGF0dGVybj4KPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybildIiAvPgo8L3N2Zz4=');
-  opacity: 0.1;
-  z-index: -1;
+  padding: 2rem 0;
 }
 
 .roadmap-header h1 {
-  font-size: 3rem; /* text-5xl */
+  font-size: 3rem;
   line-height: 1;
-  font-weight: 400; /* font-bold */
+  font-weight: 600;
   margin-bottom: 1rem;
-  position: relative;
-  color: #C5B483;
+  color: var(--roadmap-text-primary);
 }
 
 .roadmap-header p {
-  font-size: 1.3rem; /* text-xl */
-  color: rgba(225, 225, 225, 0.9); /* text-btc-light/90 */
-  max-width: 42rem; /* max-w-2xl */
+  font-size: 1.3rem;
+  color: var(--roadmap-text-secondary);
+  max-width: 42rem;
   margin: 0 auto;
-  font-family: 'Satoshi', sans-serif; /* font-grotesk */
-  position: relative;
 }
 
 .roadmap-timeline {
@@ -103,8 +61,8 @@
 }
 */
 
-/* Стилизация элементов таймлайна */
-.timeline-item {
+/* Стилизация элементов таймлайна - только для roadmap */
+.roadmap-timeline .timeline-item {
   display: flex;
   align-items: center;
   margin-bottom: 6rem; /* mb-24 */
@@ -114,138 +72,140 @@
   position: relative;
 }
 
-.timeline-item.visible {
+.roadmap-timeline .timeline-item.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Позиционирование четных и нечетных элементов */
-.timeline-item:nth-child(even) {
+/* Позиционирование четных и нечетных элементов - только для roadmap */
+.roadmap-timeline .timeline-item:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-.timeline-item:nth-child(odd).visible {
+.roadmap-timeline .timeline-item:nth-child(odd).visible {
   transform: translateX(0);
 }
 
-.timeline-item:nth-child(even).visible {
+.roadmap-timeline .timeline-item:nth-child(even).visible {
   transform: translateX(0);
 }
 
-.timeline-content-wrapper {
+.roadmap-timeline .timeline-content-wrapper {
   width: calc(50% - 2rem); /* w-[calc(50%-2rem)] */
 }
 
-.timeline-item:nth-child(odd) .timeline-content-wrapper {
+.roadmap-timeline .timeline-item:nth-child(odd) .timeline-content-wrapper {
   text-align: right;
   padding-right: 2rem; /* pr-8 */
 }
 
-.timeline-item:nth-child(even) .timeline-content-wrapper {
+.roadmap-timeline .timeline-item:nth-child(even) .timeline-content-wrapper {
   text-align: left;
   padding-left: 2rem; /* pl-8 */
 }
 
-.timeline-card {
-  background-color: rgba(0, 0, 0, 0.8); /* bg-black/80 */
-  border: 1px solid rgba(243, 201, 121, 0.2); /* border-gold/20 */
-  border-radius: 0.75rem; /* rounded-lg */
-  padding: 1.5rem; /* p-6 */
-  backdrop-filter: blur(4px);
-  transition: all 0.5s ease;
+.roadmap-timeline .timeline-card {
+  background-color: var(--roadmap-card-bg);
+  border: 1px solid var(--roadmap-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.timeline-card:hover {
+.roadmap-timeline .timeline-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px -5px rgba(243, 201, 121, 0.15);
-  border-color: rgba(243, 201, 121, 0.35);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--roadmap-accent);
 }
 
-.timeline-card-header {
+.roadmap-timeline .timeline-card-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* gap-2 */
-  margin-bottom: 0.75rem; /* mb-3 */
-  color: var(--color-primary); /* text-gold */
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--roadmap-text-secondary);
 }
 
-.timeline-period {
-  font-weight: 600; /* font-semibold */
-  font-size: 1.125rem; /* text-lg */
+.roadmap-timeline .timeline-period {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--roadmap-text-secondary);
 }
 
-.timeline-status-icon {
-  margin-left: auto; /* ml-auto */
+.roadmap-timeline .timeline-status-icon {
+  margin-left: auto;
 }
 
-.timeline-title {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 700; /* font-bold */
-  margin-bottom: 0.75rem; /* mb-3 */
-  color: #ffffff; /* text-white */
+.roadmap-timeline .timeline-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--roadmap-text-primary);
 }
 
-.timeline-description {
-  color: rgba(225, 225, 225, 0.9); /* text-btc-light/90 */
-  margin-bottom: 1rem; /* mb-4 */
+.roadmap-timeline .timeline-description {
+  color: var(--roadmap-text-primary);
+  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
-.timeline-point-container {
-  width: 4rem; /* w-16 */
-  height: 4rem; /* h-16 */
+.roadmap-timeline .timeline-point-container {
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  background: linear-gradient(to bottom right, black, #374151); /* bg-gradient-to-br from-black to-gray-900 */
+  background: var(--roadmap-card-bg);
   border-width: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Стили для точки в зависимости от статуса */
-.timeline-point-container.status-completed {
-  border-color: #4ade80; /* border-green-400 */
+.roadmap-timeline .timeline-point-container.status-completed {
+  border-color: #22c55e;
 }
-.timeline-point-container.status-completed .timeline-point-icon {
-  color: #4ade80; /* text-green-400 */
+.roadmap-timeline .timeline-point-container.status-completed .timeline-point-icon {
+  color: #22c55e;
 }
 
-.timeline-point-container.status-in-progress {
-  border-color: var(--color-primary); /* border-gold */
+.roadmap-timeline .timeline-point-container.status-in-progress {
+  border-color: var(--roadmap-accent);
   animation: pulse-border 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-.timeline-point-container.status-in-progress .timeline-point-icon {
-  color: var(--color-primary); /* text-gold */
+.roadmap-timeline .timeline-point-container.status-in-progress .timeline-point-icon {
+  color: var(--roadmap-accent);
 }
 
-.timeline-point-container.status-upcoming {
-  border-color: #4b5563; /* border-gray-700 */
+.roadmap-timeline .timeline-point-container.status-upcoming {
+  border-color: var(--roadmap-border);
 }
-.timeline-point-container.status-upcoming .timeline-point-icon {
-  color: #9ca3af; /* text-gray-400 */
+.roadmap-timeline .timeline-point-container.status-upcoming .timeline-point-icon {
+  color: var(--roadmap-text-secondary);
 }
 
-.timeline-spacer {
+.roadmap-timeline .timeline-spacer {
   width: calc(50% - 2rem);
 }
 
 /* Анимация пульсации рамки */
 @keyframes pulse-border {
   0%, 100% {
-    border-color: var(--color-primary);
+    border-color: var(--roadmap-accent);
   }
   50% {
-    border-color: #fef3c7; /* amber-100 */
+    border-color: var(--roadmap-text-secondary);
   }
 }
 
 /* Дополнительные стили для подсветки и масштабирования при скролле */
-.timeline-card.glow {
-  border-color: rgba(243, 201, 121, 0.4);
-  box-shadow: 0 0 15px 5px rgba(243, 201, 121, 0.2); /* shadow-gold shadow-lg */
+.roadmap-timeline .timeline-card.glow {
+  border-color: var(--roadmap-accent);
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Для мобильных устройств */
@@ -263,18 +223,18 @@
     transform: translateX(0);
   }
 
-  .timeline-item {
+  .roadmap-timeline .timeline-item {
     flex-direction: row !important; 
     transform: translateX(0); 
     margin-bottom: 2.5rem; /* Уменьшаем отступ между элементами */
     align-items: flex-start; /* Выравниваем по верху */
   }
 
-  .timeline-item.visible {
+  .roadmap-timeline .timeline-item.visible {
      transform: translateX(0);
   }
 
-  .timeline-point-container {
+  .roadmap-timeline .timeline-point-container {
     margin-right: 0.75rem; /* Уменьшаем отступ справа от точки */
     flex-shrink: 0;
     width: 3rem; /* Уменьшаем размер точки */
@@ -283,32 +243,32 @@
     margin-top: 0.5rem; /* Небольшой отступ сверху для выравнивания с текстом */
   }
   
-  .timeline-point-container .timeline-point-icon svg {
+  .roadmap-timeline .timeline-point-container .timeline-point-icon svg {
       width: 1.25rem; /* Уменьшаем иконку внутри точки */
       height: 1.25rem;
   }
 
-  .timeline-content-wrapper {
+  .roadmap-timeline .timeline-content-wrapper {
     width: calc(100% - 3rem - 0.75rem); /* Занимает оставшееся место */
     padding-left: 0.5rem; /* Уменьшаем отступ слева от карточки */
     padding-right: 0;
     text-align: left !important; 
   }
   
-  .timeline-card {
+  .roadmap-timeline .timeline-card {
       padding: 1rem; /* Уменьшаем внутренние отступы карточки */
   }
   
-  .timeline-title {
+  .roadmap-timeline .timeline-title {
       font-size: 1.25rem; /* Уменьшаем заголовок в карточке */
   }
   
-  .timeline-description {
+  .roadmap-timeline .timeline-description {
       font-size: 0.9rem; /* Уменьшаем текст описания */
       margin-bottom: 0.5rem;
   }
 
-  .timeline-spacer {
+  .roadmap-timeline .timeline-spacer {
     display: none;
   }
   
@@ -481,7 +441,7 @@ body.modal-open {
 }
 
 /* Указатель для кликабельных карточек */
-.timeline-card {
+.roadmap-timeline .timeline-card {
   cursor: pointer;
 }
 
@@ -521,12 +481,12 @@ body.noscroll {
 .expanded-card-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   z-index: 999;
   opacity: 0;
   transition: opacity 0.4s ease;
-  pointer-events: auto; /* Обеспечиваем, что оверлей принимает события мыши */
+  pointer-events: auto;
 }
 
 .expanded-card-overlay.visible {
@@ -535,19 +495,19 @@ body.noscroll {
 
 /* Развернутая карточка */
 .expanded-card {
-  background-color: rgba(19, 19, 26, 0.95);
-  border: 1px solid rgba(243, 201, 121, 0.3);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5),
-              0 0 30px 5px rgba(243, 201, 121, 0.1);
-  color: var(--text-light);
+  background-color: var(--roadmap-card-bg);
+  border: 1px solid var(--roadmap-border);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2),
+              0 0 30px 5px rgba(0, 0, 0, 0.05);
+  color: var(--roadmap-text-primary);
   padding: 2rem;
   overflow-y: auto;
   max-height: 90vh;
-  z-index: 1000; /* Убедимся, что карточка выше оверлея */
-  pointer-events: auto; /* Обеспечиваем, что карточка принимает события мыши */
-  will-change: transform, opacity; /* Оптимизация для анимации */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: rgba(243, 201, 121, 0.4) rgba(19, 19, 26, 0.8); /* Firefox */
+  z-index: 1000;
+  pointer-events: auto;
+  will-change: transform, opacity;
+  scrollbar-width: thin;
+  scrollbar-color: var(--roadmap-text-secondary) var(--roadmap-bg);
 }
 
 /* Кастомный скроллбар для Webkit (Chrome, Safari, новый Edge) */
@@ -556,18 +516,18 @@ body.noscroll {
 }
 
 .expanded-card::-webkit-scrollbar-track {
-  background-color: rgba(19, 19, 26, 0.8);
+  background-color: var(--roadmap-bg);
   border-radius: 10px;
 }
 
 .expanded-card::-webkit-scrollbar-thumb {
-  background-color: rgba(243, 201, 121, 0.4);
+  background-color: var(--roadmap-border);
   border-radius: 10px;
-  border: 1px solid rgba(19, 19, 26, 0.9);
+  border: 1px solid var(--roadmap-bg);
 }
 
 .expanded-card::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(243, 201, 121, 0.6);
+  background-color: var(--roadmap-text-secondary);
 }
 
 /* Улучшенные анимации для карточки */
@@ -610,18 +570,18 @@ body.noscroll {
 }
 
 .expanded-card-status .timeline-status-icon {
-  color: var(--accent-gold);
+  color: var(--roadmap-accent);
 }
 
 .expanded-card-status .timeline-period {
   font-weight: 600;
-  color: var(--text-medium);
+  color: var(--roadmap-text-secondary);
 }
 
 .expanded-card-close {
   background: none;
   border: none;
-  color: var(--text-medium);
+  color: var(--roadmap-text-secondary);
   cursor: pointer;
   width: 32px;
   height: 32px;
@@ -633,19 +593,16 @@ body.noscroll {
 }
 
 .expanded-card-close:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  background-color: var(--roadmap-icon-bg);
+  color: var(--roadmap-text-primary);
   transform: rotate(90deg);
 }
 
 .expanded-card-title {
   font-size: 2rem;
   margin: 1rem 0 1.5rem;
-  color: var(--accent-gold);
-  background: linear-gradient(to right, var(--accent-gold), #fde68a, var(--accent-gold));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--roadmap-text-primary);
+  font-weight: 600;
 }
 
 .expanded-card-content {
@@ -654,8 +611,9 @@ body.noscroll {
 
 .expanded-card-content h2 {
   font-size: 1.6rem;
-  color: var(--accent-gold);
+  color: var(--roadmap-text-primary);
   margin: 1.5rem 0 1rem;
+  font-weight: 600;
 }
 
 .expanded-card-content p {
@@ -678,7 +636,7 @@ body.noscroll {
 }
 
 .expanded-card-content strong {
-  color: white;
+  color: var(--roadmap-text-primary);
   font-weight: 600;
 }
 
@@ -714,4 +672,70 @@ body.noscroll {
 /* Заменяем класс modal-open на noscroll */
 body.modal-open {
   display: none;
+}
+
+/* Стили для секции заключения - скопированы из whitepaper */
+.conclusion-section {
+  padding: 80px 20px 120px;
+  background-color: var(--roadmap-bg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.roadmap-conclusion-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.roadmap-conclusion-header h2 {
+  margin: 0;
+  color: var(--roadmap-text-primary);
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.roadmap-conclusion-line {
+  width: 60px;
+  height: 3px;
+  background: var(--roadmap-accent);
+  margin: 12px auto 0;
+}
+
+.conclusion-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 1; /* без анимаций во избежание конфликтов */
+}
+
+.conclusion-content.animate { opacity: 1; }
+
+.conclusion-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--roadmap-text-primary);
+  margin-bottom: 2rem;
+}
+
+.conclusion-tagline {
+  font-size: 1.3rem;
+  color: var(--roadmap-accent);
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* Адаптивные стили для заключения */
+@media (max-width: 768px) {
+  .conclusion-section {
+    padding: 60px 15px 80px;
+  }
+  
+  .conclusion-content p {
+    font-size: 1rem;
+  }
+  
+  .conclusion-tagline {
+    font-size: 1.1rem;
+  }
 } 

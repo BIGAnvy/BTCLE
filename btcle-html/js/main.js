@@ -2,7 +2,7 @@
 
 // Импорт модулей
 import { initRouter } from './libs/router.js';
-import { loadHeader } from './components/header.js';
+import { loadHeader, updateLogoForPage } from './components/header.js';
 import { loadFooter } from './components/footer.js';
 import { setPageLoader, initInitialLoader } from './components/loader.js';
 
@@ -17,6 +17,7 @@ const routes = {
   '/whitepaper': 'pages/whitepaper.js',
   '/why-btcle': 'pages/why-btcle.js',
   '/vision': 'pages/vision.js',
+  '/connect': 'pages/connect.js',
   '/404': 'pages/not-found.js'
 };
 
@@ -58,6 +59,14 @@ async function initApp() {
       }
     }, 300);
     
+    // Показываем футер после загрузки
+    setTimeout(() => {
+      if (footerElement) {
+        footerElement.style.display = 'block';
+        footerElement.classList.add('visible');
+      }
+    }, 400);
+    
     // Инициализация роутера
     initRouter(routes, mainContentElement);
     
@@ -87,6 +96,14 @@ function handleScroll() {
     if (mainHeader) {
       mainHeader.classList.add('header-scrolled');
       mainHeader.classList.remove('header-transparent');
+      
+      // Если это белая страница, добавляем белый фон
+      if (document.body.classList.contains('white-page')) {
+        mainHeader.classList.add('header-white-bg');
+      }
+      
+      // Обновляем логотип
+      updateLogoForPage();
     }
   } else {
     // Удаляем класс как с контейнера хедера, так и с внутреннего элемента
@@ -94,7 +111,11 @@ function handleScroll() {
     const mainHeader = document.getElementById('main-header');
     if (mainHeader) {
       mainHeader.classList.remove('header-scrolled');
+      mainHeader.classList.remove('header-white-bg');
       mainHeader.classList.add('header-transparent');
+      
+      // Обновляем логотип
+      updateLogoForPage();
     }
   }
 }
@@ -113,7 +134,8 @@ window.app = {
   },
   hideLoader: () => {
     if (globalLoader) globalLoader.classList.add('hidden');
-  }
+  },
+  updateLogo: updateLogoForPage
 };
 
 /**
@@ -141,11 +163,29 @@ function initStickyHeader() {
             // Делаем хедер липким
             header.classList.add('sticky');
             mainContent.style.paddingTop = `${headerHeight}px`;
+            
+            // Если это белая страница, добавляем белый фон
+            if (document.body.classList.contains('white-page')) {
+              header.classList.add('header-white-bg');
+            }
+            
+            // Обновляем логотип
+            if (typeof updateLogoForPage === 'function') {
+              updateLogoForPage();
+            }
+            
             isSticky = true;
         } else if (!shouldBeSticky && isSticky) {
             // Убираем липкость
             header.classList.remove('sticky');
+            header.classList.remove('header-white-bg');
             mainContent.style.paddingTop = '0';
+            
+            // Обновляем логотип
+            if (typeof updateLogoForPage === 'function') {
+              updateLogoForPage();
+            }
+            
             isSticky = false;
         }
     }

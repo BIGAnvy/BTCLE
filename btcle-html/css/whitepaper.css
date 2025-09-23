@@ -1,80 +1,25 @@
-/* Стили для страницы Whitepaper с modern luxury дизайном */
+/* Whitepaper - Black & White Minimalist Design */
 :root {
-  --color-primary: #C5B483;
-  --color-gold: #C5B483;
-  --color-gold-light: #C5B483;
-  --color-gold-dark: #C5B483;
-  --color-background: #08080A; /* Еще темнее фон */
-  --color-card-bg: rgba(18, 18, 22, 0.9);
-  --color-text: rgba(255, 255, 255, 0.95);
-  --color-text-muted: rgba(255, 255, 255, 0.65);
-  --gradient-bg: linear-gradient(145deg, #101012, #08080A); /* Обновленный градиент фона */
-  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 12px 45px rgba(0, 0, 0, 0.8);
-  --shadow-gold: 0 0 20px rgba(184, 157, 88, 0.25);
-  --transition-normal: all 0.3s ease-out;
-  --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --dark-bg-1: #0B0B0F;
-  --dark-bg-2: #13131A;
-  --dark-bg-3: #1A1A24;
-  --accent-blue: #2E7DFF;
-  --font-heading: var(--font-display);
-  --font-body: var(--font-main);
-  --transition-fast: 0.2s ease-out;
-  --transition-slow: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --text-light: #EAEAEA;
-  --text-medium: #A0A0B0;
-  --text-dark: #606070;
-  --parallax-x: 0px;
-  --parallax-y: 0px;
-  --section-bg-gradient: linear-gradient(180deg, var(--dark-bg-1) 0%, var(--dark-bg-2) 100%);
+  --whitepaper-bg: #ffffff;
+  --whitepaper-text-primary: #000000;
+  --whitepaper-text-secondary: #666666;
+  --whitepaper-border: #e5e5e5;
+  --whitepaper-card-bg: #ffffff;
+  --whitepaper-accent: #000000;
+  --whitepaper-icon-bg: rgba(0, 0, 0, 0.05);
 }
 
 /* Общие стили для контейнера */
 .whitepaper-container {
-  color: var(--text-light);
+  color: var(--whitepaper-text-primary);
   position: relative;
-  background-color: var(--dark-bg-1); /* Добавляем базовый фон как в tokenomics */
-  z-index: 1; /* Добавляем z-index как в tokenomics */
-  overflow: hidden;
+  background-color: var(--whitepaper-bg);
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Интерактивный фон с градиентной сеткой */
-.whitepaper-container::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 3rem 3rem;
-    z-index: -2;
-    opacity: 0.7;
-    mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 80%);
-    animation: bg-grid-subtle-move 60s linear infinite;
-}
-
-/* Псевдоэлемент для радиальных градиентов */
-.whitepaper-container::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 10% 20%, #252530 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(46, 125, 255, 0.08) 0%, transparent 35%);
-    z-index: -2;
-    opacity: 0.6;
-    animation: bg-glow-subtle-move 45s ease-in-out infinite alternate;
-}
-
-
-
-/* ПОЛНОСТЬЮ ПЕРЕДЕЛАННАЯ HERO SECTION */
+/* Hero Section */
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -82,8 +27,7 @@
   align-items: center;
   justify-content: center;
   padding: 120px 40px;
-  overflow: hidden;
-
+  background-color: var(--whitepaper-bg);
 }
 
 /* Содержимое hero-section */
@@ -91,97 +35,255 @@
   position: relative;
   max-width: 1000px;
   width: 100%;
-  z-index: 5;
   padding: 60px 0;
-  opacity: 1;
+  opacity: 0;
   text-align: center;
-  transition: transform 0.5s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(20px);
 }
 
-.community-links {
-    display: none;
+.hero-content.hero-appear-active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.whitepaper-container .hero-section {
-    height: fit-content !important;
-    min-height: 100vh !important;
-}
-
-/* Заголовок - убраны эффекты, изменен размер и цвет */
+/* Заголовок */
 .hero-title {
-  font-family: var(--font-heading);
-  font-size: 3rem; /* Изменен размер */
-  font-weight: 400; /* Можно оставить или изменить */
-  color: var(--color-primary, #C5B483); /* Установлен прямой цвет */
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--whitepaper-text-primary);
   letter-spacing: -0.02em;
   margin-bottom: 2rem;
-  line-height: 1.1;
+  line-height: 1.2;
   text-align: center;
 }
 
-/* Подзаголовок - убран параллакс */
+/* Подзаголовок */
 .hero-subtitle {
-  font-family: var(--font-body);
-  font-size: 1.8rem;
-  color: var(--text-medium);
+  font-size: 1.3rem;
+  color: var(--whitepaper-text-secondary);
   max-width: 75%;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 3rem;
   line-height: 1.5;
   text-align: center;
   font-weight: 400;
 }
 
-/* Кнопка скачивания - переработана с flex */
-.download-btn {
+/* Кнопка для Whitepaper Summary */
+.wp-summary-toggle-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-  padding: 1.4rem 3rem;
-  font-size: 1.3rem;
+  background: var(--whitepaper-card-bg);
+  border: 1px solid var(--whitepaper-border);
+  color: var(--whitepaper-text-primary);
+  padding: 16px 32px;
+  border-radius: 50px;
   font-weight: 600;
-  border-radius: 12px;
   cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  width: auto;
-  min-width: 260px;
   transition: all 0.3s ease;
-    margin: 0 auto;
+  margin: 30px auto 0;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.download-btn:hover {
-  background: rgba(184, 157, 88, 0.1);
-  border-color: var(--color-primary);
-  color: var(--text-light);
-  transform: scale(1.03);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.wp-summary-toggle-btn:hover {
+  background: var(--whitepaper-text-primary);
+  color: var(--whitepaper-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-.download-btn svg {
-  width: 24px;
-  height: 24px;
+.wp-summary-toggle-btn.active {
+  background: var(--whitepaper-text-primary);
+  color: var(--whitepaper-bg);
 }
 
-/* Core Technology Section - Современный редизайн */
-.core-tech-section {
-  padding: 120px 40px;
+/* Introduction Section */
+.introduction-section {
+  padding: 80px 20px;
+  background-color: var(--whitepaper-bg);
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
+}
 
+.introduction-content {
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.introduction-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.introduction-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Vision Section */
+.vision-section {
+  padding: 80px 20px;
+  background-color: var(--whitepaper-bg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vision-content {
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.vision-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 2rem;
+}
+
+.vision-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vision-list li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.vision-list li::before {
+  content: "•";
+  color: var(--whitepaper-accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Tokenomics Section */
+.tokenomics-section {
+  padding: 80px 20px;
+  background-color: var(--whitepaper-bg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tokenomics-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tokenomics-item {
+  padding: 2rem;
+  background: var(--whitepaper-card-bg);
+  border: 1px solid var(--whitepaper-border);
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tokenomics-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tokenomics-item:hover {
+  border-color: var(--whitepaper-accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tokenomics-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--whitepaper-icon-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--whitepaper-accent);
+}
+
+.tokenomics-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 1rem;
+}
+
+.tokenomics-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--whitepaper-text-secondary);
+}
+
+/* Conclusion Section */
+.conclusion-section {
+  padding: 80px 20px 120px;
+  background-color: var(--whitepaper-bg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.conclusion-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.conclusion-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.conclusion-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 2rem;
+}
+
+.conclusion-tagline {
+  font-size: 1.3rem;
+  color: var(--whitepaper-accent);
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 100px;
-  position: relative;
+  margin-bottom: 4rem;
   opacity: 0;
-  transform: translateY(40px);
-  transition: var(--transition-slow);
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .section-header.animate {
@@ -190,45 +292,39 @@
 }
 
 .section-header h2 {
-  font-family: var(--font-heading);
-  font-size: 3.2rem;
-  font-weight: 400;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
-  letter-spacing: -0.01em;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 1rem;
 }
 
 .header-line {
-  height: 4px;
-  width: 80px;
-  display: none;
-  background: var(--color-primary);
+  width: 60px;
+  height: 3px;
+  background: var(--whitepaper-accent);
   margin: 0 auto;
-  border-radius: 4px;
-  position: relative;
+  display: none;
 }
 
-/* Карточки технологий - современный дизайн */
+/* Карточки технологий */
 .tech-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
-  padding: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .tech-card {
-  position: relative;
-  padding: 40px;
-  border-radius: 16px;
-  background: linear-gradient(145deg, var(--dark-bg-2), var(--dark-bg-3));
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s ease;
+  padding: 2rem;
+  background: var(--whitepaper-card-bg);
+  border: 1px solid var(--whitepaper-border);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
   opacity: 0;
-  transform: translateY(40px);
-  overflow: hidden;
+  transform: translateY(20px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .tech-card.animate {
@@ -237,279 +333,55 @@
 }
 
 .tech-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Иконка с современным дизайном */
+/* Иконка */
 .card-icon {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(247, 206, 104, 0.08);
-  color: var(--color-primary);
-  border-radius: 16px;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.tech-card:hover .card-icon {
-  background: rgba(247, 206, 104, 0.12);
-  transform: scale(1.05);
-}
-
-.card-icon::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(247, 206, 104, 0.1);
-  border-radius: 16px;
-  filter: blur(10px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.tech-card:hover .card-icon::after {
-  opacity: 1;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  color: var(--whitepaper-text-secondary);
 }
 
 .card-icon svg {
-  width: 40px;
-  height: 40px;
-  stroke-width: 1.5;
+  width: 100%;
+  height: 100%;
 }
 
 .tech-card h3 {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--whitepaper-text-primary);
 }
 
 .tech-card p {
-  font-family: var(--font-body);
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 0;
-}
-
-/* Анимации для интерактивности */
-@keyframes hero-appear {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-appear-active {
-  animation: hero-appear 1s ease-out forwards;
-}
-
-/* Адаптив */
-@media (max-width: 1200px) {
-  .hero-title {
-    font-size: 4rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.6rem;
-    max-width: 85%;
-  }
-  
-  .section-header h2 {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .hero-section {
-    padding: 100px 30px;
-  }
-  
-  .hero-content {
-    padding: 40px 20px;
-  }
-  
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.5rem;
-    max-width: 90%;
-  }
-  
-  .tech-cards {
-    grid-template-columns: 1fr;
-  }
-  
-  .download-btn {
-    padding: 1.2rem 2.5rem;
-  }
-  
-  .circular-progress {
-    width: 90%;
-    height: 90%;
-    top: 5%;
-    left: 5%;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.3rem;
-    max-width: 95%;
-  }
-  
-  .section-header h2 {
-    font-size: 2.5rem;
-  }
-  
-  .tech-card {
-    padding: 30px;
-  }
-  
-  .card-icon {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .circular-progress {
-    width: 85%;
-    height: 85%;
-    top: 7.5%;
-    left: 7.5%;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-section {
-    padding: 80px 20px;
-  }
-  
-  .hero-content {
-    padding: 30px 15px;
-  }
-  
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-    max-width: 90%;
-  }
-  
-  .download-btn {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    min-width: 220px;
-  }
-  
-  .section-header h2 {
-    font-size: 1.8rem;
-  }
-  
-  .card-icon {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .tech-card h3 {
-    font-size: 1.1rem;
-  }
-  
-  .tech-card p {
-    font-size: 0.9rem;
-  }
-  
-  .market-card h3 {
-    font-size: 1.1rem;
-  }
-  
-  .market-value {
-    font-size: 1.5rem;
-  }
-  
-  .market-card p {
-    font-size: 0.85rem;
-  }
-  
-  .circular-progress {
-    width: 80px;
-    height: 80px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-  }
-  
-  .timeline-content {
-    padding: 15px;
-  }
-  
-  .timeline-year {
-    font-size: 0.8rem;
-  }
-  
-  .timeline-content h3 {
-    font-size: 1rem;
-  }
-  
-  .timeline-content p {
-    font-size: 0.85rem;
-  }
-  
-  .cta-content h2 {
-    font-size: 1.8rem;
-  }
+  color: var(--whitepaper-text-primary);
+  line-height: 1.6;
 }
 
 /* Features Section */
 .features-section {
-  padding: 100px 20px;
-
-  position: relative;
-  overflow: hidden;
+  padding: 80px 20px;
+  background-color: var(--whitepaper-bg);
 }
-
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .feature-card {
-  background: var(--color-card-bg);
-  border-radius: 16px;
-  padding: 35px 30px;
-  border: 1px solid rgba(212, 175, 55, 0.1);
-  transition: var(--transition-spring);
+  padding: 2rem;
+  text-align: center;
   opacity: 0;
-  transform: translateY(30px);
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(5px);
+  transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
 .feature-card.animate {
@@ -517,75 +389,45 @@
   transform: translateY(0);
 }
 
-.feature-card:hover {
-  border-color: rgba(212, 175, 55, 0.4);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-md);
-}
-
 .feature-icon {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-gold-light);
-  background: rgba(212, 175, 55, 0.08);
-  border-radius: 14px;
-  margin-bottom: 25px;
-  transition: var(--transition-normal);
-}
-
-.feature-card:hover .feature-icon {
-  background: rgba(212, 175, 55, 0.18);
-  transform: scale(1.15);
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1.5rem;
+  color: var(--whitepaper-text-secondary);
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--whitepaper-text-primary);
 }
 
 .feature-card p {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--color-text-muted);
+  color: var(--whitepaper-text-primary);
+  line-height: 1.6;
 }
 
 /* Benefits Section */
 .benefits-section {
-  padding: 120px 20px;
-  position: relative;
-
+  padding: 80px 20px;
+  background-color: var(--whitepaper-bg);
 }
-
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .benefit-card {
-  position: relative;
-  background: var(--color-card-bg);
-  border-radius: 20px;
-  padding: 45px 35px;
+  padding: 2rem;
   text-align: center;
-  border: 0.5px solid rgba(212, 175, 55, 0.15);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-spring);
   opacity: 0;
-  transform: translateY(30px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  backdrop-filter: blur(8px);
+  transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
 .benefit-card.animate {
@@ -593,85 +435,51 @@
   transform: translateY(0);
 }
 
-.benefit-card:hover {
-  transform: translateY(-12px);
-  border-color: var(--color-gold);
-  box-shadow: var(--shadow-gold), var(--shadow-lg);
-}
-
 .benefit-icon {
-  width: 65px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(212, 175, 55, 0.08);
-  color: var(--color-gold-light);
-  border-radius: 50%;
-  margin-bottom: 35px;
-  font-size: 1.6rem;
-  transition: var(--transition-normal);
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
-}
-
-.benefit-card:hover .benefit-icon {
-  background: rgba(212, 175, 55, 0.18);
-  transform: scale(1.12);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  color: var(--whitepaper-text-secondary);
 }
 
 .benefit-counter {
-  font-size: 5rem;
-  font-weight: 800;
-  color: var(--color-gold);
-  line-height: 1;
-  margin-bottom: 15px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  text-shadow: var(--shadow-gold);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .benefit-card p {
-  font-size: 1.3rem;
-  color: var(--color-text);
-  white-space: nowrap;
+  color: var(--whitepaper-text-secondary);
+  font-weight: 500;
 }
 
 /* Market Section */
 .market-section {
-  padding: 100px 20px;
-
-  position: relative;
-  overflow: hidden;
+  padding: 80px 20px;
+  background-color: var(--whitepaper-bg);
 }
-
-
 
 .market-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .market-card {
-  position: relative;
-  border-radius: 18px;
-  padding: 45px 35px;
+  padding: 2rem;
+  background: var(--whitepaper-card-bg);
+  border: 1px solid var(--whitepaper-border);
+  border-radius: 12px;
   text-align: center;
-  transition: var(--transition-spring);
+  position: relative;
+  transition: all 0.3s ease;
   opacity: 0;
-  transform: translateY(30px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
-  border-radius: 18px;
+  transform: translateY(20px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .market-card.animate {
@@ -680,649 +488,341 @@
 }
 
 .market-card:hover {
-  transform: translateY(-12px);
-  border-color: var(--color-gold);
-  box-shadow: var(--shadow-gold), var(--shadow-lg);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .market-icon {
-  width: 65px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(212, 175, 55, 0.08);
-  color: var(--color-gold-light);
-  border-radius: 50%;
-  margin-bottom: 25px;
-  font-size: 1.6rem;
-  transition: var(--transition-normal);
-  z-index: 1;
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
-}
-
-.market-card:hover .market-icon {
-  background: rgba(212, 175, 55, 0.18);
-  transform: scale(1.12);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem;
+  color: var(--whitepaper-text-secondary);
 }
 
 .market-card h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  color: #ffffff;
-  position: relative;
-  z-index: 1;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--whitepaper-text-primary);
 }
 
 .market-value {
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: var(--color-gold);
-  margin-bottom: 8px;
-  line-height: 1.2;
-  position: relative;
-  z-index: 1;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 0.5rem;
 }
 
 .market-card p {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  margin-bottom: 35px;
-  position: relative;
-  z-index: 1;
+  color: var(--whitepaper-text-secondary);
+  margin-bottom: 1.5rem;
 }
 
+/* Circular Progress */
 .circular-progress {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transform: rotate(-90deg);
-  z-index: 0;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.circular-progress circle {
+  fill: none;
+  stroke-width: 4;
 }
 
 .circular-progress .bg {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.05);
-  stroke-width: 2;
+  stroke: var(--whitepaper-border);
 }
 
 .circular-progress .progress {
-  fill: none;
-  stroke: #C5B483;
-  stroke-width: 3;
-  stroke-dashoffset: 314.159;
-  stroke-dasharray: 314.159;
-  transition: stroke-dashoffset 2s cubic-bezier(0.25, 1, 0.5, 1);
+  stroke: var(--whitepaper-text-primary);
   stroke-linecap: round;
+  transition: stroke-dashoffset 2s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
 }
 
 /* Roadmap Section */
 .roadmap-section {
-  padding: 120px 20px;
-  /* background: linear-gradient(180deg, rgba(12, 12, 18, 0.9), rgba(15, 15, 20, 0.8)); */ /* Убираем этот фон */
+  padding: 80px 20px;
+  background-color: var(--whitepaper-bg);
 }
 
 .timeline {
   position: relative;
-  max-width: 56rem; /* max-w-5xl */
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* ВОССТАНОВЛЕННАЯ ЛИНИЯ РОАДМАПА */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 50%; /* Центрируем линию */
-  transform: translateX(-50%);
+  left: 50%;
   top: 0;
   bottom: 0;
-  width: 4px; /* Толщина линии */
-  background: linear-gradient(to bottom, rgba(243, 201, 121, 0.7), rgba(243, 201, 121, 0.5), rgba(243, 201, 121, 0.1)); /* Градиент линии */
-  z-index: 0; /* Помещаем за точками, но перед фоном секции */
+  width: 2px;
+  background: var(--whitepaper-border);
+  transform: translateX(-50%);
 }
 
 .timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
   position: relative;
-  margin-bottom: 80px;
-  width: 100%;
+  margin-bottom: 3rem;
   opacity: 0;
-  transform: translateY(30px);
-  transition: var(--transition-spring);
+  transform: translateX(-20px);
+  transition: all 0.8s ease;
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 2rem;
+  transform: translateX(20px);
 }
 
 .timeline-item.animate {
   opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
+  transform: translateX(0);
 }
 
 .timeline-marker {
   position: absolute;
-  top: 0;
   left: 50%;
-  width: 24px;
-  height: 24px;
-  background: var(--color-gold-dark);
+  top: 1rem;
+  width: 16px;
+  height: 16px;
+  background: var(--whitepaper-text-primary);
+  border: 3px solid var(--whitepaper-bg);
   border-radius: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.15);
-  transition: var(--transition-normal);
-  border: 2px solid var(--color-background);
-}
-
-.timeline-item:hover .timeline-marker {
-  background: var(--color-gold-light);
-  box-shadow: 0 0 0 7px rgba(212, 175, 55, 0.25), var(--shadow-gold);
-  transform: translateX(-50%) scale(1.1);
 }
 
 .timeline-content {
-  position: relative;
-  margin-left: 55%;
-  padding: 35px;
-  background: var(--color-card-bg);
-  border-radius: 16px;
-  border: 1px solid rgba(212, 175, 55, 0.1);
-  box-shadow: var(--shadow-md);
-  margin-top: -12px;
-  width: calc(50% - 50px);
-  transition: var(--transition-normal);
-  backdrop-filter: blur(8px);
+  background: var(--whitepaper-card-bg);
+  border: 1px solid var(--whitepaper-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-.timeline-item:nth-child(odd) .timeline-content {
-  margin-left: 0;
-  margin-right: 50%;
-}
-
-.timeline-item:hover .timeline-content {
-  transform: translateY(-8px);
-  border-color: var(--color-gold);
-  box-shadow: var(--shadow-gold), var(--shadow-lg);
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-year {
-  display: inline-block;
-  padding: 6px 18px;
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--color-gold-light);
-  font-weight: 700;
-  border-radius: 50px;
-  margin-bottom: 18px;
   font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--whitepaper-text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .timeline-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--whitepaper-text-primary);
+  margin-bottom: 0.5rem;
 }
 
 .timeline-content p {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--color-text-muted);
-}
-
-/* CTA Section */
-.cta-section {
-  position: relative;
-  padding: 120px 20px;
-  /* background: linear-gradient(to bottom, rgba(15, 15, 20, 0.8), rgba(10, 10, 15, 0.9)); */ /* Убираем и этот фон */
-  overflow: hidden;
-}
-
-.cta-content {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  z-index: 1;
-}
-
-.cta-content h2 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-  color: var(--color-gold);
-  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
-}
-
-.cta-bg-glow {
-  position: absolute;
-  top: -20%;
-  left: 0;
-  width: 100%;
-  height: 140%;
-  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
-  z-index: 0;
-  animation: pulse-glow 8s infinite alternate ease-in-out;
-}
-
-.community-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.community-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--color-text);
-  font-size: 1.1rem;
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: rgba(235, 204, 123, 0.05);
-  border: 1px solid rgba(235, 204, 123, 0.1);
-  transition: var(--transition-normal);
-}
-
-.community-link:hover {
-  background: rgba(235, 204, 123, 0.1);
-  transform: translateY(-5px);
+  color: var(--whitepaper-text-primary);
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* Home Button */
 .home-button {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 65px;
-  height: 65px;
-  background: rgba(20, 20, 25, 0.8);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: var(--whitepaper-card-bg);
+  border: 1px solid var(--whitepaper-border);
   border-radius: 50%;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-gold-light);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-spring);
+  color: var(--whitepaper-text-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
   z-index: 100;
-  backdrop-filter: blur(8px);
+  text-decoration: none;
+}
+
+.home-button.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home-button:hover {
-  background: rgba(212, 175, 55, 0.15);
-  color: #ffffff;
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: var(--shadow-gold), var(--shadow-lg);
+  background: var(--whitepaper-text-primary);
+  color: var(--whitepaper-bg);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .home-button svg {
-  width: 28px;
-  height: 28px;
+  transition: stroke 0.3s ease;
+  stroke: currentColor;
 }
 
-/* Animations */
-@keyframes fadeUpIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Summary Container */
+.wp-summary-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
 }
 
-@keyframes pulse-glow {
-  from { opacity: 0.7; transform: scale(1); }
-  to { opacity: 1; transform: scale(1.05); }
+.wp-summary-container.expanded {
+  border: 1px solid var(--whitepaper-border);
+  border-radius: 12px;
+  background: var(--whitepaper-card-bg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Медиа-запросы для адаптации */
-@media (max-width: 1200px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2.6rem;
-  }
-  
-  .cta-content h2 {
-    font-size: 2.6rem;
-  }
+.wp-summary-content {
+  padding: 2rem;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  color: var(--whitepaper-text-primary);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-@media (max-width: 992px) {
-  .hero-content {
-    padding: 1.5rem 0;
-  }
-  
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.3rem;
-    max-width: 90%;
-    margin-bottom: 2.5rem;
-  }
-  
-  .tech-cards {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
- 
-  
-  .timeline-marker {
-    left: 40px;
-  }
-  
-  .timeline-content {
-    margin-left: 80px;
-    width: calc(100% - 80px);
-  }
-  
-  .timeline-item:nth-child(odd) .timeline-content {
-    margin-left: 80px;
-    margin-right: 0;
-  }
+.wp-summary-content h3 {
+  font-size: 1.8rem;
+  color: var(--whitepaper-text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--whitepaper-border);
+  font-weight: 600;
 }
 
+.wp-summary-content h3:first-child {
+  margin-top: 0;
+}
+
+.wp-summary-content h4 {
+  font-size: 1.3rem;
+  color: var(--whitepaper-text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.wp-summary-content p {
+  margin-bottom: 1.2rem;
+  color: var(--whitepaper-text-primary);
+}
+
+.wp-summary-content strong {
+  color: var(--whitepaper-text-primary);
+  font-weight: 600;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
   }
   
   .hero-subtitle {
-    font-size: 1.3rem;
-    max-width: 90%;
-    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
   }
   
-  .download-btn {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
+  .hero-section {
+    padding: 80px 15px 40px;
+  }
+  
+  .core-tech-section,
+  .features-section,
+  .benefits-section,
+  .market-section,
+  .roadmap-section {
+    padding: 60px 15px;
   }
   
   .section-header h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
-  .benefit-counter {
-    font-size: 3.5rem;
+  .tech-cards,
+  .features-grid,
+  .benefits-grid,
+  .market-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
-  .cta-content h2 {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-content {
-    padding: 1rem 0;
+  .timeline::before {
+    left: 1rem;
   }
   
-  .hero-title {
-    font-size: 2.2rem;
+  .timeline-item {
+    justify-content: flex-start !important;
+    padding-left: 3rem !important;
+    padding-right: 0 !important;
+    transform: translateX(0) !important;
   }
   
-  .hero-subtitle {
-    font-size: 1.1rem;
-    max-width: 90%;
-  }
-  
-  .download-btn {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-  
-  .tech-cards {
-    gap: 30px;
-  }
-  
-  .card-icon {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .tech-card h3 {
-    font-size: 1.1rem;
-  }
-  
-  .tech-card p {
-    font-size: 0.9rem;
-  }
-  
-  .market-card h3 {
-    font-size: 1.1rem;
-  }
-  
-  .market-value {
-    font-size: 1.5rem;
-  }
-  
-  .market-card p {
-    font-size: 0.85rem;
-  }
-  
-  .circular-progress {
-    width: 40vh;
-    height: 40vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
+  .timeline-marker {
+    left: 1rem;
+    transform: translateX(-50%);
   }
   
   .timeline-content {
-    padding: 15px;
+    max-width: none;
   }
   
-  .timeline-year {
-    font-size: 0.8rem;
+  .home-button {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
   }
   
-  .timeline-content h3 {
+  .hero-subtitle {
     font-size: 1rem;
   }
   
-  .timeline-content p {
-    font-size: 0.85rem;
+  .wp-summary-toggle-btn {
+    min-width: 200px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
   
-  .cta-content h2 {
-    font-size: 1.8rem;
+  .wp-summary-content {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .tech-card,
+  .market-card {
+    padding: 1.5rem;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
   }
 }
-
-/* --- Стили для кнопки и контента Whitepaper Summary --- */
-
-/* Новая кнопка */
-.wp-summary-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: transparent; /* Прозрачный фон */
-  color: var(--color-primary); /* Золотой цвет текста */
-  border: 1px solid var(--color-primary); /* Золотая рамка */
-  padding: 1.2rem 2.5rem; /* Отступы чуть меньше кнопки скачивания */
-  font-size: 1.1rem; /* Размер шрифта */
-  font-weight: 600;
-  border-radius: 10px; /* Чуть менее скругленные углы */
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease;
-  margin-top: 1.5rem; /* Небольшой отступ сверху от субтитра */
-  backdrop-filter: blur(3px); /* Легкий блюр фона */
-}
-
-.wp-summary-toggle-btn:hover {
-  background: rgba(184, 157, 88, 0.1); /* Легкий фон при наведении */
-  border-color: var(--color-primary);
-  color: var(--text-light);
-  transform: scale(1.03);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Иконка-стрелка */
-.wp-summary-toggle-btn .chevron-icon svg {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
-  stroke-width: 2; /* Убедимся, что толщина линии видна */
-}
-
-/* Контейнер для контента */
-.wp-summary-content {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  padding: 0 2rem; /* Горизонтальные отступы при раскрытии */
-  background: rgba(18, 18, 22, 0.7); /* Полупрозрачный темный фон */
-  border: 1px solid rgba(184, 157, 88, 0.1); /* Едва заметная рамка */
-  border-top: none; /* Убираем верхнюю рамку, т.к. она под кнопкой */
-  border-radius: 0 0 12px 12px; /* Скругляем нижние углы */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transition: max-height 0.6s ease-out, opacity 0.4s ease-out 0.1s, margin-top 0.6s ease-out, padding 0.6s ease-out; /* Плавная анимация */
-  max-width: 1200px; /* Ограничим ширину контента */
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left; /* Выравниваем текст внутри по левому краю */
-  backdrop-filter: blur(5px);
-}
-
-/* Состояние раскрытого контента */
-.wp-summary-content.expanded {
-  max-height: 1500px; /* Достаточно большая высота для контента */
-  opacity: 1;
-  margin-top: -1px; /* Перекрываем нижнюю границу кнопки */
-  padding: 2rem 2rem; /* Возвращаем вертикальные отступы */
-  border-top: 1px solid rgba(184, 157, 88, 0.2); /* Показываем верхнюю границу */
-}
-
-/* Стилизация секций внутри summary */
-.wp-summary-content .summary-section {
-  margin-bottom: 1.8rem;
-}
-.wp-summary-content .summary-section:last-child {
-  margin-bottom: 0.5rem; /* Меньший отступ у последней секции */
-}
-
-.wp-summary-content h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(184, 157, 88, 0.2);
-  padding-bottom: 0.5rem;
-}
-
-.wp-summary-content p,
-.wp-summary-content ul {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text-medium);
-  margin-bottom: 1rem; /* Отступ под параграфами и списками */
-}
-
-.wp-summary-content ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.wp-summary-content li {
-  margin-bottom: 0.6rem;
-  padding-left: 1.2rem; /* Отступ для маркера */
-  position: relative;
-}
-.wp-summary-content li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--color-primary);
-  margin-right: 0.5rem;
-}
-
-.wp-summary-content strong {
-  color: var(--text-light);
-  font-weight: 600;
-}
-
-/* Специфичные стили для roadmap summary */
-.roadmap-summary-list li {
-  padding-left: 0; /* Убираем отступ, т.к. нет маркера */
-}
-.roadmap-summary-list li::before {
-  content: none; /* Убираем стандартный маркер */
-}
-.roadmap-summary-list strong {
-    color: var(--color-primary); /* Выделяем Q1, Q2 и т.д. */
-    margin-right: 0.5em;
-}
-
-/* Адаптивность для summary */
-@media (max-width: 768px) {
-    .wp-summary-toggle-btn {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-    }
-    .wp-summary-content {
-        padding: 0 1.5rem;
-        max-width: 100%;
-        height: 100%;
-    }
-    .wp-summary-content.expanded {
-        padding: 1.5rem 1.5rem;
-    }
-    .wp-summary-content h3 {
-        font-size: 1.15rem;
-    }
-    .wp-summary-content p,
-    .wp-summary-content ul {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-    .wp-summary-content li {
-        margin-bottom: 0.5rem;
-    }
-}
-
-/* Стили для улучшенного списка Core Features */
-.wp-summary-content ul.core-features-list > li {
-    /* Основной пункт списка уже имеет нужный отступ и маркер из общих стилей .wp-summary-content li */
-    /* Можно добавить margin-bottom, если нужно больше пространства между основными пунктами */
-}
-
-.wp-summary-content ul.core-features-list > li > strong {
-    display: block; /* Заголовок фичи занимает всю строку */
-    margin-bottom: 0.4rem; /* Небольшой отступ под заголовком фичи */
-    /* color: var(--color-primary); /* Если хотим выделить заголовок цветом, можно раскомментировать */
-}
-
-.wp-summary-content ul.core-features-list > li > ul {
-    list-style-type: none; /* Убираем маркеры у вложенного списка (описания) */
-    padding-left: 0;       /* Убираем стандартный отступ для вложенного списка */
-    margin-left: 0;        /* Убираем стандартный внешний отступ, если есть */
-    margin-top: 0;         /* Убираем отступ сверху, если есть, т.к. strong уже имеет margin-bottom */
-}
-
-.wp-summary-content ul.core-features-list > li > ul > li {
-    padding-left: 0; /* Убираем отступы у самого элемента описания */
-    position: relative; /* Сбрасываем position, если он наследовался и мешает */
-    /* margin-bottom: 0.5rem; /* Если описание может быть в несколько пунктов и нужен отступ */
-}
-
-/* Убираем псевдоэлемент ::before для вложенных li, если он наследуется */
-.wp-summary-content ul.core-features-list > li > ul > li::before {
-    content: none;
-} 

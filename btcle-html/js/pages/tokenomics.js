@@ -79,7 +79,7 @@ const tokenCardData = [
     highlight: true,
   },
   {
-    title: 'ITD SUPPLY',
+    title: 'CIRCULATING SUPPLY',
     value: '21,000',
     icon: ICONS.lineChart,
   },
@@ -92,7 +92,7 @@ const tokenCardData = [
 ];
 
 const distributionData = [
-  { name: 'ITD Supply (Trading)', value: 10, color: '#000000' },
+  { name: 'Circulating Supply (Trading)', value: 10, color: '#000000' },
   { name: 'Locked (10-Year Vesting)', value: 90, color: '#666666' },
 ];
 
@@ -161,7 +161,7 @@ export function createTokenomicsPage(container) {
         <p>Bitcoin Limited Edition (BTCLE) is a <strong>fixed-supply crypto asset</strong> with a max supply of <span class="highlight-text">210,000 BTCLE</span>.</p> 
         <p>This non-inflationary model reinforces BTCLE's mission of sustainable growth, transparent governance, and alignment with long-term holders.</p>
         
-        <p>At the time of the Initial Token Distribution (ITD), <strong>10% of the total supply</strong> (21,000 BTCLE) will be released to the public to support trading liquidity and early adoption.</p>
+        <p>At the time of launch, <strong>10% of the total supply</strong> (21,000 BTCLE) will be released to the public as circulating supply to support trading liquidity and early adoption.</p>
         
         <p>The remaining <strong>90%</strong> (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract. BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a <span class="highlight-text">monthly declining unlock mechanism</span>, where tokens are gradually released in decreasing amounts over a 10-year period, starting January 2026 and concluding December 2035.</p>
       </div>
@@ -248,7 +248,7 @@ export function createTokenomicsPage(container) {
         </thead>
         <tbody>
           <tr>
-            <td>Initial Token Distribution (ITD)</td>
+            <td>Circulating Supply</td>
             <td class="amount-cell">21,000</td>
             <td class="percent-cell">10%</td>
           </tr>
@@ -277,13 +277,10 @@ export function createTokenomicsPage(container) {
   // Создаем секцию распределения токенов
   const distributionSection = document.createElement('div');
   distributionSection.classList.add('distribution-section', 'fade-in-up');
-  
+
   distributionSection.innerHTML = `
     <h2 class="distribution-title">BTCLE Distribution</h2>
-    <div class="chart-container">
-      <canvas id="distribution-chart"></canvas>
-    </div>
-    
+
     <div class="vesting-mechanics">
       <h3 class="mechanics-title">Vesting Mechanics</h3>
       <ul class="mechanics-list">
@@ -294,14 +291,14 @@ export function createTokenomicsPage(container) {
       </ul>
       <p class="mechanics-summary">This structure is designed to reduce short-term sell pressure and reward holders with a progressively deflationary release curve.</p>
     </div>
-    
+
     <div class="monthly-vesting-section">
       <button class="toggle-button" id="monthly-toggle">
         <span class="toggle-icon">${ICONS.calendar}</span>
         <span class="toggle-text">Monthly Vesting Breakdown (2026)</span>
         <span class="chevron">${ICONS.chevronDown}</span>
       </button>
-      
+
       <div class="monthly-content" id="monthly-content" style="display: none;">
         <div class="table-container">
           <table class="vesting-table">
@@ -323,10 +320,10 @@ export function createTokenomicsPage(container) {
             </tbody>
           </table>
         </div>
-        
+
         <div class="remaining-box">
           <p>
-            Remaining Locked Supply (as of December 2026): 
+            Remaining Locked Supply (as of December 2026):
             <span class="remaining-value">150,000 BTCLE</span>
           </p>
         </div>
@@ -388,15 +385,31 @@ export function createTokenomicsPage(container) {
   principlesSection.innerHTML = `
     <h2 class="principles-title">Summary of Distribution Principles</h2>
     <ul class="principles-list">
-      <li><span class="point-icon">●</span> Max Supply: <strong>210,000 BTCLE</strong> (non-inflationary).</li>
-      <li><span class="point-icon">●</span> ITD Circulation: <strong>21,000 BTCLE</strong> (10% released for trading at launch).</li>
-      <li><span class="point-icon">●</span> Locked: <strong>189,000 BTCLE</strong> (90% locked with a 10-year vesting period).</li>
-      <li><span class="point-icon">●</span> Release Mechanism: Smart contract-based, with a deflationary model.</li>
+      <li class="principles-item">
+        <div class="principles-content">
+          <strong>Max Supply</strong>
+          <span class="principles-text">210,000 BTCLE (non-inflationary)</span>
+        </div>
+      </li>
+      <li class="principles-item">
+        <div class="principles-content">
+          <strong>Circulating Supply</strong>
+          <span class="principles-text">21,000 BTCLE (10% released for trading at launch)</span>
+        </div>
+      </li>
+      <li class="principles-item">
+        <div class="principles-content">
+          <strong>Locked Supply</strong>
+          <span class="principles-text">189,000 BTCLE (90% locked with a 10-year vesting period)</span>
+        </div>
+      </li>
+      <li class="principles-item">
+        <div class="principles-content">
+          <strong>Release Mechanism</strong>
+          <span class="principles-text">Smart contract-based, with a deflationary model</span>
+        </div>
+      </li>
     </ul>
-    
-    <div class="principles-goal" style="display:none;"> 
-      <strong>Goal:</strong> Ensure sustainability, reduce volatility, reward long-term holders
-    </div>
   `;
   
   tokenomicsContainer.appendChild(principlesSection);
@@ -413,7 +426,7 @@ export function createTokenomicsPage(container) {
         <li><span class="check-icon">●</span> Fully auditable, with all token movements visible on-chain in real time.</li>
       </ul>
       <p>The team reserves the right to propose adjustments to the vesting schedule in response to regulatory changes or community governance proposals. All modifications will be transparently disclosed and in accordance with BTCLE's long-term mission and ecosystem alignment.</p>
-      <p>BTCLE follows a declining monthly issuance model, gradually reducing token release over time, supporting price stability and incentivizing long-term participation.</p>
+      <p>BTCLE follows a declining monthly issuance model, gradually reducing token release over time, supporting price stability and incentivizing long-term participation. And this transparency will strengthen community trust in the Bitcoin Layer 2 Limited project.</p>
     </div>
   `;
   
@@ -431,12 +444,7 @@ export function createTokenomicsPage(container) {
   
   // Добавляем стили
   loadStyles();
-  
-  // Загружаем Chart.js если еще не загружен
-  loadChartJs(() => {
-    initChart();
-  });
-  
+
   // Инициализируем обработчики событий
   initEventHandlers();
   
@@ -463,128 +471,6 @@ export function createTokenomicsPage(container) {
   return container;
 }
 
-/**
- * Загружает Chart.js для создания диаграмм
- * @param {Function} callback - Функция, вызываемая после загрузки библиотеки
- */
-function loadChartJs(callback) {
-  if (window.Chart) {
-    callback();
-    return;
-  }
-  
-  const script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
-  script.onload = callback;
-  document.head.appendChild(script);
-}
-
-/**
- * Инициализирует круговую диаграмму распределения токенов
- */
-function initChart() {
-  const ctx = document.getElementById('distribution-chart').getContext('2d');
-  
-  // --- Создаем градиенты ---
-  const primaryColor = '#000000'; // Черный
-  const secondaryColor = '#666666'; // Серый
-
-  const gradient1 = ctx.createRadialGradient(150, 150, 50, 150, 150, 150); // Градиент для черного
-  gradient1.addColorStop(0, primaryColor);       
-  gradient1.addColorStop(1, '#333333'); // Край черного
-
-  const gradient2 = ctx.createRadialGradient(150, 150, 50, 150, 150, 150); // Градиент для серого
-  gradient2.addColorStop(0, secondaryColor);     // Центр серого
-  gradient2.addColorStop(1, '#999999'); // Край серого (светлее)
-  // ------------------------
-  
-  const chart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: distributionData.map(d => d.name),
-      datasets: [{
-        data: distributionData.map(d => d.value),
-        backgroundColor: [gradient1, gradient2], // Используем новые градиенты
-        borderColor: [primaryColor, secondaryColor], // Цвета границ
-        borderWidth: [2, 1],
-        hoverBorderColor: ['#333333', '#999999'], // Цвет при наведении
-        hoverBorderWidth: [4, 2],
-        hoverOffset: 8
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      cutout: '60%',
-      layout: {
-        padding: 10
-      },
-      plugins: {
-        legend: {
-          display: false,
-        },
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              return ` ${context.label}: ${context.raw}%`;
-            }
-          },
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          titleColor: '#000000',
-          bodyColor: '#000000',
-          borderColor: '#e5e5e5',
-          borderWidth: 1,
-          cornerRadius: 8,
-          padding: 12,
-          titleFont: {
-            size: 16,
-            weight: 'bold'
-          },
-          bodyFont: {
-            size: 14,
-            weight: 'normal'
-          }
-        }
-      },
-      animation: {
-        animateRotate: true,
-        animateScale: true
-      }
-    }
-  });
-
-  // Создаем кастомную легенду после инициализации Chart.js
-  createCustomLegend();
-  
-  return chart;
-}
-
-/**
- * Создает кастомную легенду для диаграммы
- */
-function createCustomLegend() {
-  const chartContainer = document.querySelector('.chart-container');
-  
-  // Создаем контейнер для кастомной легенды
-  const customLegend = document.createElement('div');
-  customLegend.classList.add('custom-chart-legend');
-  
-  // Создаем элементы легенды на основе данных распределения
-  const legendItems = distributionData.map(item => {
-    return `
-      <div class="legend-item">
-        <span class="legend-color" style="background-color: ${item.color}"></span>
-        <span class="legend-text">${item.name}: ${item.value}%</span>
-      </div>
-    `;
-  }).join('');
-  
-  // Добавляем HTML элементов легенды в контейнер
-  customLegend.innerHTML = legendItems;
-  
-  // Добавляем легенду рядом с графиком
-  chartContainer.appendChild(customLegend);
-}
 
 /**
  * Инициализирует обработчики событий на странице
