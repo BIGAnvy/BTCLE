@@ -16,7 +16,7 @@
   color: var(--about-text-primary);
   position: relative;
   background-color: var(--about-bg);
-  min-height: 100vh;
+  min-height: calc(100vh - 120px); /* Оставляем место для футера */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -72,7 +72,7 @@
 }
 
 .about-info-content {
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* --- Детали токена --- */
@@ -83,8 +83,8 @@
 
 .token-details-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивная сетка */
-  gap: 2rem 2.5rem; /* Промежутки */
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.2rem; 
   margin-top: 30vh;
 }
 
@@ -97,6 +97,19 @@
   border-radius: 6px;
   border: 1px solid var(--about-card-border);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Верхний ряд: две половинки ширины */
+.detail-item:nth-child(1),
+.detail-item:nth-child(2) {
+  grid-column: span 6;
+}
+
+/* Нижний ряд: три равные карточки */
+.detail-item:nth-child(3),
+.detail-item:nth-child(4),
+.detail-item:nth-child(5) {
+  grid-column: span 4;
 }
 
 .detail-item:hover {
@@ -214,6 +227,106 @@
   color: white;
   border-color: var(--about-text-primary);
 }
+
+/* --- Карточка контракта (как на скрине) --- */
+.contract-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--about-card-bg);
+  border: 1px solid var(--about-card-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.contract-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chain-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff8e1;
+  border: 1px solid var(--about-card-border);
+  border-radius: 999px;
+}
+
+.chain-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.contract-label {
+  font-size: 0.85rem;
+  color: var(--about-text-secondary);
+}
+
+.chain-name {
+  font-size: 1rem;
+  color: var(--about-text-primary);
+  font-weight: 600;
+}
+
+.contract-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contract-address {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--about-text-primary);
+  text-decoration: none;
+  background: #e6e6e6;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.contract-address:hover { text-decoration: underline; }
+
+/* --- Листинги --- */
+.listings-section { margin-top: 2rem; }
+
+.listings-title {
+  font-size: 1.1rem;
+  margin: 0 0 0.8rem 0;
+  color: var(--about-text-primary);
+}
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 1.2rem;
+}
+
+.listing-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--about-card-border);
+  border-radius: 10px;
+  background: var(--about-card-bg);
+  text-decoration: none;
+  color: var(--about-text-primary);
+  transition: border-color .2s ease, transform .15s ease;
+}
+
+.listing-item:hover {
+  border-color: var(--about-text-secondary);
+  transform: translateY(-1px);
+}
+
+.listing-icon { display: inline-flex; }
+.listing-name { font-weight: 600; }
 
 /* --- Секция описания --- */
 .description-section {
@@ -335,8 +448,8 @@
     margin-bottom: 3rem;
   }
   .token-details-section {
-     grid-template-columns: 1fr; /* Одна колонка на мобильных */
-     gap: 1.5rem;
+     grid-template-columns: 1fr; /* одна колонка */
+     gap: 1rem;
      margin-top: 10vh;
   }
   .description-title {
@@ -365,16 +478,8 @@
     padding: 0.8rem 1rem; /* Уменьшаем паддинги элемента */
     gap: 0.6rem; /* Уменьшаем гэп внутри */
   }
-  
-  .detail-icon {
-     /* Можно немного уменьшить иконку, если нужно */
-     /* padding: 5px; */
-  }
-  
-  .detail-icon svg {
-    /* width: 16px; */
-    /* height: 16px; */
-  }
+  .contract-card { flex-direction: column; align-items: stretch; }
+  .contract-right { justify-content: space-between; }
   
   .detail-label {
       font-size: 0.7rem;

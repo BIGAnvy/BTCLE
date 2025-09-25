@@ -108,8 +108,8 @@
 }
 
 .card-icon-container {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -221,9 +221,9 @@
 }
 
 .highlight-text {
-  padding: 0.15em 0.4em;
-  background: var(--tokenomics-table-bg);
-  border-radius: 3px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
   font-weight: 600;
   white-space: nowrap;
   color: var(--tokenomics-text-primary);
@@ -292,15 +292,27 @@
 }
 
 .distribution-table .amount-cell {
-  font-family: monospace;
+  font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-variant-numeric: tabular-nums; /* выравнивание чисел */
   font-size: 1.1rem;
   color: var(--tokenomics-text-primary);
-  font-weight: 600;
+  font-weight: 400; /* убираем жирность */
+  text-align: left; /* выравниваем по правому краю */
 }
 
 .distribution-table .percent-cell {
-  font-weight: 600;
+  font-weight: 400; /* убираем жирность */
   color: var(--tokenomics-text-primary);
+  font-variant-numeric: tabular-nums;
+  text-align: left; /* выравниваем по правому краю */
+  font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.1rem; /* одинаковый размер с amount-cell */
+}
+
+/* проценты в тексте обзора и буллетах */
+.percent {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 
 .distribution-points {
@@ -713,8 +725,7 @@
   border-color: var(--tokenomics-text-secondary);
 }
 
-.principles-item::before {
-  content: '';
+.principles-icon {
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
@@ -726,18 +737,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--tokenomics-icon-border);
-}
-
-.principles-item::after {
-  content: '';
-  position: absolute;
-  top: 2.3rem;
-  left: 2.3rem;
-  width: 16px;
-  height: 16px;
-  background: var(--tokenomics-text-primary);
-  border-radius: 50%;
-  z-index: 1;
+  color: var(--tokenomics-text-secondary);
 }
 
 .principles-content {

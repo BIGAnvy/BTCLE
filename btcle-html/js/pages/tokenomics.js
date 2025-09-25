@@ -5,12 +5,12 @@
 import { createLayout } from '../components/layout.js';
 import { hideGlobalLoader } from '../components/loader.js';
 
-// SVG иконки
+// SVG иконки (более описательные)
 const ICONS = {
-  creditCard: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zM1 4v8h13V4z"></path><path d="M5 10.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"></path></svg>`,
-  trendingUp: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M3 6.035a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5"></path></svg>`,
-  barChart: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>`,
-  lineChart: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>`,
+  idCard: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h7"/><path d="M7 12h10"/><circle cx="17" cy="16" r="0"/></svg>`,
+  tag: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>`,
+  plusCircle: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>`,
+  arrows: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 15-4 4-4-4"/><path d="M17 19V6a2 2 0 0 0-2-2H3"/><path d="m3 9 4-4 4 4"/><path d="M7 5v13a2 2 0 0 0 2 2h12"/></svg>`,
   shield: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
   </svg>`,
@@ -55,7 +55,12 @@ const ICONS = {
   lock: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-  </svg>`
+  </svg>`,
+  // Иконки для принципов распределения
+  maxSupply: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>`,
+  circulating: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 15-4 4-4-4"/><path d="M17 19V6a2 2 0 0 0-2-2H3"/><path d="m3 9 4-4 4 4"/><path d="M7 5v13a2 2 0 0 0 2 2h12"/></svg>`,
+  locked: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  mechanism: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.5 3.5-1.7 1.7L12 5.4 10.2 7.2 8.5 5.5 12 2zm6.5 6.5L22 12l-3.5 3.5-1.7-1.7L18.6 12l-1.8-1.8 1.7-1.7zM12 18.6l1.8-1.8 1.7 1.7L12 22l-3.5-3.5 1.7-1.7L12 18.6zM5.4 12l1.8 1.8-1.7 1.7L2 12l3.5-3.5 1.7 1.7L5.4 12zm2.8 0L12 8.2 15.8 12 12 15.8 8.2 12z"/></svg>`
 };
 
 // Данные для страницы
@@ -65,23 +70,23 @@ const tokenCardData = [
   {
     title: 'NAME',
     value: 'Bitcoin Limited Edition',
-    icon: ICONS.creditCard,
+    icon: ICONS.idCard,
   },
   {
     title: 'TICKER',
     value: 'BTCLE',
-    icon: ICONS.trendingUp,
+    icon: ICONS.tag,
   },
   {
     title: 'MAX SUPPLY',
     value: '210,000',
-    icon: ICONS.barChart,
+    icon: ICONS.plusCircle,
     highlight: true,
   },
   {
     title: 'CIRCULATING SUPPLY',
     value: '21,000',
-    icon: ICONS.lineChart,
+    icon: ICONS.arrows,
   },
 //   {
 //     title: 'CONTRACT',
@@ -161,9 +166,9 @@ export function createTokenomicsPage(container) {
         <p>Bitcoin Limited Edition (BTCLE) is a <strong>fixed-supply crypto asset</strong> with a max supply of <span class="highlight-text">210,000 BTCLE</span>.</p> 
         <p>This non-inflationary model reinforces BTCLE's mission of sustainable growth, transparent governance, and alignment with long-term holders.</p>
         
-        <p>At the time of launch, <strong>10% of the total supply</strong> (21,000 BTCLE) will be released to the public as circulating supply to support trading liquidity and early adoption.</p>
+        <p>At the time of launch, <span class="percent">10%</span> of the total supply (21,000 BTCLE) will be released to the public as circulating supply to support trading liquidity and early adoption.</p>
         
-        <p>The remaining <strong>90%</strong> (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract. BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a <span class="highlight-text">monthly declining unlock mechanism</span>, where tokens are gradually released in decreasing amounts over a 10-year period, starting January 2026 and concluding December 2035.</p>
+        <p>The remaining <span class="percent">90%</span> (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract. BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a <span class="highlight-text">monthly declining unlock mechanism</span>, where tokens are gradually released in decreasing amounts over a 10-year period, starting January 2026 and concluding December 2035.</p>
       </div>
     </div>
   `;
@@ -267,8 +272,8 @@ export function createTokenomicsPage(container) {
     </div>
     
     <ul class="distribution-points">
-      <li><span class="point-icon">●</span> <span class="point-text"><strong>10%</strong> of the total supply will be made available at launch to provide public access and trading liquidity.</span></li>
-      <li><span class="point-icon">●</span> <span class="point-text"><strong>90%</strong> of the supply is locked and released via a long-term vesting mechanism that gradually introduces tokens into circulation over 10 years.</span></li>
+      <li><span class="point-icon">●</span> <span class="point-text"><span class="percent">10%</span> of the total supply will be made available at launch to provide public access and trading liquidity.</span></li>
+      <li><span class="point-icon">●</span> <span class="point-text"><span class="percent">90%</span> of the supply is locked and released via a long-term vesting mechanism that gradually introduces tokens into circulation over 10 years.</span></li>
     </ul>
   `;
   
@@ -386,24 +391,28 @@ export function createTokenomicsPage(container) {
     <h2 class="principles-title">Summary of Distribution Principles</h2>
     <ul class="principles-list">
       <li class="principles-item">
+        <div class="principles-icon">${ICONS.maxSupply}</div>
         <div class="principles-content">
           <strong>Max Supply</strong>
           <span class="principles-text">210,000 BTCLE (non-inflationary)</span>
         </div>
       </li>
       <li class="principles-item">
+        <div class="principles-icon">${ICONS.circulating}</div>
         <div class="principles-content">
           <strong>Circulating Supply</strong>
           <span class="principles-text">21,000 BTCLE (10% released for trading at launch)</span>
         </div>
       </li>
       <li class="principles-item">
+        <div class="principles-icon">${ICONS.locked}</div>
         <div class="principles-content">
           <strong>Locked Supply</strong>
           <span class="principles-text">189,000 BTCLE (90% locked with a 10-year vesting period)</span>
         </div>
       </li>
       <li class="principles-item">
+        <div class="principles-icon">${ICONS.mechanism}</div>
         <div class="principles-content">
           <strong>Release Mechanism</strong>
           <span class="principles-text">Smart contract-based, with a deflationary model</span>
@@ -420,7 +429,7 @@ export function createTokenomicsPage(container) {
   transparencySection.innerHTML = `
     <h2 class="transparency-title">Transparency & Governance Commitment</h2>
     <div class="transparency-content">
-      <p>BTCLE's token release mechanism is designed for full transparency, security, and long-term sustainability. It is:</p>
+      <p>At the core of this vision is the BTCLE governance token, designed to empower its holders with true participation rights. Beyond simple speculation, BTCLE represents ownership with responsibility; every holder will have the opportunity to vote, propose changes, and directly influence the future.</p>
       <ul class="transparency-list">
         <li><span class="check-icon">●</span> Immutable and automated via audited smart contracts.</li>
         <li><span class="check-icon">●</span> Fully auditable, with all token movements visible on-chain in real time.</li>

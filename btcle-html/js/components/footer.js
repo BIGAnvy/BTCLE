@@ -86,8 +86,8 @@ export async function loadFooter(element) {
                 <li><a href="mailto:info@bitcoin-limitededition.com" class="footer-nav-link">Email Us</a></li>
                 <li><a href="https://t.me/bitcoinlimitededition" class="footer-nav-link" target="_blank" rel="noopener noreferrer">Telegram</a></li>
                 <li><a href="https://x.com/bitcoinbtcle" class="footer-nav-link" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
-                <li><a href="#" class="footer-nav-link">Discord</a></li>
-                <li><a href="#" class="footer-nav-link">Medium</a></li>
+
+
               </ul>
             </div>
             

@@ -77,7 +77,7 @@ export function createConnectPage(container) {
             </div>
             
             <button type="submit" class="submit-button">
-              Contact Us Now
+              Contact Us
             </button>
           </form>
         </div>

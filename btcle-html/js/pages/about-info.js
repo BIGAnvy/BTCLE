@@ -15,6 +15,13 @@ const ICONS = {
   home: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>` // Добавим иконку домой
 };
 
+// Бренд-иконки
+ICONS.cmc = `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#000"/><path d="M24.5 14.6v2.8c0 3.2-2.6 5.8-5.8 5.8H13.3c-3.2 0-5.8-2.6-5.8-5.8v-2.8c0-3.2 2.6-5.8 5.8-5.8 1.8 0 3.3.8 4.4 2.1 1.1-1.3 2.6-2.1 4.4-2.1 1.1 0 2.1.3 3 .8l-1.1 2.1c-.6-.3-1.2-.5-1.9-.5-2.1 0-3.8 1.7-3.8 3.8v5.2h-2.4v-5.2c0-2.1-1.7-3.8-3.8-3.8S8.8 12.5 8.8 14.6v2.8c0 1.8 1.5 3.4 3.4 3.4h5.4c1.8 0 3.4-1.5 3.4-3.4v-2.8h3.5z" fill="#fff"/></svg>`;
+ICONS.coingecko = `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#8BC34A"/><circle cx="12.5" cy="14.5" r="2.5" fill="#000"/><path d="M9 20c2.2 2.2 6 2.2 8.2 0 2.2-2.2 2.2-6 0-8.2 2.6.2 5.1 1.4 6.8 3.6 2.9 3.6 2.4 8.8-1.2 11.7-3.6 2.9-8.8 2.4-11.7-1.2C10.2 24 9.3 22.1 9 20z" fill="#F5F5F5"/></svg>`;
+ICONS.pancakeswap = `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#F3BA2F"/><path d="M11 8c.7 0 1.3.6 1.3 1.3V12h7.4V9.3c0-.7.6-1.3 1.3-1.3s1.3.6 1.3 1.3V12c2 .8 3.4 2.7 3.4 4.9 0 3-2.9 5.5-6.4 5.5h-6.6C9 22.4 6 20 6 16.9 6 14.7 7.5 12.8 9.4 12V9.3C9.4 8.6 10 8 10.7 8H11z" fill="#5D4037"/></svg>`;
+ICONS.dexscreener = `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="16" fill="#111"/><path d="M10 22l4-8 3 6 2-4 3 6H10z" fill="#fff"/></svg>`;
+ICONS.bsc = `<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#F3BA2F"><path d="M12 2l3.5 3.5-1.7 1.7L12 5.4 10.2 7.2 8.5 5.5 12 2zm6.5 6.5L22 12l-3.5 3.5-1.7-1.7L18.6 12l-1.8-1.8 1.7-1.7zM12 18.6l1.8-1.8 1.7 1.7L12 22l-3.5-3.5 1.7-1.7L12 18.6zM5.4 12l1.8 1.8-1.7 1.7L2 12l3.5-3.5 1.7 1.7L5.4 12zm2.8 0L12 8.2 15.8 12 12 15.8 8.2 12z"/></svg>`;
+
 /**
  * Создает содержимое страницы "About Info"
  * @param {HTMLElement} container - Контейнер для страницы
@@ -87,6 +94,54 @@ export function createAboutInfoPage(container) {
 
   aboutContainer.innerHTML = content;
 
+  const contentRoot = aboutContainer.querySelector('.about-info-content');
+
+  const oldContractItemButton = aboutContainer.querySelector('.token-details-section .copy-button');
+  if (oldContractItemButton) {
+    const oldItem = oldContractItemButton.closest('.detail-item');
+    if (oldItem && oldItem.parentElement) oldItem.parentElement.removeChild(oldItem);
+  }
+
+  const shortAddress = `${contractAddress.slice(0, 10)}...${contractAddress.slice(-6)}`;
+
+  const contractCard = document.createElement('div');
+  contractCard.className = 'info-section contract-card fade-in-up';
+  contractCard.setAttribute('data-animation-delay', '0.7');
+  contractCard.innerHTML = `
+    <div class="contract-left">
+      <div class="chain-icon">${ICONS.bsc}</div>
+      <div class="chain-text">
+        <span class="contract-label">Contract Address</span>
+        <span class="chain-name">Binance Smart Chain</span>
+      </div>
+    </div>
+    <div class="contract-right">
+      <a class="contract-address" href="https://bscscan.com/address/${contractAddress}" target="_blank" rel="noopener">${shortAddress}</a>
+      <button class="copy-button" data-clipboard-text="${contractAddress}" aria-label="Copy contract address">${ICONS.copy}<span class="copy-tooltip">Copy</span></button>
+    </div>
+  `;
+
+  const listingsSection = document.createElement('div');
+  listingsSection.className = 'info-section listings-section fade-in-up';
+  listingsSection.setAttribute('data-animation-delay', '0.8');
+  listingsSection.innerHTML = `
+    <h3 class="listings-title">Listed</h3>
+    <div class="listings-grid">
+      <a class="listing-item" href="https://coinmarketcap.com/currencies/bitcoin-limited-edition/" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.cmc}</span><span class="listing-name">CoinMarketCap</span></a>
+      <a class="listing-item" href="https://www.coingecko.com/en/coins/bitcoin-limited-edition" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.coingecko}</span><span class="listing-name">CoinGecko</span></a>
+    </div>
+    <h3 class="listings-title">DEX Listed</h3>
+    <div class="listings-grid">
+      <a class="listing-item" href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955&inputCurrency=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.pancakeswap}</span><span class="listing-name">PancakeSwap</span></a>
+      <a class="listing-item" href="https://dexscreener.com/search?q=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.dexscreener}</span><span class="listing-name">DEX Screener</span></a>
+    </div>
+  `;
+
+  if (contentRoot) {
+    contentRoot.appendChild(contractCard);
+    contentRoot.appendChild(listingsSection);
+  }
+
   // Кнопка Домой (логика та же)
   const homeButton = createHomeButton();
   aboutContainer.appendChild(homeButton);
@@ -122,14 +177,8 @@ export function createAboutInfoPage(container) {
       // Инициализируем скролл-анимации для дочерних элементов
       initScrollAnimations(aboutContainer);
 
-      // Устанавливаем overflow: hidden для body ТОЛЬКО на десктопных экранах
-      const isMobile = window.innerWidth < 768;
-      if (!isMobile) {
-        console.log('[about-info.js] Setting body overflow to hidden for desktop');
-        document.body.style.overflow = 'hidden';
-      } else {
-        console.log('[about-info.js] Ensuring body overflow allows scrolling for mobile');
-      }
+      // Убираем overflow: hidden чтобы разрешить прокрутку и показать футер
+      document.body.style.overflow = 'auto';
 
     }, 50); // Минимальная задержка 50ms
   });
