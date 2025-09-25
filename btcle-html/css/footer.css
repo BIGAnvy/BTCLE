@@ -128,6 +128,14 @@ body.white-page .footer-bottom {
   transition: var(--transition-default);
 }
 
+.social-link img {
+  width: 28px;
+  height: 28px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+}
+
 .social-link:hover {
   color: var(--color-primary);
 }

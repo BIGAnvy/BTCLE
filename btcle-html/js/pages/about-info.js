@@ -135,7 +135,7 @@ export function createAboutInfoPage(container) {
     <h3 class="listings-title">DEX Listed</h3>
     <div class="listings-grid">
       <a class="listing-item" href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955&inputCurrency=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.pancakeswap}</span><span class="listing-name">PancakeSwap</span></a>
-      <a class="listing-item" href="https://dexscreener.com/search?q=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.dexscreener}</span><span class="listing-name">DEX Screener</span></a>
+      <a class="listing-item" href="https://dexscreener.com/search?q=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon"><img src="/images/dexscreener.png" alt="DEX Screener" width="24" height="24" /></span><span class="listing-name">DEX Screener</span></a>
     </div>
   `;
 
