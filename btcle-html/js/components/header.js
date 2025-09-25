@@ -31,21 +31,20 @@ export async function loadHeader(element) {
             <a href="?page=why-btcle" class="nav-link" data-navigate>Why BTCLE?</a>
             <a href="?page=tokenomics" class="nav-link" data-navigate>Tokenomics</a>
             <a href="?page=whitepaper" class="nav-link" data-navigate>Light paper</a>
-            <a href="?page=roadmap" class="nav-link" data-navigate>Roadmap</a>
             
             
             <a href="?page=connect" class="nav-link" data-navigate>Connect</a>
           </nav>
           
-          <!-- Логотип для мобильной версии -->
-          <a href="?" class="mobile-header-home-logo" data-navigate>
-            <img src="/images/BTCLELAYER2-white.svg" alt="Home" class="logo-image">
-          </a>
-
           <!-- Кнопка мобильного меню -->
           <button id="mobile-menu-toggle" class="mobile-menu-toggle">
             ${icons.menu}
           </button>
+          
+          <!-- Логотип для мобильной версии -->
+          <a href="?" class="mobile-header-home-logo" data-navigate>
+            <img src="/images/BTCLELAYER2-white.svg" alt="Home" class="logo-image">
+          </a>
         </div>
       </div>
 
@@ -55,7 +54,6 @@ export async function loadHeader(element) {
           <a href="?page=about" class="mobile-nav-item" data-navigate>About</a>
           <a href="?page=why-btcle" class="mobile-nav-item" data-navigate>Why BTCLE?</a>
           <a href="?page=tokenomics" class="mobile-nav-item" data-navigate>Tokenomics</a>
-          <a href="?page=roadmap" class="mobile-nav-item" data-navigate>Roadmap</a>
           <a href="?page=whitepaper" class="mobile-nav-item" data-navigate>Whitepaper</a>
           
           <a href="?page=connect" class="mobile-nav-item" data-navigate>Connect</a>
