@@ -108,17 +108,28 @@
   opacity: 0.8;
 }
 
+.why-point:hover .point-icon-wrapper {
+  background: var(--why-text-primary);
+  transform: scale(1.1);
+}
+
+.why-point:hover .point-icon-wrapper svg {
+  stroke: var(--why-bg);
+}
+
 /* Icon styling */
 .point-icon-wrapper {
   flex-shrink: 0;
   width: 70px;
   height: 70px;
-  background-color: transparent;
-  border-radius: 0;
+  background-color: var(--why-card-bg);
+  border: 1px solid var(--why-text-primary);
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .point-icon-wrapper::before {
@@ -128,9 +139,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, var(--why-icon-bg) 0%, transparent 100%);
-  border-radius: 12px;
-  opacity: 0.6;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .point-icon-wrapper svg {
