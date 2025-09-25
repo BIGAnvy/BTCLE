@@ -25,6 +25,11 @@ body {
     background: linear-gradient(to bottom, var(--color-background), var(--color-background-secondary));
 }
 
+/* Убираем прокрутку для главной страницы с видео (без класса white-page) */
+body:not(.white-page) {
+    overflow: hidden;
+}
+
 .page-wrapper {
     display: flex;
     flex-direction: column;

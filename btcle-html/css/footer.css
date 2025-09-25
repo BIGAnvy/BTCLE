@@ -9,6 +9,11 @@
   opacity: 1;
 }
 
+/* Скрываем футер на темной главной странице (без класса white-page) */
+body:not(.white-page) #footer {
+  display: none !important;
+}
+
 /* Стили футера для белых страниц */
 body.white-page .footer {
   background: linear-gradient(to bottom, #f8f8f8, #ffffff);
@@ -20,6 +25,37 @@ body.white-page .footer {
 
 body.white-page .social-bar {
   background-color: #f0f0f0;
+}
+
+.social-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.social-bar-content .footer-copyright {
+  margin: 0;
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+/* Адаптивность для social-bar */
+@media (max-width: 768px) {
+  .social-bar-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .social-bar-content .footer-copyright {
+    font-size: 0.8rem;
+    order: 2;
+  }
+  
+  .social-links {
+    order: 1;
+  }
 }
 
 body.white-page .social-link {
