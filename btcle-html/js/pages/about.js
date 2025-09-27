@@ -20,6 +20,13 @@ export function createStoryPage(container) {
   const aboutContainer = document.createElement('div');
   aboutContainer.classList.add('section-container');
   aboutContainer.classList.add('about-container');
+
+  // Показываем футер
+  const footer = document.getElementById('footer');
+  if (footer) {
+    footer.style.display = 'block';
+    footer.classList.add('visible');
+  }
   
   // Создаем содержимое секции
   const content = `

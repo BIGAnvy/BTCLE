@@ -144,6 +144,13 @@ export function createRoadmapPage(container) {
   container.appendChild(layout.container);
 
   loadStyles();
+
+  // Показываем футер
+  const footer = document.getElementById('footer');
+  if (footer) {
+    footer.style.display = 'block';
+    footer.classList.add('visible');
+  }
   
   // Добавляем обработчики кликов на карточки
   setupTimelineCardClicks(roadmapContainer);

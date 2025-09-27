@@ -132,10 +132,20 @@ function updateBodyOverflow(path) {
  */
 async function loadContent(path, isInitialLoad = false) {
     try {
-        // Сбрасываем overflow и класс white-page перед загрузкой новой страницы
-        console.log('Resetting body overflow and white-page class to default before loading content');
+        // Сбрасываем overflow и классы перед загрузкой новой страницы
+        console.log('Resetting body overflow and classes to default before loading content');
         document.body.style.overflow = '';
-        document.body.classList.remove('white-page');
+        document.body.classList.remove('white-page', 'without-overflow');
+
+        // Восстанавливаем футер по умолчанию (только если это не главная страница)
+        const footer = document.getElementById('footer');
+        if (footer) {
+          if (path === '/') {
+            footer.style.display = 'none';
+          } else {
+            footer.style.display = 'block';
+          }
+        }
 
         // --- Управление видимостью хедера --- (оставляем как было)
         const headerContainer = document.getElementById('header');

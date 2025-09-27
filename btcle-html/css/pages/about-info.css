@@ -99,16 +99,17 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Верхний ряд: две половинки ширины */
+/* Верхний ряд: три равные карточки */
 .detail-item:nth-child(1),
-.detail-item:nth-child(2) {
-  grid-column: span 6;
+.detail-item:nth-child(2),
+.detail-item:nth-child(3) {
+  grid-column: span 4;
 }
 
 /* Нижний ряд: три равные карточки */
-.detail-item:nth-child(3),
 .detail-item:nth-child(4),
-.detail-item:nth-child(5) {
+.detail-item:nth-child(5),
+.detail-item:nth-child(6) {
   grid-column: span 4;
 }
 
@@ -464,13 +465,14 @@
   }
   
   .detail-item:nth-child(1),
-  .detail-item:nth-child(2) {
-    grid-column: span 6;
+  .detail-item:nth-child(2),
+  .detail-item:nth-child(3) {
+    grid-column: span 4;
   }
   
-  .detail-item:nth-child(3),
   .detail-item:nth-child(4),
-  .detail-item:nth-child(5) {
+  .detail-item:nth-child(5),
+  .detail-item:nth-child(6) {
     grid-column: span 4;
   }
 }
@@ -493,13 +495,14 @@
   }
   
   .detail-item:nth-child(1),
-  .detail-item:nth-child(2) {
+  .detail-item:nth-child(2),
+  .detail-item:nth-child(3) {
     grid-column: span 1;
   }
   
-  .detail-item:nth-child(3),
   .detail-item:nth-child(4),
-  .detail-item:nth-child(5) {
+  .detail-item:nth-child(5),
+  .detail-item:nth-child(6) {
     grid-column: span 1;
   }
   

@@ -59,11 +59,15 @@ async function initApp() {
       }
     }, 300);
     
-    // Показываем футер после загрузки
+    // Показываем футер после загрузки (только если это не главная страница)
     setTimeout(() => {
       if (footerElement) {
-        footerElement.style.display = 'block';
-        footerElement.classList.add('visible');
+        // Проверяем, не главная ли это страница
+        const isHomePage = window.location.search === '' || window.location.search === '?';
+        if (!isHomePage) {
+          footerElement.style.display = 'block';
+          footerElement.classList.add('visible');
+        }
       }
     }, 400);
     

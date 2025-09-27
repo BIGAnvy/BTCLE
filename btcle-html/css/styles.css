@@ -25,8 +25,8 @@ body {
     background: linear-gradient(to bottom, var(--color-background), var(--color-background-secondary));
 }
 
-/* Убираем прокрутку для главной страницы с видео (без класса white-page) */
-body:not(.white-page) {
+/* Отключаем прокрутку для главной страницы */
+body.without-overflow {
     overflow: hidden;
 }
 

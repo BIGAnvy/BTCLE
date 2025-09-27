@@ -23,6 +23,8 @@ ICONS.coingecko = `<img src="/images/coingeko.png" alt="CoinGecko" width="28" he
 ICONS.pancakeswap = `<img src="/images/pancakeswap.png" alt="PancakeSwap" width="28" height="28" style="object-fit: contain;">`;
 ICONS.dexscreener = `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="16" fill="#111"/><path d="M10 22l4-8 3 6 2-4 3 6H10z" fill="#fff"/></svg>`;
 ICONS.bsc = `<img src="/images/bnsmartchain.png" alt="BNB Chain" width="24" height="24" style="object-fit: contain;">`;
+ICONS.uncx = `<img src="/images/uncx.png" alt="UNCX Network" width="28" height="28" style="object-fit: contain;">`;
+ICONS.locked = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><circle cx="12" cy="16" r="1"></circle><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
 
 /**
  * Создает содержимое страницы "About Info"
@@ -60,27 +62,34 @@ export function createAboutInfoPage(container) {
           </div>
         </div>
         <div class="detail-item fade-in-up" data-animation-delay="0.4">
+          <div class="detail-icon">${ICONS.locked}</div>
+          <div class="detail-text">
+            <span class="detail-label">Locked & Vested</span>
+            <span class="detail-value">189,000 BTCLE</span>
+          </div>
+        </div>
+        <div class="detail-item fade-in-up" data-animation-delay="0.5">
           <div class="detail-icon">${ICONS.maxSupply}</div>
           <div class="detail-text">
             <span class="detail-label">Max Supply</span>
             <span class="detail-value">210,000 BTCLE</span>
           </div>
         </div>
-        <div class="detail-item fade-in-up" data-animation-delay="0.5">
+        <div class="detail-item fade-in-up" data-animation-delay="0.6">
           <div class="detail-icon">${ICONS.totalSupply}</div>
           <div class="detail-text">
             <span class="detail-label">Total Supply</span>
             <span class="detail-value">210,000 BTCLE</span>
           </div>
         </div>
-        <div class="detail-item fade-in-up" data-animation-delay="0.6">
+        <div class="detail-item fade-in-up" data-animation-delay="0.7">
           <div class="detail-icon">${ICONS.circulatingSupply}</div>
           <div class="detail-text">
             <span class="detail-label">Circulating Supply</span>
             <span class="detail-value">21,000 BTCLE</span>
           </div>
         </div>
-        <div class="detail-item fade-in-up" data-animation-delay="0.7">
+        <div class="detail-item fade-in-up" data-animation-delay="0.8">
           <div class="detail-icon">${ICONS.contract}</div>
           <div class="detail-text">
             <span class="detail-label">Contract Address</span>
@@ -125,7 +134,7 @@ export function createAboutInfoPage(container) {
 
   const listingsSection = document.createElement('div');
   listingsSection.className = 'info-section listings-section fade-in-up';
-  listingsSection.setAttribute('data-animation-delay', '0.8');
+  listingsSection.setAttribute('data-animation-delay', '0.9');
   listingsSection.innerHTML = `
     <h3 class="listings-title">Listed</h3>
     <div class="listings-grid">
@@ -136,6 +145,10 @@ export function createAboutInfoPage(container) {
     <div class="listings-grid">
       <a class="listing-item" href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955&inputCurrency=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.pancakeswap}</span><span class="listing-name">PancakeSwap</span></a>
       <a class="listing-item" href="https://dexscreener.com/search?q=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon"><img src="/images/dexscreener.png" alt="DEX Screener" width="24" height="24" /></span><span class="listing-name">DEX Screener</span></a>
+    </div>
+    <h3 class="listings-title">Vesting</h3>
+    <div class="listings-grid">
+      <a class="listing-item" href="https://app.uncx.network/vesting-v2/token/chain/56/address/0x9d2144328e1d618f54cd38540f5ee50671f6a208" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.uncx}</span><span class="listing-name">UNCX Network</span></a>
     </div>
   `;
 
@@ -158,6 +171,13 @@ export function createAboutInfoPage(container) {
   // --- Элементы для анимации появления ---
   const sectionContent = aboutContainer.querySelector('.about-info-content');
   // --------------------------------------
+
+  // Показываем футер
+  const footer = document.getElementById('footer');
+  if (footer) {
+    footer.style.display = 'block';
+    footer.classList.add('visible');
+  }
 
   // Скрываем лоадер и ПОТОМ показываем контент
   requestAnimationFrame(() => {

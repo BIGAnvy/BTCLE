@@ -273,6 +273,13 @@ export function createWhitepaperPage(container) {
   initHeroAppearAnimation();
   initScrollAnimations();
   initWhitepaperEvents(container);
+
+  // Показываем футер
+  const footer = document.getElementById('footer');
+  if (footer) {
+    footer.style.display = 'block';
+    footer.classList.add('visible');
+  }
   
   // Скрываем лоадер
   setTimeout(() => {

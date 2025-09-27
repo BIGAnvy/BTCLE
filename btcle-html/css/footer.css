@@ -9,11 +9,6 @@
   opacity: 1;
 }
 
-/* Скрываем футер на темной главной странице (без класса white-page) */
-body:not(.white-page) #footer {
-  display: none !important;
-}
-
 /* Стили футера для белых страниц */
 body.white-page .footer {
   background: linear-gradient(to bottom, #f8f8f8, #ffffff);

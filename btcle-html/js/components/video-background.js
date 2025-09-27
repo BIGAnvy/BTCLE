@@ -118,6 +118,13 @@ export function createVideoBackground(options) {
   `;
   
   container.innerHTML = videoHtml;
+
+  // Скрываем футер и отключаем скролл на главной странице
+  const footer = document.getElementById('footer');
+  if (footer) {
+    footer.style.display = 'none';
+  }
+  document.body.classList.add('without-overflow');
   
   const videoBackground = container.querySelector('.video-background');
   const contentContainer = container.querySelector('#video-content');

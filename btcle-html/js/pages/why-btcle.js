@@ -90,6 +90,13 @@ export function createWhyBtclePage(container) {
 
   loadStyles();
 
+  // Показываем футер
+  const footer = document.getElementById('footer');
+  if (footer) {
+    footer.style.display = 'block';
+    footer.classList.add('visible');
+  }
+
   // Скрываем лоадер и анимируем контент
   requestAnimationFrame(() => {
     hideGlobalLoader();
