@@ -53,6 +53,9 @@ export function createHomePage(container) {
   
   // Инициализация анимаций для маркетингового плана
   setupMarketingAnimations();
+
+  // Добавляем класс для белой страницы
+  document.body.classList.add('white-page');
 }
 
 /**
