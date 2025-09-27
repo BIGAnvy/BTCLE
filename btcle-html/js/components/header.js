@@ -20,9 +20,14 @@ export async function loadHeader(element) {
     <div class="header header-transparent" id="main-header">
       <div class="header-container">
         <div class="header-content">
-          <!-- Логотип -->
+          <!-- Логотип для десктопа -->
           <a href="?" class="header-logo" data-navigate="">
             <img src="/images/BTCLELAYER2-white.svg" alt="BTCLE Layer II Limited Logo" class="logo-image">
+          </a>
+          
+          <!-- Логотип для мобильной версии -->
+          <a href="?" class="mobile-header-home-logo" data-navigate>
+            <img src="/images/BTCLELAYER2-white.svg" alt="Home" class="logo-image">
           </a>
           
           <!-- Навигация для десктопа -->
@@ -40,11 +45,6 @@ export async function loadHeader(element) {
           <button id="mobile-menu-toggle" class="mobile-menu-toggle">
             ${icons.menu}
           </button>
-          
-          <!-- Логотип для мобильной версии -->
-          <a href="?" class="mobile-header-home-logo" data-navigate>
-            <img src="/images/BTCLELAYER2-white.svg" alt="Home" class="logo-image">
-          </a>
         </div>
       </div>
 

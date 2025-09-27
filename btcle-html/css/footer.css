@@ -90,7 +90,7 @@ body.white-page .footer-bottom {
 
 .footer {
   position: relative;
-  padding-top: 6rem;
+  padding-top: 1rem;
   padding-bottom: 4rem;
   background: linear-gradient(to bottom, #080808, #000000);
   overflow: hidden;
@@ -140,6 +140,7 @@ body.white-page .footer-bottom {
   margin: 0 auto;
   padding: 0 1rem;
   margin-top: 4rem;
+  display: none;
 }
 
 .footer-grid {

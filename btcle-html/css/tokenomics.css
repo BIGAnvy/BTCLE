@@ -23,6 +23,7 @@
   padding: 120px 20px;
   overflow: hidden;
   min-height: 100vh;
+  max-width: 1200px; /* Ограничиваем максимальную ширину */
 }
 
 /* Заголовок и подзаголовок */
@@ -964,7 +965,23 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .tokenomics-container {
+    padding: 120px 60px; /* Увеличиваем боковые отступы на больших экранах */
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .tokenomics-container {
+    padding: 120px 40px; /* Средние боковые отступы для средних экранов */
+  }
+}
+
 @media (max-width: 1024px) {
+  .tokenomics-container {
+    padding: 120px 30px; /* Боковые отступы для планшетов */
+  }
+  
   .section-title {
     font-size: 3.2rem;
   }
@@ -976,7 +993,7 @@
 
 @media (max-width: 768px) {
   .tokenomics-container {
-    padding: 60px 15px;
+    padding: 60px 20px; /* Обновляем отступы для мобильных */
   }
   
   .section-title {
@@ -1025,7 +1042,7 @@
 
 @media (max-width: 480px) {
   .tokenomics-container {
-    padding: 80px 10px;
+    padding: 80px 15px; /* Минимальные боковые отступы для очень маленьких экранов */
   }
   
   .tokenomics-header {
