@@ -171,10 +171,13 @@
 /* Секция обзора */
 .overview-section {
   margin-bottom: 6rem;
-  padding: 0;
+  padding: 0 20px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .overview-section.visible {
@@ -185,17 +188,20 @@
 .overview-title {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--tokenomics-text-primary);
   position: relative;
   display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
 .overview-title::after {
   content: '';
   position: absolute;
   bottom: -10px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 3px;
   background: var(--tokenomics-accent);
@@ -206,6 +212,9 @@
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--tokenomics-text-primary);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .overview-text p {
@@ -233,9 +242,13 @@
 /* Секция цели распределения */
 .purpose-section {
   margin-bottom: 6rem;
+  padding: 0 20px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .purpose-section.visible {
@@ -247,7 +260,8 @@
   font-size: 2rem;
   margin-bottom: 1.2rem;
   color: var(--tokenomics-text-primary);
-  font-weight: 700;
+  font-weight: 400;
+  text-align: center;
 }
 
 .purpose-text {
@@ -255,6 +269,9 @@
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: var(--tokenomics-text-primary);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
 }
 
 .distribution-table-container {
@@ -363,10 +380,13 @@
 /* Секция распределения */
 .distribution-section {
   margin-bottom: 6rem;
-  padding: 0;
+  padding: 0 20px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .distribution-section.visible {
@@ -376,7 +396,7 @@
 
 .distribution-title {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 1.5rem;
   color: var(--tokenomics-text-primary);
@@ -404,7 +424,7 @@
   font-size: 1.5rem;
   margin-bottom: 1.2rem;
   color: var(--tokenomics-text-primary);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .mechanics-list {
@@ -586,9 +606,11 @@
 /* Секция расписания вестинга */
 .vesting-schedule {
   margin: 0 auto 6rem;
+  padding: 0 20px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 1200px;
 }
 
 .vesting-schedule.visible {
@@ -615,7 +637,7 @@
 
 .toggle-text {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--tokenomics-text-primary);
 }
 
@@ -647,18 +669,22 @@
 
 .annual-header h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--tokenomics-text-primary);
 }
 
 /* Секция принципов */
 .principles-section {
   margin-top: 6rem;
+  padding: 0 20px;
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
   position: relative;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .principles-section::before {
@@ -680,7 +706,7 @@
 .principles-title {
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--tokenomics-text-primary);
   position: relative;
   display: inline-block;
@@ -748,7 +774,7 @@
 
 .principles-content strong {
   color: var(--tokenomics-text-primary);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.2rem;
   display: block;
   margin-bottom: 0.5rem;
@@ -787,11 +813,14 @@
 /* Секция прозрачности */
 .transparency-section {
   margin-bottom: 6rem;
-  padding: 0;
+  padding: 0 20px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
   position: relative;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .transparency-section::before {
@@ -813,13 +842,17 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: var(--tokenomics-text-primary);
-  font-weight: 700;
+  font-weight: 400;
+  text-align: center;
 }
 
 .transparency-content {
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--tokenomics-text-primary);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .transparency-content p {
@@ -849,7 +882,7 @@
 
 .transparency-content strong {
   color: var(--tokenomics-text-primary);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 /* Кнопка возврата домой */
@@ -919,7 +952,7 @@
 
 .legend-text {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--tokenomics-text-primary);
 }
 
@@ -996,6 +1029,15 @@
     padding: 60px 20px; /* Обновляем отступы для мобильных */
   }
   
+  .overview-section,
+  .purpose-section,
+  .distribution-section,
+  .vesting-schedule,
+  .transparency-section,
+  .principles-section {
+    padding: 0 15px;
+  }
+  
   .section-title {
     font-size: 2.5rem;
   }
@@ -1066,6 +1108,15 @@
     padding: 80px 15px; /* Минимальные боковые отступы для очень маленьких экранов */
   }
   
+  .overview-section,
+  .purpose-section,
+  .distribution-section,
+  .vesting-schedule,
+  .transparency-section,
+  .principles-section {
+    padding: 0 10px;
+  }
+  
   .tokenomics-header {
     margin-bottom: 3rem;
   }
@@ -1132,5 +1183,14 @@
 @media (max-width: 360px) {
   .tokenomics-container {
     padding: 60px 10px;
+  }
+  
+  .overview-section,
+  .purpose-section,
+  .distribution-section,
+  .vesting-schedule,
+  .transparency-section,
+  .principles-section {
+    padding: 0 5px;
   }
 }

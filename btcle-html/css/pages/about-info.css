@@ -34,7 +34,7 @@
   max-width: 1100px; /* Оптимальная ширина для чтения */
   width: 100%;
   text-align: center; /* Центрируем заголовок */
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 /* --- Заголовок страницы --- */
@@ -291,8 +291,12 @@
   border-radius: 6px;
   font-size: 0.85rem;
   word-break: break-all;
-  max-width: fit-content;
-  width: fit-content;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  text-align: center;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .contract-address:hover { text-decoration: underline; }
@@ -519,8 +523,10 @@
   }
   
   .contract-address {
-    max-width: 200px;
+    max-width: 100%;
     font-size: 0.8rem;
+    flex: 1;
+    margin-right: 10px;
   }
   
   .description-text {
@@ -594,6 +600,8 @@
     font-size: 0.75rem;
     word-break: break-all;
     text-align: center;
+    padding: 8px 6px;
+    line-height: 1.3;
   }
   
   .copy-button {
@@ -652,6 +660,8 @@
   
   .contract-address {
     font-size: 0.7rem;
+    padding: 6px 4px;
+    line-height: 1.4;
   }
   
   .detail-icon {

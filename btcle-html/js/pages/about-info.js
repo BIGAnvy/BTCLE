@@ -115,9 +115,19 @@ export function createAboutInfoPage(container) {
 
   const shortAddress = `${contractAddress.slice(0, 10)}...${contractAddress.slice(-6)}`;
 
+  const vestingSection = document.createElement('div');
+  vestingSection.className = 'info-section vesting-section fade-in-up';
+  vestingSection.setAttribute('data-animation-delay', '0.7');
+  vestingSection.innerHTML = `
+    <h3 class="listings-title">Vesting Timeline 10 years</h3>
+    <div class="listings-grid">
+      <a class="listing-item" href="https://app.uncx.network/vesting-v2/token/chain/56/address/0x9d2144328e1d618f54cd38540f5ee50671f6a208" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.uncx}</span><span class="listing-name">UNCX Network</span></a>
+    </div>
+  `;
+
   const contractCard = document.createElement('div');
   contractCard.className = 'info-section contract-card fade-in-up';
-  contractCard.setAttribute('data-animation-delay', '0.7');
+  contractCard.setAttribute('data-animation-delay', '0.8');
   contractCard.innerHTML = `
     <div class="contract-left">
       <div class="chain-icon">${ICONS.bsc}</div>
@@ -146,13 +156,10 @@ export function createAboutInfoPage(container) {
       <a class="listing-item" href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955&inputCurrency=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.pancakeswap}</span><span class="listing-name">PancakeSwap</span></a>
       <a class="listing-item" href="https://dexscreener.com/search?q=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon"><img src="/images/dexscreener.png" alt="DEX Screener" width="24" height="24" /></span><span class="listing-name">DEX Screener</span></a>
     </div>
-    <h3 class="listings-title">Vesting Timeline 10 years</h3>
-    <div class="listings-grid">
-      <a class="listing-item" href="https://app.uncx.network/vesting-v2/token/chain/56/address/0x9d2144328e1d618f54cd38540f5ee50671f6a208" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.uncx}</span><span class="listing-name">UNCX Network</span></a>
-    </div>
   `;
 
   if (contentRoot) {
+    contentRoot.appendChild(vestingSection);
     contentRoot.appendChild(contractCard);
     contentRoot.appendChild(listingsSection);
   }
