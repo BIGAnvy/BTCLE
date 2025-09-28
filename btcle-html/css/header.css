@@ -303,6 +303,7 @@ body.white-page .mobile-nav-item:hover {
   
   .header-logo {
     order: 1; /* Логотип первый слева */
+    margin-left: 10px;
   }
   
   .desktop-nav {

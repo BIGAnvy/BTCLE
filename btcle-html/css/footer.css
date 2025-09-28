@@ -37,6 +37,10 @@ body.white-page .social-bar {
 
 /* Адаптивность для social-bar */
 @media (max-width: 768px) {
+  .social-bar {
+    padding: 1rem 0 1.5rem 0; /* Увеличиваем нижний отступ для копирайта */
+  }
+
   .social-bar-content {
     flex-direction: column;
     gap: 1rem;
@@ -46,6 +50,9 @@ body.white-page .social-bar {
   .social-bar-content .footer-copyright {
     font-size: 0.8rem;
     order: 2;
+    margin-top: 0.5rem; /* Дополнительный отступ сверху */
+    padding: 0 1rem; /* Боковые отступы для лучшей читаемости */
+    line-height: 1.4; /* Улучшаем читаемость */
   }
   
   .social-links {
@@ -142,6 +149,8 @@ body.white-page .footer-bottom {
   margin-top: 4rem;
   display: none;
 }
+
+
 
 .footer-grid {
   display: grid;
@@ -279,4 +288,20 @@ body.white-page .footer-bottom {
   .footer-nav {
     grid-template-columns: repeat(2, 1fr);
   }
+
 } 
+
+/* Адаптивность для footer-container на мобильных */
+@media (max-width: 768px) {
+    .footer-container {
+      margin-top: 5rem; /* Увеличиваем отступ для учета большей высоты social-bar */
+    }
+  
+    .footer {
+      padding: 0 !important;
+    }
+  
+    .social-bar {
+      position: relative;
+    }
+  }

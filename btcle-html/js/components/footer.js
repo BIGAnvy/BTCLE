@@ -19,7 +19,7 @@ export async function loadFooter(element) {
         <div class="container">
           <div class="social-bar-content">
             <p class="footer-copyright">
-              &copy; ${currentYear} Bitcoin Limited Edition. All rights reserved By Bitcoin Limited Edition.
+              &copy; ${currentYear} BTCLE. All rights reserved By Bitcoin Limited Edition.
             </p>
             <div class="social-links">
               <a href="https://t.me/bitcoinlimitededition" class="social-link" title="Telegram" target="_blank" rel="noopener noreferrer">

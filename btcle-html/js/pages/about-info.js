@@ -62,31 +62,31 @@ export function createAboutInfoPage(container) {
           </div>
         </div>
         <div class="detail-item fade-in-up" data-animation-delay="0.4">
-          <div class="detail-icon">${ICONS.locked}</div>
-          <div class="detail-text">
-            <span class="detail-label">Locked & Vested</span>
-            <span class="detail-value">189,000 BTCLE</span>
-          </div>
-        </div>
-        <div class="detail-item fade-in-up" data-animation-delay="0.5">
           <div class="detail-icon">${ICONS.maxSupply}</div>
           <div class="detail-text">
             <span class="detail-label">Max Supply</span>
             <span class="detail-value">210,000 BTCLE</span>
           </div>
         </div>
-        <div class="detail-item fade-in-up" data-animation-delay="0.6">
+        <div class="detail-item fade-in-up" data-animation-delay="0.5">
           <div class="detail-icon">${ICONS.totalSupply}</div>
           <div class="detail-text">
             <span class="detail-label">Total Supply</span>
             <span class="detail-value">210,000 BTCLE</span>
           </div>
         </div>
-        <div class="detail-item fade-in-up" data-animation-delay="0.7">
+        <div class="detail-item fade-in-up" data-animation-delay="0.6">
           <div class="detail-icon">${ICONS.circulatingSupply}</div>
           <div class="detail-text">
             <span class="detail-label">Circulating Supply</span>
             <span class="detail-value">21,000 BTCLE</span>
+          </div>
+        </div>
+        <div class="detail-item fade-in-up" data-animation-delay="0.7">
+          <div class="detail-icon">${ICONS.locked}</div>
+          <div class="detail-text">
+            <span class="detail-label">10 years Locked & Vested</span>
+            <span class="detail-value">189,000 BTCLE</span>
           </div>
         </div>
         <div class="detail-item fade-in-up" data-animation-delay="0.8">
@@ -146,7 +146,7 @@ export function createAboutInfoPage(container) {
       <a class="listing-item" href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955&inputCurrency=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.pancakeswap}</span><span class="listing-name">PancakeSwap</span></a>
       <a class="listing-item" href="https://dexscreener.com/search?q=${contractAddress}" target="_blank" rel="noopener"><span class="listing-icon"><img src="/images/dexscreener.png" alt="DEX Screener" width="24" height="24" /></span><span class="listing-name">DEX Screener</span></a>
     </div>
-    <h3 class="listings-title">Vesting</h3>
+    <h3 class="listings-title">Vesting Timeline 10 years</h3>
     <div class="listings-grid">
       <a class="listing-item" href="https://app.uncx.network/vesting-v2/token/chain/56/address/0x9d2144328e1d618f54cd38540f5ee50671f6a208" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.uncx}</span><span class="listing-name">UNCX Network</span></a>
     </div>
