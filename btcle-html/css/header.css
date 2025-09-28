@@ -372,6 +372,16 @@ body.white-page .mobile-nav-item:hover {
   #mobile-connect-toggle svg {
     margin-left: 9px;
   }
+
+  .mobile-menu {
+    border-bottom: 0 !important;
+  }
+  .header,
+  .header-scrolled,
+  .header-white-bg,
+  header.sticky {
+    border-bottom: 0 !important;
+  }
 }
 
 #main-header, .header {

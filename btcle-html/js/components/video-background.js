@@ -93,10 +93,10 @@ export function createVideoBackground(options) {
         class="video-element loading"
         id="video-bg-element"
         autoplay
+        loop
         ${muted ? 'muted' : ''}
         playsinline
         ${poster ? `poster="${poster}"` : ''}
-        ${loop ? 'loop' : ''}
         ${controls ? 'controls' : ''}
       >
         <source src="${videoSrc}" type="video/mp4">

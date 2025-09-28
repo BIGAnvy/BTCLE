@@ -27,7 +27,7 @@ export function createHomePage(container) {
     src: '/images/Header-video.mp4', // Путь от корня сайта
     autoplay: true,
     loop: true,
-    muted: false,
+    muted: true,
     content: createHomePageContent(),
     onReady: () => {
       console.log('Видео готово к воспроизведению');
