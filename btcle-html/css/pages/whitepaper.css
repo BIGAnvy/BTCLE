@@ -975,6 +975,17 @@
     font-size: 1rem;
   }
   
+  .hero-section,
+  .introduction-section,
+  .vision-section,
+  .features-section,
+  .tokenomics-section,
+  .roadmap-section,
+  .conclusion-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
   .wp-summary-toggle-btn {
     min-width: 200px;
     padding: 12px 20px;
@@ -1012,5 +1023,18 @@
   
   .timeline-content {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-section,
+  .introduction-section,
+  .vision-section,
+  .features-section,
+  .tokenomics-section,
+  .roadmap-section,
+  .conclusion-section {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

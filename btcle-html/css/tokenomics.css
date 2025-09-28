@@ -1004,6 +1004,27 @@
     font-size: 1.1rem;
   }
   
+  .card-title,
+  .card-value,
+  .overview-title,
+  .highlight-text,
+  .purpose-title,
+  .total-row,
+  .percent,
+  .distribution-title,
+  .mechanics-title,
+  .mechanics-label,
+  .toggle-button,
+  .value-cell,
+  .annual-total,
+  .remaining-value,
+  .toggle-text,
+  .annual-header h3,
+  .principles-title,
+  .transparency-title,
+  .legend-text {
+    font-weight: 400;
+  }
   
   .toggle-text {
     font-size: 1.1rem;
@@ -1105,5 +1126,11 @@
 
   .principles-text {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .tokenomics-container {
+    padding: 60px 10px;
   }
 }

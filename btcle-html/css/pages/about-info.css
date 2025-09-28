@@ -531,12 +531,13 @@
 /* Мобильные устройства */
 @media (max-width: 480px) {
   .about-info-container {
-    padding: 40px 15px 40px;
+    padding: 40px 15px;
   }
   
   .about-info-title {
     font-size: 2rem;
     margin-bottom: 2rem;
+    font-weight: 400;
   }
   
   .token-details-section {
@@ -634,7 +635,7 @@
 /* Очень маленькие экраны */
 @media (max-width: 360px) {
   .about-info-container {
-    padding: 30px 10px 30px;
+    padding: 30px 10px;
   }
   
   .about-info-title {

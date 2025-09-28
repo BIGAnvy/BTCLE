@@ -323,6 +323,7 @@
   .point-content h2 {
     font-size: 1.6rem;
     margin-top: 0;
+    font-weight: 400;
   }
 
   .point-content h3 {
@@ -357,7 +358,7 @@
 
 @media (max-width: 480px) {
   .why-btcle-container {
-    padding: 50px 10px 30px;
+    padding: 40px 15px 30px;
   }
 
   .why-btcle-hero h1.section-title {
@@ -419,5 +420,11 @@
 
   .why-btcle-conclusion p {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .why-btcle-container {
+    padding: 30px 10px;
   }
 }

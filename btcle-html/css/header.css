@@ -333,6 +333,10 @@ body.white-page .mobile-nav-item:hover {
     display: none; /* Скрываем десктопный логотип на мобильных */
   }
 
+  header.sticky {
+    height: 70px;
+  }
+
   .mobile-menu-toggle {
     display: block;
     order: 3; /* Бургер справа */
@@ -341,6 +345,7 @@ body.white-page .mobile-nav-item:hover {
   .mobile-header-home-logo {
     display: block; /* Показываем мобильный логотип */
     order: 1; /* Логотип слева */
+    margin: 5px 0 0 10px;
   }
   
   .header-content {

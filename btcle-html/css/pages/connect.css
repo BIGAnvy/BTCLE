@@ -305,6 +305,7 @@
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
+    font-weight: 400;
   }
   
   .hero-subtitle {
@@ -312,7 +313,7 @@
   }
   
   .connect-hero {
-    padding: 72px 20px 40px;
+    padding: 72px 15px 40px;
   }
   
   .main-content-section {
@@ -344,6 +345,14 @@
     right: 20px;
     width: 48px;
     height: 48px;
+  }
+}
+
+@media (max-width: 360px) {
+  .connect-hero,
+  .main-content-section {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
