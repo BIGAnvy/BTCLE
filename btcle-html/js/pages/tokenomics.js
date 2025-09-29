@@ -27,6 +27,7 @@ const ICONS = {
     <circle cx="12" cy="12" r="10" />
     <polyline points="12 6 12 12 16 14" />
   </svg>`,
+  uncx: `<img src="/images/uncx.png" alt="UNCX Network" width="20" height="20" style="object-fit: contain;">`,
   landmark: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <line x1="3" x2="21" y1="22" y2="22" />
     <line x1="6" x2="6" y1="18" y2="11" />
@@ -247,25 +248,33 @@ export function createTokenomicsPage(container) {
         <thead>
           <tr>
             <th>Allocation</th>
-            <th>Amount (BTCLE)</th>
+            <th>BTCLE</th>
             <th>% of Total Supply</th>
           </tr>
         </thead>
         <tbody>
+          <tr class="total-row">
+            <td>Max Supply</td>
+            <td class="amount-cell">210,000</td>
+            <td class="percent-cell">100%</td>
+          </tr>
           <tr>
             <td>Circulating Supply</td>
             <td class="amount-cell">21,000</td>
             <td class="percent-cell">10%</td>
           </tr>
           <tr>
-            <td>Locked vesting allocation (10-Year Vesting)</td>
+            <td class="vesting-cell">
+              <div class="vesting-content">
+                <span class="vesting-text">Locked vesting allocation (10-Year Vesting)</span>
+                <a href="https://app.uncx.network/vesting-v2/token/chain/56/address/0x9d2144328e1d618f54cd38540f5ee50671f6a208" target="_blank" rel="noopener" class="vesting-link">
+                  <span class="vesting-icon">${ICONS.uncx}</span>
+                  <span class="vesting-link-text">UNCX Network</span>
+                </a>
+              </div>
+            </td>
             <td class="amount-cell">189,000</td>
             <td class="percent-cell">90%</td>
-          </tr>
-          <tr class="total-row">
-            <td>Max Supply</td>
-            <td class="amount-cell">210,000</td>
-            <td class="percent-cell">100%</td>
           </tr>
         </tbody>
       </table>

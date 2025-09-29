@@ -358,15 +358,15 @@
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   
   .connect-hero {
-    padding: 56px 15px 36px;
+    padding: 98px 15px 36px;
   }
   
   .main-content-section {

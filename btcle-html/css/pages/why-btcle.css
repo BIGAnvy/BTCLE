@@ -365,8 +365,12 @@
     padding: 40px 15px 30px;
   }
 
-  .why-btcle-hero h1.section-title {
-    font-size: 2.2rem;
+  .why-btcle-hero h1.section-title, .overview-title, .purpose-title, .distribution-title, .transparency-title, .principles-title {
+    font-size: 1.8rem;
+  }
+
+  .why-btcle-hero {
+    padding: 60px 0 0 0;
   }
 
   .why-btcle-subtitle {

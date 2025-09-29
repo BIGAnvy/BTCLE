@@ -283,6 +283,19 @@
   border-radius: 8px;
 }
 
+@media (max-width: 768px) {
+  .distribution-table-container {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .distribution-table-container {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+}
+
 .distribution-table {
   width: 100%;
   border-collapse: collapse;
@@ -312,20 +325,154 @@
 
 .distribution-table .amount-cell {
   font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-variant-numeric: tabular-nums; /* выравнивание чисел */
+  font-variant-numeric: tabular-nums;
   font-size: 1.1rem;
   color: var(--tokenomics-text-primary);
-  font-weight: 400; /* убираем жирность */
-  text-align: left; /* выравниваем по правому краю */
+  font-weight: 400;
+  text-align: left;
 }
 
 .distribution-table .percent-cell {
-  font-weight: 400; /* убираем жирность */
+  font-weight: 400;
   color: var(--tokenomics-text-primary);
   font-variant-numeric: tabular-nums;
-  text-align: left; /* выравниваем по правому краю */
+  text-align: left;
   font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 1.1rem; /* одинаковый размер с amount-cell */
+  font-size: 1.1rem;
+}
+
+.vesting-cell {
+  vertical-align: top;
+}
+
+.vesting-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vesting-text {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.vesting-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--tokenomics-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  width: fit-content;
+}
+
+.vesting-link:hover {
+  color: var(--tokenomics-text-primary);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--tokenomics-text-secondary);
+  transform: translateY(-1px);
+}
+
+.vesting-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.vesting-link-text {
+  font-size: 0.85rem;
+}
+
+/* Адаптивные стили для мобильных экранов */
+@media (max-width: 768px) {
+  .distribution-table {
+    font-size: 0.9rem;
+  }
+  
+  .distribution-table th,
+  .distribution-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .distribution-table .amount-cell,
+  .distribution-table .percent-cell {
+    font-size: 0.9rem;
+  }
+  
+  .vesting-text {
+    font-size: 0.9rem;
+  }
+  
+  .vesting-link {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .vesting-link-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .distribution-table {
+    font-size: 0.8rem;
+  }
+  
+  .distribution-table th,
+  .distribution-table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .distribution-table .amount-cell,
+  .distribution-table .percent-cell {
+    font-size: 0.8rem;
+  }
+  
+  .distribution-table th:first-child,
+  .distribution-table td:first-child {
+    max-width: 120px;
+    word-wrap: break-word;
+    line-height: 1.2;
+  }
+  
+  .distribution-table th:nth-child(2),
+  .distribution-table td:nth-child(2) {
+    min-width: 80px;
+  }
+  
+  .distribution-table th:nth-child(3),
+  .distribution-table td:nth-child(3) {
+    min-width: 60px;
+  }
+  
+  .vesting-content {
+    gap: 0.25rem;
+  }
+  
+  .vesting-text {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .vesting-link {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.3rem;
+    gap: 0.25rem;
+  }
+  
+  .vesting-link-text {
+    font-size: 0.65rem;
+  }
+  
+  .vesting-icon {
+    font-size: 0.8rem;
+  }
 }
 
 /* проценты в тексте обзора и буллетах */
@@ -362,7 +509,7 @@
   flex-shrink: 0;
   width: 28px;
   height: 28px;
-  color: var(--tokenomics-text-secondary);
+  color: #252525;
   margin-right: 1rem;
   display: flex;
   align-items: center;
@@ -517,7 +664,7 @@
 
 .monthly-content, .vesting-content {
   margin-top: 1.5rem;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -787,8 +934,15 @@
     padding: 1.5rem;
   }
 
+  .principles-icon {
+    width: 35px;
+    height: 35px;
+    top: 1.25rem;
+    left: 1.25rem;
+  }
+
   .principles-content {
-    padding-left: 2.5rem;
+    padding-left: 3.5rem;
   }
 
   .principles-content strong {
@@ -1092,6 +1246,10 @@
   .principles-text {
     font-size: 0.95rem;
   }
+
+  .monthly-content, .vesting-content {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1110,10 +1268,11 @@
   
   .tokenomics-header {
     margin-bottom: 3rem;
+    margin-top: 20px;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .section-subtitle {
@@ -1158,8 +1317,15 @@
     padding: 1.2rem;
   }
 
+  .principles-icon {
+    width: 30px;
+    height: 30px;
+    top: 1rem;
+    left: 1rem;
+  }
+
   .principles-content {
-    padding-left: 2rem;
+    padding-left: 3rem;
   }
 
   .principles-content strong {
@@ -1168,6 +1334,10 @@
 
   .principles-text {
     font-size: 0.9rem;
+  }
+
+  .overview-title, .purpose-title, .distribution-title, .transparency-title, .principles-title {
+    font-size: 1.5rem;
   }
 }
 
@@ -1183,5 +1353,28 @@
   .transparency-section,
   .principles-section {
     padding: 0 5px;
+  }
+
+  .principles-item {
+    padding: 1rem;
+  }
+
+  .principles-icon {
+    width: 28px;
+    height: 28px;
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .principles-content {
+    padding-left: 2.5rem;
+  }
+
+  .principles-content strong {
+    font-size: 0.95rem;
+  }
+
+  .principles-text {
+    font-size: 0.85rem;
   }
 }

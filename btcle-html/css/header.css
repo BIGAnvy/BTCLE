@@ -335,7 +335,7 @@ body.white-page .mobile-nav-item:hover {
   }
 
   header.sticky {
-    height: 70px;
+    height: 70px !important;
   }
 
   .mobile-menu-toggle {

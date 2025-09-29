@@ -85,7 +85,7 @@ export function createAboutInfoPage(container) {
         <div class="detail-item fade-in-up" data-animation-delay="0.7">
           <div class="detail-icon">${ICONS.locked}</div>
           <div class="detail-text">
-            <span class="detail-label">10 years Locked & Vested</span>
+            <span class="detail-label">10 year Locked & Vested</span>
             <span class="detail-value">189,000 BTCLE</span>
           </div>
         </div>
@@ -119,7 +119,7 @@ export function createAboutInfoPage(container) {
   vestingSection.className = 'info-section vesting-section fade-in-up';
   vestingSection.setAttribute('data-animation-delay', '0.7');
   vestingSection.innerHTML = `
-    <h3 class="listings-title">Vesting Timeline 10 years</h3>
+    <h3 class="listings-title">Vesting Timeline 10 year</h3>
     <div class="listings-grid">
       <a class="listing-item" href="https://app.uncx.network/vesting-v2/token/chain/56/address/0x9d2144328e1d618f54cd38540f5ee50671f6a208" target="_blank" rel="noopener"><span class="listing-icon">${ICONS.uncx}</span><span class="listing-name">UNCX Network</span></a>
     </div>
