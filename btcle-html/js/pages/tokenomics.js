@@ -427,7 +427,7 @@ export function createTokenomicsPage(container) {
   const transparencySection = document.createElement('div');
   transparencySection.classList.add('transparency-section', 'fade-in-up');
   transparencySection.innerHTML = `
-    <h2 class="transparency-title">Transparency & Governance Commitment</h2>
+    <h2 class="transparency-title">Transparency and Governance Commitment</h2>
     <div class="transparency-content">
       <p>At the core of this vision is the BTCLE governance token, designed to empower its holders with true participation rights. Beyond simple speculation, BTCLE represents ownership with responsibility; every holder will have the opportunity to vote, propose changes, and directly influence the future.</p>
       <ul class="transparency-list">

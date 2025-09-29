@@ -24,9 +24,8 @@
 /* Hero Section */
 .why-btcle-hero {
   text-align: center;
-  margin-bottom: 60px;
   position: relative;
-  padding: 20px 0;
+  padding: 45px 0 0 0;
 }
 
 .why-btcle-hero h1.section-title {
@@ -332,7 +331,8 @@
 
   .point-content p {
     font-size: 0.95rem;
-    text-align: center;
+    text-align: left;
+    padding: 10px 10vw;
   }
 
   .why-btcle-conclusion {
@@ -353,6 +353,10 @@
     right: 20px;
     width: 45px;
     height: 45px;
+  }
+
+  .why-btcle-hero {
+    padding: 50px 0 0 0;
   }
 }
 

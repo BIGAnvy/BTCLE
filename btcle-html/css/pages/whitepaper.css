@@ -29,6 +29,10 @@
   background-color: var(--whitepaper-bg);
 }
 
+.whitepaper-container .hero-section {
+    align-items: end;
+}
+
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
@@ -45,7 +49,7 @@
 .hero-title {
   font-size: 3rem;
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: var(--whitepaper-text-primary);
   line-height: 1.2;
 }
@@ -53,7 +57,7 @@
 .hero-subtitle {
   font-size: 1.3rem;
   color: var(--whitepaper-text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   font-weight: 400;
 }
 
@@ -106,14 +110,14 @@
 }
 
 .whitepaper-container .hero-section {
-    height: 50vh;
-    min-height: 40vh;
+    height: 30vh;
+    min-height: 30vh;
     padding: 0;
     margin-bottom: 0;
 }
 
 .whitepaper-container .hero-section .hero-content {
-    margin-top: 15vh;
+    margin-top: 0vh;
 }
 
 .introduction-content {

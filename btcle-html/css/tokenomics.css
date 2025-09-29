@@ -29,8 +29,8 @@
 /* Заголовок и подзаголовок */
 .tokenomics-header {
   text-align: center;
-  margin-bottom: 5rem;
-  padding: 2rem;
+  margin-bottom: 40px;
+  padding: 0 2rem;
   position: relative;
   overflow: hidden;
   opacity: 0;
@@ -186,7 +186,7 @@
 }
 
 .overview-title {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
   color: var(--tokenomics-text-primary);
@@ -206,6 +206,7 @@
   height: 3px;
   background: var(--tokenomics-accent);
   border-radius: 2px;
+  display: none;
 }
 
 .overview-text {
@@ -395,7 +396,7 @@
 }
 
 .distribution-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -483,34 +484,23 @@
   align-items: center;
   gap: 0.75rem;
   background: none;
-  border: none;
+  border: 1px solid var(--tokenomics-card-border);
+  border-radius: 12px;
   cursor: pointer;
   color: var(--tokenomics-text-primary);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 1rem 0;
+  padding: 1rem 1.25rem;
   width: 100%;
   position: relative;
 }
 
-.toggle-button::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--tokenomics-text-primary);
-  transition: width 0.3s ease;
-}
-
-.toggle-button:hover::after {
-  width: 100%;
-}
-
 .toggle-button:hover {
   color: var(--tokenomics-text-secondary);
+  border-color: var(--tokenomics-text-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-icon {
@@ -622,11 +612,10 @@
   width: 100%;
   justify-content: space-between;
   background: none;
-  border: none;
-  border-radius: 0;
-  padding: 1rem 0;
+  border: 1px solid var(--tokenomics-card-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--tokenomics-card-border);
 }
 
 .toggle-left {
@@ -723,6 +712,7 @@
   height: 3px;
   background: var(--tokenomics-accent);
   border-radius: 2px;
+  display: none;   
 }
 
 .principles-list {
@@ -1026,7 +1016,7 @@
 
 @media (max-width: 768px) {
   .tokenomics-container {
-    padding: 60px 20px; /* Обновляем отступы для мобильных */
+    padding: 110px 20px; /* Обновляем отступы для мобильных */
   }
   
   .overview-section,
@@ -1053,6 +1043,7 @@
   .purpose-title,
   .total-row,
   .percent,
+  .table-subtitle,
   .distribution-title,
   .mechanics-title,
   .mechanics-label,

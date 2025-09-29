@@ -22,7 +22,7 @@
 /* Глобальные стили */
 body {
     color: var(--color-text);
-    background: linear-gradient(to bottom, var(--color-background), var(--color-background-secondary));
+    background: white;
 }
 
 /* Отключаем прокрутку для главной страницы */
