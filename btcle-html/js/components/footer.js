@@ -22,7 +22,7 @@ export async function loadFooter(element) {
               &copy; ${currentYear} BTCLE. All rights reserved By Bitcoin Limited Edition.
             </p>
             <div class="social-links">
-              <a href="https://t.me/bitcoinlimitededition" class="social-link" title="Telegram" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/BTCLE_Official" class="social-link" title="Telegram" target="_blank" rel="noopener noreferrer">
                 <img src="/images/tg.png" alt="Telegram" width="24" height="24" />
               </a>
               <a href="https://x.com/bitcoinbtcle?s=11&t=JWlxHx9VQF6b-5TZPkL5NQ" class="social-link" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
@@ -72,7 +72,7 @@ export async function loadFooter(element) {
               <h3 class="footer-nav-title">Connect</h3>
               <ul class="footer-nav-list">
                 <li><a href="mailto:info@bitcoin-limitededition.com" class="footer-nav-link">Email Us</a></li>
-                <li><a href="https://t.me/bitcoinlimitededition" class="footer-nav-link" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+                <li><a href="https://t.me/BTCLE_Official" class="footer-nav-link" target="_blank" rel="noopener noreferrer">Telegram</a></li>
                 <li><a href="https://x.com/bitcoinbtcle" class="footer-nav-link" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
               </ul>
             </div>

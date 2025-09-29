@@ -399,3 +399,27 @@
         max-width: 82%;
     }
 }
+
+/* Стили для fallback фона */
+.video-background.video-fallback {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.video-background.video-fallback .video-overlay {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+/* Улучшения для мобильных устройств */
+@media (max-width: 768px) {
+  /* Принудительное отключение полноэкранного режима для видео на мобильных */
+  .video-element::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+  }
+  
+  .video-element::-webkit-media-controls {
+    display: none !important;
+  }
+}

@@ -257,12 +257,16 @@
   transform: translateY(0);
 }
 
-.purpose-title {
+.purpose-title, .strategy-title {
   font-size: 2rem;
   margin-bottom: 1.2rem;
   color: var(--tokenomics-text-primary);
   font-weight: 400;
   text-align: center;
+}
+
+.table-subtitle {
+    font-weight: normal;
 }
 
 .purpose-text {
@@ -1209,7 +1213,8 @@
   .annual-header h3,
   .principles-title,
   .transparency-title,
-  .legend-text {
+  .legend-text,
+  .strategy-title {
     font-weight: 400;
   }
   
@@ -1336,7 +1341,7 @@
     font-size: 0.9rem;
   }
 
-  .overview-title, .purpose-title, .distribution-title, .transparency-title, .principles-title {
+  .overview-title, .purpose-title, .strategy-title, .distribution-title, .transparency-title, .principles-title {
     font-size: 1.5rem;
   }
 }

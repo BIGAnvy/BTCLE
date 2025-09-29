@@ -103,18 +103,16 @@ const distributionData = [
 ];
 
 const monthlyBreakdown2026 = [
-  { month: 'January', released: 3800, cumulative: 3800 },
-  { month: 'February', released: 3700, cumulative: 7500 },
-  { month: 'March', released: 3600, cumulative: 11100 },
-  { month: 'April', released: 3500, cumulative: 14600 },
-  { month: 'May', released: 3400, cumulative: 18000 },
-  { month: 'June', released: 3300, cumulative: 21300 },
-  { month: 'July', released: 3200, cumulative: 24500 },
-  { month: 'August', released: 3100, cumulative: 27600 },
-  { month: 'September', released: 3000, cumulative: 30600 },
-  { month: 'October', released: 2900, cumulative: 33500 },
-  { month: 'November', released: 2800, cumulative: 36300 },
-  { month: 'December', released: 2700, cumulative: 39000 }
+  { month: 'March', released: 2795, cumulative: 2795 },
+  { month: 'April', released: 2795, cumulative: 5590 },
+  { month: 'May', released: 2795, cumulative: 8385 },
+  { month: 'June', released: 2795, cumulative: 11180 },
+  { month: 'July', released: 2795, cumulative: 13975 },
+  { month: 'August', released: 2795, cumulative: 16770 },
+  { month: 'September', released: 2795, cumulative: 19565 },
+  { month: 'October', released: 2795, cumulative: 22360 },
+  { month: 'November', released: 2795, cumulative: 25155 },
+  { month: 'December', released: 2795, cumulative: 27950 }
 ];
 
 const annualVesting = [
@@ -169,7 +167,7 @@ export function createTokenomicsPage(container) {
         
         <p>At the time of launch, <span class="percent">10%</span> of the total supply (21,000 BTCLE) will be released to the public as circulating supply to support trading liquidity and early adoption.</p>
         
-        <p>The remaining <span class="percent">90%</span> (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract. BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a <span class="highlight-text">monthly declining unlock mechanism</span>, where tokens are gradually released in decreasing amounts over a 10-year period, starting January 2026 and concluding December 2035.</p>
+        <p>The remaining <span class="percent">90%</span> (189,000 BTCLE) is locked and allocated for a long-term vesting plan governed by a smart contract. BTCLE's vesting does not include a cliff unlock period, and does not follow a linear vesting model. Instead, it employs a <span class="highlight-text">monthly declining unlock mechanism</span>, where tokens are gradually released in decreasing amounts over a 10-year period, starting March 2026 and concluding December 2035.</p>
       </div>
     </div>
   `;
@@ -280,10 +278,19 @@ export function createTokenomicsPage(container) {
       </table>
     </div>
     
-    <ul class="distribution-points">
-      <li><span class="point-icon">●</span> <span class="point-text"><span class="percent">10%</span> of the total supply will be made available at launch to provide public access and trading liquidity.</span></li>
-      <li><span class="point-icon">●</span> <span class="point-text"><span class="percent">90%</span> of the supply is locked and released via a long-term vesting mechanism that gradually introduces tokens into circulation over 10 years.</span></li>
-    </ul>
+    <div class="liquidity-strategy">
+      <h3 class="strategy-title">Liquidity & Unlock Strategy</h3>
+      <p class="strategy-intro">Driven by our commitment to absolute transparency and safeguarding the community from sudden sell-offs, BTCLE has implemented a gradual monthly unlock schedule in small, controlled amounts.</p>
+      
+      <p class="strategy-highlight">To guarantee strong and sustainable liquidity, <span class="percent">85%</span> of the monthly unlocked tokens are deposited into PancakeSwap V3 and permanently locked and publicly verifiable.</p>
+      
+      <p class="strategy-approach">This approach secures two key objectives:</p>
+      
+      <ul class="strategy-objectives">
+        <li><span class="objective-icon">●</span> <span class="objective-text"><strong>Price Protection:</strong> Mitigating violent market fluctuations and shielding the community from instability.</span></li>
+        <li><span class="objective-icon">●</span> <span class="objective-text"><strong>Healthy Market Growth:</strong> Creating a sustainable trading environment that supports long-term stability, organic adoption, and steady growth.</span></li>
+      </ul>
+    </div>
   `;
   
   tokenomicsContainer.appendChild(purposeSection);
@@ -298,7 +305,7 @@ export function createTokenomicsPage(container) {
     <div class="vesting-mechanics">
       <h3 class="mechanics-title">Vesting Mechanics</h3>
       <ul class="mechanics-list">
-        <li><span class="mechanics-label">Vesting Start:</span> <span class="mechanics-value">January 2026</span></li>
+        <li><span class="mechanics-label">Vesting Start:</span> <span class="mechanics-value">March 2026</span></li>
         <li><span class="mechanics-label">Vesting End:</span> <span class="mechanics-value">December 2035</span></li>
         <li><span class="mechanics-label">Mechanism:</span> <span class="mechanics-value">Monthly token release via smart contract, following a gradually decreasing emission schedule</span></li>
         <li><span class="mechanics-label">Governance:</span> <span class="mechanics-value">Fully transparent and on-chain</span></li>
@@ -338,7 +345,7 @@ export function createTokenomicsPage(container) {
         <div class="remaining-box">
           <p>
             Remaining Locked Supply (as of December 2026):
-            <span class="remaining-value">150,000 BTCLE</span>
+            <span class="remaining-value">161,000 BTCLE</span>
           </p>
         </div>
       </div>

@@ -4,7 +4,15 @@
 
 // SVG иконки
 const icons = {
-  play: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4V8z"/></svg>`,
+  play: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap/**
+ * Инициализация видео и обработчиков событий
+ * @param {HTMLElement} container - Контейнер с видео
+ * @param {Function} [onReady] - Колбэк при готовности видео
+ * @param {Function} [onLoaded] - Колбэк при полной загрузке видео
+ */
+function initVideo(container, onReady, onLoaded) {
+  const videoElement = container.querySelector('#video-bg-element');
+  const soundToggleButton = container.querySelector('.sound-toggle-button');stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4V8z"/></svg>`,
   chevronDown: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-white/50"><path d="m6 9 6 6 6-6"/></svg>`,
   soundOn: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4zM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`,
   soundOff: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg>`,
@@ -86,7 +94,7 @@ export function createVideoBackground(options) {
   const isMobile = window.innerWidth <= 768;
   const videoSrc = isMobile ? 'images/Header-video-mobile.mp4' : src;
 
-  // HTML для видео-фона (БЕЗ деталей и дисклеймера)
+  // HTML для видео-фона с улучшенной совместимостью
   const videoHtml = `
     <div class="video-background">
       <video
@@ -96,11 +104,19 @@ export function createVideoBackground(options) {
         loop
         ${muted ? 'muted' : ''}
         playsinline
+        webkit-playsinline
+        x5-video-player-type="h5"
+        x5-video-player-fullscreen="false"
+        x5-video-orientation="portraint"
         ${poster ? `poster="${poster}"` : ''}
         ${controls ? 'controls' : ''}
+        preload="${isMobile ? 'metadata' : 'auto'}"
+        controlslist="nodownload nofullscreen noremoteplayback"
+        disablepictureinpicture
       >
         <source src="${videoSrc}" type="video/mp4">
-        Ваш браузер не поддерживает видео.
+        <source src="${videoSrc.replace('.mp4', '.webm')}" type="video/webm">
+        <p>Ваш браузер не поддерживает видео. <a href="${videoSrc}" download>Скачать видео</a></p>
       </video>
       
       <div class="video-overlay"></div>
@@ -171,16 +187,50 @@ export function createVideoBackground(options) {
 function initVideo(container, onReady, onLoaded) {
   const videoElement = container.querySelector('#video-bg-element');
   const soundToggleButton = container.querySelector('.sound-toggle-button');
-  // Убрали поиск элементов отсюда, т.к. они теперь не используются в этом модуле
   
   if (!videoElement) {
     console.error('Элемент видео не найден');
     return { toggleSound: () => {} };
   }
+
+  // Переменные для отслеживания состояния и попыток
+  let playAttempts = 0;
+  const maxPlayAttempts = 5;
+  let loadAttempts = 0;
+  const maxLoadAttempts = 3;
+  let isVideoReady = false;
+  let isFirstPlaySuccessful = false;
   
-  /* 1. Гарантируем mute ещё до первой попытки play() */
-  videoElement.muted = true;          // свойство
-  videoElement.setAttribute('muted',''); // атрибут (нужно для iOS)
+  // Детекция мобильного устройства и браузера
+  const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const isAndroid = /Android/.test(navigator.userAgent);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  console.log('Device detection:', { isMobile, isIOS, isAndroid, isSafari });
+
+  /* 1. Конфигурация видео для максимальной совместимости */
+  // Гарантируем mute для автовоспроизведения
+  videoElement.muted = true;
+  videoElement.setAttribute('muted', '');
+  
+  // Дополнительные атрибуты для мобильных устройств
+  videoElement.setAttribute('playsinline', ''); // Критично для iOS
+  videoElement.setAttribute('webkit-playsinline', ''); // Старые версии iOS
+  videoElement.defaultMuted = true;
+  
+  // Для Android - принудительное отключение контролов системы
+  if (isAndroid) {
+    videoElement.setAttribute('controlslist', 'nodownload nofullscreen noremoteplayback');
+    videoElement.disablePictureInPicture = true;
+  }
+
+  // Preload настройки в зависимости от устройства
+  if (isMobile) {
+    videoElement.preload = 'metadata'; // Экономим трафик на мобильных
+  } else {
+    videoElement.preload = 'auto';
+  }
 
   // Функция для переключения звука
   const toggleSound = () => {
@@ -193,53 +243,199 @@ function initVideo(container, onReady, onLoaded) {
     soundToggleButton.addEventListener('click', toggleSound);
   }
 
-  /* 2. Перестраховка: если autoplay всё‑таки заблокировали,
-         пробуем запустить ещё раз после canplay и при возвращении на вкладку */
-  const tryPlay = () => {
-      console.log('Attempting to play video. Paused:', videoElement.paused); // Лог
-      // Проверяем, что видео все еще на паузе перед попыткой
-      if (videoElement.paused) {
-          videoElement.play().then(() => {
-              console.log('Video play() successful.'); // Лог успеха
-          }).catch(err => {
-               console.error('Video play() failed:', err); // Лог ошибки
-          });
-      }
-  }
+  /* 2. Улучшенная функция воспроизведения с повторными попытками */
+  const tryPlay = (reason = 'manual') => {
+    if (playAttempts >= maxPlayAttempts) {
+      console.warn('Достигнуто максимальное количество попыток воспроизведения');
+      return Promise.reject(new Error('Max play attempts reached'));
+    }
+
+    playAttempts++;
+    console.log(`Попытка воспроизведения #${playAttempts} (${reason}). Paused:`, videoElement.paused);
+    
+    // Проверяем готовность видео
+    if (videoElement.readyState < 2) {
+      console.log('Видео не готово, ждем загрузки...');
+      return Promise.reject(new Error('Video not ready'));
+    }
+    
+    if (videoElement.paused) {
+      return videoElement.play().then(() => {
+        console.log('✅ Воспроизведение успешно запущено');
+        isFirstPlaySuccessful = true;
+        playAttempts = 0; // Сброс счетчика при успехе
+        return true;
+      }).catch(err => {
+        console.error(`❌ Ошибка воспроизведения (попытка ${playAttempts}):`, err);
+        
+        // Разные стратегии в зависимости от ошибки
+        if (err.name === 'NotAllowedError') {
+          console.log('Автовоспроизведение заблокировано, ждем взаимодействия пользователя');
+        } else if (err.name === 'NotSupportedError') {
+          console.error('Формат видео не поддерживается');
+          handleVideoLoadError();
+        } else {
+          // Повторная попытка через небольшую задержку
+          setTimeout(() => {
+            if (playAttempts < maxPlayAttempts) {
+              tryPlay(`retry-${playAttempts}`);
+            }
+          }, 1000 + (playAttempts * 500)); // Увеличивающаяся задержка
+        }
+        throw err;
+      });
+    }
+    
+    return Promise.resolve(true);
+  };
   
-  // Обработчик загрузки видео для отображения (canplay)
+  /* 3. Обработка ошибок загрузки видео */
+  const handleVideoLoadError = () => {
+    loadAttempts++;
+    console.error(`Ошибка загрузки видео (попытка ${loadAttempts})`);
+    
+    if (loadAttempts < maxLoadAttempts) {
+      console.log('Перезагружаем видео...');
+      setTimeout(() => {
+        videoElement.load(); // Перезагрузка видео
+      }, 2000 * loadAttempts); // Увеличивающаяся задержка
+    } else {
+      console.error('Не удалось загрузить видео после максимального количества попыток');
+      // Скрываем видео и показываем fallback
+      showFallbackBackground();
+    }
+  };
+
+  /* 4. Fallback фон при неудаче загрузки видео */
+  const showFallbackBackground = () => {
+    console.log('Показываем fallback фон');
+    container.classList.add('video-fallback');
+    videoElement.style.display = 'none';
+    
+    // Можно добавить статичное изображение как фон
+    const fallbackOverlay = container.querySelector('.video-overlay');
+    if (fallbackOverlay) {
+      fallbackOverlay.style.backgroundImage = 'url(/images/bitcoin-fallback.png)';
+      fallbackOverlay.style.backgroundSize = 'cover';
+      fallbackOverlay.style.backgroundPosition = 'center';
+    }
+  };
+
+  /* 5. Обработчики событий видео с улучшенной логикой */
+  
+  // Событие загрузки метаданных
+  videoElement.addEventListener('loadedmetadata', () => {
+    console.log('✅ Метаданные видео загружены');
+    isVideoReady = true;
+  });
+
+  // Событие готовности к воспроизведению
   videoElement.addEventListener('canplay', () => {
-    console.log('Видео может начать воспроизведение (canplay)');
-    tryPlay(); // Пытаемся запустить здесь
+    console.log('✅ Видео готово к воспроизведению (canplay)');
+    
+    // Первая попытка автовоспроизведения
+    if (!isFirstPlaySuccessful) {
+      tryPlay('canplay').catch(() => {
+        console.log('Автовоспроизведение не удалось, ждем взаимодействия пользователя');
+      });
+    }
+    
     if (typeof onReady === 'function') {
       onReady(videoElement);
     }
   });
 
-  /* 3. Возвращаемся на вкладку – тоже пробуем */
+  // Обработка ошибок загрузки
+  videoElement.addEventListener('error', (e) => {
+    console.error('Ошибка видео:', e);
+    handleVideoLoadError();
+  });
+
+  // Обработка прерывания загрузки
+  videoElement.addEventListener('abort', () => {
+    console.warn('Загрузка видео прервана');
+  });
+
+  // Событие начала загрузки
+  videoElement.addEventListener('loadstart', () => {
+    console.log('🔄 Начало загрузки видео');
+  });
+
+  // Событие прогресса загрузки
+  videoElement.addEventListener('progress', () => {
+    if (videoElement.buffered.length > 0) {
+      const bufferedEnd = videoElement.buffered.end(videoElement.buffered.length - 1);
+      const duration = videoElement.duration;
+      const bufferedPercent = (bufferedEnd / duration) * 100;
+      console.log(`📊 Загружено: ${bufferedPercent.toFixed(1)}%`);
+    }
+  });
+
+  /* 6. Обработка изменения видимости вкладки */
   document.addEventListener('visibilitychange', () => {
-    if (!document.hidden && videoElement.paused) {
-        console.log('Tab became visible, trying to play paused video.');
-        tryPlay();
+    if (!document.hidden && videoElement.paused && isVideoReady) {
+      console.log('Вкладка снова активна, пытаемся воспроизвести видео');
+      setTimeout(() => tryPlay('visibility-change'), 500);
     }
   });
   
-  /* 4. Пробуем запустить после первого взаимодействия пользователя */
-  const playOnFirstInteraction = () => {
-    if (videoElement.paused) {
-      console.log('First user interaction detected, trying to play paused video.');
-      tryPlay(); // Используем ту же функцию tryPlay с логами
+  /* 7. Обработка взаимодействия пользователя */
+  let userInteractionHandled = false;
+  
+  const playOnFirstInteraction = (eventType) => {
+    if (userInteractionHandled) return;
+    
+    console.log(`Первое взаимодействие пользователя: ${eventType}`);
+    userInteractionHandled = true;
+    
+    if (videoElement.paused && isVideoReady) {
+      tryPlay('user-interaction').catch(() => {
+        console.log('Не удалось запустить видео даже после взаимодействия пользователя');
+      });
     }
-    // Удаляем обработчик после первого срабатывания
-    document.removeEventListener('touchstart', playOnFirstInteraction);
-    document.removeEventListener('click', playOnFirstInteraction); // Добавим и click для десктопа/мыши
   };
-  document.addEventListener('touchstart', playOnFirstInteraction, { once: true });
-  document.addEventListener('click', playOnFirstInteraction, { once: true });
+
+  // Множественные события для максимального покрытия
+  const interactionEvents = ['touchstart', 'touchend', 'click', 'keydown'];
+  interactionEvents.forEach(eventType => {
+    document.addEventListener(eventType, () => playOnFirstInteraction(eventType), { 
+      once: true, 
+      passive: true 
+    });
+  });
+
+  /* 8. Специальная обработка для iOS */
+  if (isIOS) {
+    // Дополнительный обработчик для iOS Safari
+    videoElement.addEventListener('canplaythrough', () => {
+      console.log('iOS: Видео полностью буферизовано');
+      if (!isFirstPlaySuccessful && isVideoReady) {
+        tryPlay('ios-canplaythrough');
+      }
+    });
+  }
+
+  /* 9. Мониторинг состояния сети для мобильных устройств */
+  if (isMobile && 'connection' in navigator) {
+    const connection = navigator.connection;
+    
+    const handleConnectionChange = () => {
+      console.log(`Изменение соединения: ${connection.effectiveType}, ${connection.downlink}Mbps`);
+      
+      // При медленном соединении переключаемся на более низкое качество
+      if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+        videoElement.preload = 'none';
+        console.log('Медленное соединение: отключен preload');
+      }
+    };
+    
+    connection.addEventListener('change', handleConnectionChange);
+    handleConnectionChange(); // Проверяем сразу
+  }
   
   // Обработчик полной загрузки видео
   videoElement.addEventListener('loadeddata', () => {
-    console.log('Видео полностью загружено');
+    console.log('✅ Видео полностью загружено');
     videoElement.classList.remove('loading');
     videoElement.classList.add('loaded');
     
@@ -250,17 +446,50 @@ function initVideo(container, onReady, onLoaded) {
 
   // Обработчик события play - запускается один раз при старте видео
   videoElement.addEventListener('play', () => {
-    console.log('Video playback started. Starting timer.');
+    console.log('🎬 Воспроизведение видео началось. Запуск таймера.');
+    isFirstPlaySuccessful = true;
 
     // Запускаем таймер 
     setTimeout(() => {
-      console.log('Video timer finished.');
+      console.log('⏰ Таймер видео завершен.');
       isVideoTimerElapsed = true;
-      tryRevealContent(); // Пытаемся показать контент (теперь без деталей токена)
-
-    }, 4000); // Таймер остался, влияет на tryRevealContent
+      tryRevealContent();
+    }, 4000);
 
   }, { once: true }); // Сработает только один раз
+
+  // Обработчик паузы (для отладки)
+  videoElement.addEventListener('pause', () => {
+    console.log('⏸️ Видео поставлено на паузу');
+  });
+
+  // Обработчик возобновления
+  videoElement.addEventListener('playing', () => {
+    console.log('▶️ Видео возобновлено');
+  });
+
+  // Обработчик ожидания (буферизация)
+  videoElement.addEventListener('waiting', () => {
+    console.log('⏳ Видео ожидает буферизации');
+  });
+
+  /* 10. Принудительная загрузка через небольшую задержку */
+  setTimeout(() => {
+    if (!isVideoReady && loadAttempts === 0) {
+      console.log('🔄 Принудительная загрузка видео');
+      videoElement.load();
+    }
+  }, 1000);
+
+  /* 11. Финальная проверка через 5 секунд */
+  setTimeout(() => {
+    if (!isFirstPlaySuccessful && isVideoReady && !userInteractionHandled) {
+      console.log('🚨 Финальная попытка запуска видео');
+      tryPlay('final-attempt').catch(() => {
+        console.warn('Не удалось запустить видео, возможно требуется взаимодействие пользователя');
+      });
+    }
+  }, 5000);
   
   // --- Добавляем слушатель события ended ---
   videoElement.addEventListener('ended', () => {

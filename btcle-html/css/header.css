@@ -381,6 +381,7 @@ body.white-page .mobile-nav-item:hover {
 
   .mobile-menu {
     border-bottom: 0 !important;
+    margin-top: -12px;
   }
   .header,
   .header-scrolled,

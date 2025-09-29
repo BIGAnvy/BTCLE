@@ -54,7 +54,7 @@ export async function loadHeader(element) {
           <a href="?page=about" class="mobile-nav-item" data-navigate>About</a>
           <a href="?page=why-btcle" class="mobile-nav-item" data-navigate>Why BTCLE?</a>
           <a href="?page=tokenomics" class="mobile-nav-item" data-navigate>Tokenomics</a>
-          <a href="?page=whitepaper" class="mobile-nav-item" data-navigate>Whitepaper</a>
+          <a href="?page=whitepaper" class="mobile-nav-item" data-navigate>Light Paper</a>
           
           <a href="?page=connect" class="mobile-nav-item" data-navigate>Connect</a>
         </nav>

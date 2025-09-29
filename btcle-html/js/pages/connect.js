@@ -194,9 +194,10 @@ function handleFormSubmit(event) {
   const message = formData.get('message');
   
   // Создаем mailto ссылку
+  const recipient = 'Info@bitcoin-limitededition.com';
   const subject = encodeURIComponent(`BTCLE Contact Form - ${name}`);
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-  const mailtoLink = `mailto:info@bitcoin-limitededition.com?subject=${subject}&body=${body}`;
+  const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
   
   // Открываем почтовый клиент
   window.location.href = mailtoLink;

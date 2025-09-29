@@ -638,6 +638,10 @@
     width: 18px;
     height: 18px;
   }
+  
+  .about-info-content {
+    margin-top: 60px;
+  }
 }
 
 /* Очень маленькие экраны */
